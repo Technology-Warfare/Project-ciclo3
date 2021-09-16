@@ -1,0 +1,9 @@
+Nombre: Wilmer Yoan López
+Edad: 38 años
+Ocupación: Productor de contenido multimedia
+Celular: 3219679921
+correo: jlopjen@gmail.com
+correo alterno: JhoanLopez@protonmail.com
+hobbie: Componer canciones (musica, letra), practicar instrumentos musicales (guitarra, bajo, piano), realizar videos (Sketch), caminar por donde exista naturaleza, redes sociales (administro paginas, grupos), comunicador-investigador (comparto y redacto información de interés) 
+
+Rol del Sprint 1 : Database
