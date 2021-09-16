@@ -1,0 +1,9 @@
+Nombre:Eillen Daniela Chaparro Badillo
+Edad: 21 años
+Ocupación: Matemática Docente
+Celular: 3006825467
+correo: eillenc@uninorte.edu.co
+correo alterno: ed_chb@hotmail.com
+hobbie: los deportes de manos, bailar, cantar, tocar instrumentos y estudiar ciencias
+
+Rol Sprint 1 : Analista
