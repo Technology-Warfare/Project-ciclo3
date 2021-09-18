@@ -1,0 +1,7 @@
+Nombre:Camilo Alexander Molina
+Edad: 27 años
+Ocupación: Estudiante
+Celular: 3015352083
+correo: Alexander.molina@udea.edu.co
+Hobbies: jugar fútbol, escuchar música, ver series
+Rol del Sprint 1 : Desarrollador
