@@ -12,7 +12,6 @@ function App() {
   return (
     <div>
       <HashRouter>
-        <Navbar />
         <Switch>
           <Route exact
             path="/"
