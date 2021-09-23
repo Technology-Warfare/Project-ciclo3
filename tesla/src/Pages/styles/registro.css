@@ -8,18 +8,26 @@
     padding-bottom: 5%;
     padding-top: 5%;
     margin-bottom: 8%;
+    border-radius: 30px;
 }
 
 .descripcion{
-    padding-top: 10%;
+    padding-top: 8%;
     text-align: center;
 }
 
 .botonregistro{
-    text-align: center;
+    display: flex;
+    justify-content: center;
 }
 
-@media screen and (max-width:400px) {
+.terminos{
+    display: flex;
+    justify-content: center;
+    margin-top: 3%;
+}
+
+@media screen and (max-width:600px) {
     
     .main-registro{
         width: 100%;
