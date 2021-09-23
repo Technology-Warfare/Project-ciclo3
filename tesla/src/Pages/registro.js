@@ -16,6 +16,7 @@ import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 
 import './styles/registro.css';
+import logo from './img/logo.png';
 
 const Registro = () => {
     const [loading, setLoading] = React.useState(false);
@@ -73,141 +74,146 @@ const Registro = () => {
     return(
         <React.Fragment>
             <div className="main-registro">
-                <h1>Bienvenido!!</h1>
-                <p>Por favor completa los campos que se necesitan para poder crear una cuenta.</p>
-                <Box
-                    component="form"
-                    sx={{
-                        '& > :not(style)': { m: 1, width: 'fullwidth' },
-                    }}
-                    noValidate
-                    autoComplete="off"
-                    >
-                        <div className="descripcion">
-                            <p>Datos personales</p>
-                        </div>
-                        <TextField 
-                            required 
-                            id="filled-basic" 
-                            label="Nombres" 
-                            variant="filled" 
-                            helperText="Por favor digita tu nombre"
-                        />
-                        <TextField 
-                            required 
-                            id="filled-basic" 
-                            label="Apellidos" 
-                            variant="filled" 
-                            helperText="Por favor digita tu apellido"
-                        />
-                        <TextField
-                            required
-                            id="filled-number"
-                            label="Edad"
-                            type="number"
-                            InputLabelProps={{
-                                shrink: true,
-                            }}
-                            variant="filled"
-                            helperText="Por favor digita tu edad"
-                        />
-                        <TextField 
-                            required 
-                            id="filled-basic" 
-                            label="celular" 
-                            variant="filled" 
-                            helperText="Por favor digita tu número de celular"
-                        />
-                        <TextField 
-                            required 
-                            id="filled-email-input" 
-                            label="Email" 
-                            variant="filled" 
-                            helperText="Por favor digita tu email"
-                        />
-                        <div className="descripcion">
-                            <p>Datos para la cuenta</p>
-                        </div>
-                        <TextField 
-                            required 
-                            id="filled-basic" 
-                            label="Usuario" 
-                            variant="filled" 
-                            helperText="Por favor digita tu usuario"
-                        />
-                        <FormControl sx={{ m: 1, width: '25ch' }} variant="filled">
-                            <InputLabel htmlFor="filled-adornment-password">Password</InputLabel>
-                            <FilledInput
-                                id="filled-adornment-password"
-                                type={values.showPassword ? 'text' : 'password'}
-                                value={values.password}
-                                onChange={handleChange('password')}
-                                endAdornment={
-                                    <InputAdornment position="center">
-                                        <IconButton
-                                            aria-label="toggle password visibility"
-                                            onClick={handleClickShowPassword}
-                                            onMouseDown={handleMouseDownPassword}
-                                            edge="end"
-                                            >
-                                            {values.showPassword ? <VisibilityOff /> : <Visibility />}
-                                        </IconButton>
-                                    </InputAdornment>
-                                }
+                <div className="main-form">
+                    <div className="logo">
+                        <img className="logo-main" src={logo} alt="logo" />
+                    </div>
+                    <h1>Bienvenido!!</h1>
+                    <p>Por favor completa los campos que se necesitan para poder crear una cuenta.</p>
+                    <Box
+                        component="form"
+                        sx={{
+                            '& > :not(style)': { m: 1, width: 'fullwidth' },
+                        }}
+                        noValidate
+                        autoComplete="off"
+                        >
+                            <div className="descripcion">
+                                <p>Datos personales</p>
+                            </div>
+                            <TextField 
+                                required 
+                                id="filled-basic" 
+                                label="Nombres" 
+                                variant="filled" 
+                                helperText="Digíta tu nombre"
                             />
-                        </FormControl>
-                </Box>
-                <div className="terminos">
-                    <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                        <Box sx={{ m: 1, position: 'relative' }}>
-                            <Fab
-                                aria-label="save"
-                                color="primary"
-                                sx={buttonSx}
-                                onClick={handleButtonClick}
-                                >
-                                {success ? <CheckIcon /> : <SaveIcon />}
-                            </Fab>
-                            {loading && (
-                            <CircularProgress
-                                size={68}
-                                sx={{
-                                color: green[500],
-                                position: 'absolute',
-                                top: -6,
-                                left: -6,
-                                zIndex: 1,
+                            <TextField 
+                                required 
+                                id="filled-basic" 
+                                label="Apellidos" 
+                                variant="filled" 
+                                helperText="Digíta tu apellido"
+                            />
+                            <TextField
+                                required
+                                id="filled-number"
+                                label="Edad"
+                                type="number"
+                                InputLabelProps={{
+                                    shrink: true,
                                 }}
+                                variant="filled"
+                                helperText="Digíta tu edad"
                             />
-                            )}
-                        </Box>
-                        <Box sx={{ m: 1, position: 'relative' }}>
-                            <Button
-                                variant="contained"
-                                sx={buttonSx}
-                                disabled={loading}
-                                onClick={handleButtonClick}
-                                >
-                                Accept terms
-                            </Button>
-                            {loading && (
-                            <CircularProgress
-                                size={24}
-                                sx={{
-                                color: green[500],
-                                position: 'absolute',
-                                top: '50%',
-                                left: '50%',
-                                marginTop: '-12px',
-                                marginLeft: '-12px',
-                                }}
+                            <TextField 
+                                required 
+                                id="filled-basic" 
+                                label="celular" 
+                                variant="filled" 
+                                helperText="Digíta tu número de celular"
                             />
-                            )}
-                        </Box>
+                            <TextField 
+                                required 
+                                id="filled-email-input" 
+                                label="Email" 
+                                variant="filled" 
+                                helperText="Digíta tu email"
+                            />
+                            <div className="descripcion">
+                                <p>Datos para la cuenta</p>
+                            </div>
+                            <TextField 
+                                required 
+                                id="filled-basic" 
+                                label="Usuario" 
+                                variant="filled" 
+                                helperText="Digíta tu usuario"
+                            />
+                            <FormControl sx={{ m: 1, width: '25ch' }} variant="filled">
+                                <InputLabel htmlFor="filled-adornment-password">Password</InputLabel>
+                                <FilledInput
+                                    id="filled-adornment-password"
+                                    type={values.showPassword ? 'text' : 'password'}
+                                    value={values.password}
+                                    onChange={handleChange('password')}
+                                    endAdornment={
+                                        <InputAdornment position="center">
+                                            <IconButton
+                                                aria-label="toggle password visibility"
+                                                onClick={handleClickShowPassword}
+                                                onMouseDown={handleMouseDownPassword}
+                                                edge="end"
+                                                >
+                                                {values.showPassword ? <VisibilityOff /> : <Visibility />}
+                                            </IconButton>
+                                        </InputAdornment>
+                                    }
+                                />
+                            </FormControl>
                     </Box>
-                </div>
-                <div className="boton-registro">
-                    <Button variant="contained" color="success">Crear cuenta</Button>
+                    <div className="terminos">
+                        <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                            <Box sx={{ m: 1, position: 'relative' }}>
+                                <Fab
+                                    aria-label="save"
+                                    color="primary"
+                                    sx={buttonSx}
+                                    onClick={handleButtonClick}
+                                    >
+                                    {success ? <CheckIcon /> : <SaveIcon />}
+                                </Fab>
+                                {loading && (
+                                <CircularProgress
+                                    size={68}
+                                    sx={{
+                                    color: green[500],
+                                    position: 'absolute',
+                                    top: -6,
+                                    left: -6,
+                                    zIndex: 1,
+                                    }}
+                                />
+                                )}
+                            </Box>
+                            <Box sx={{ m: 1, position: 'relative' }}>
+                                <Button
+                                    variant="contained"
+                                    sx={buttonSx}
+                                    disabled={loading}
+                                    onClick={handleButtonClick}
+                                    >
+                                    Accept terms
+                                </Button>
+                                {loading && (
+                                <CircularProgress
+                                    size={24}
+                                    sx={{
+                                    color: green[500],
+                                    position: 'absolute',
+                                    top: '50%',
+                                    left: '50%',
+                                    marginTop: '-12px',
+                                    marginLeft: '-12px',
+                                    }}
+                                />
+                                )}
+                            </Box>
+                        </Box>
+                    </div>
+                    <div className="boton-registro">
+                        <Button variant="contained" color="success">Crear cuenta</Button>
+                    </div>
                 </div>
             </div>
         </React.Fragment>
