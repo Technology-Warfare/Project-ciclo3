@@ -12,6 +12,7 @@ import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import Button from '@mui/material/Button';
 
 import './styles/login.css';
+import logo from './img/logo.png';
 
 const Login = () => {
     const [values, setValues] = React.useState({
@@ -41,6 +42,9 @@ const Login = () => {
             <div className="main">
                 <div className="main-login">
                     <div className="form">
+                        <div className="logo">
+                            <img className="logo-main" src={logo} alt="logo" />
+                        </div>
                         <Box
                             component="form"
                             sx={{
@@ -85,8 +89,8 @@ const Login = () => {
                             <Button variant="contained" color="success">Iniciar sesion</Button>
                         </div>
                         <div className="registrarse">
-                            no tienes cuenta?, 
-                            <Link to="/registrarse">Registrate aqui</Link>
+                            ¿No tienes cuenta?. 
+                            <Link to="/registrarse">Registrate aquí</Link>
                         </div>
                     </div>
                 </div>
