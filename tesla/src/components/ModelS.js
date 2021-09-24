@@ -1,10 +1,12 @@
 import React from 'react'
 
+import '../Pages/styles/model.css';
+
 const ModelS = () => {
     return (
-        <div>
-            model s
-        </div>
+        <section className='section'>
+            BUENAAAAS
+        </section>
     )
 }
 
