@@ -1,0 +1,12 @@
+header{
+    width: 100%;
+}
+
+.navbar{
+    background-color: #bfcde6;
+}
+
+.ubicacion{
+    margin-left: 50%;
+    display: inline;
+}
