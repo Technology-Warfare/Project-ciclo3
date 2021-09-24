@@ -3,7 +3,6 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer"
 import BasicTabs from "../components/TabMenu";
 
-import Footer from "../components/Footer";
 import fotoindex1 from "./img/fotoindex1.png";
 import './styles/home.css';
 
