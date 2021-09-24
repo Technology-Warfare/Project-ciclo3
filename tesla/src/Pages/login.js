@@ -15,6 +15,8 @@ import './styles/login.css';
 import logo from './img/logo.png';
 
 const Login = () => {
+    const MyLink = props => <Link to="/adminvtas" {...props} />
+
     const [values, setValues] = React.useState({
         usuario: '',
         password: '',
@@ -86,7 +88,7 @@ const Login = () => {
                             </div>
                         </Box>
                         <div className="boton-login">
-                            <Button variant="contained" color="success">Iniciar sesion</Button>
+                            <Button variant="contained" color="success" component={MyLink}>Iniciar sesion</Button>
                         </div>
                         <div className="registrarse">
                             ¿No tienes cuenta?. 
