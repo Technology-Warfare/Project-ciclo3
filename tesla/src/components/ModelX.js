@@ -9,4 +9,5 @@ const ModelX = () => {
     )
 }
 
+
 export default ModelX
