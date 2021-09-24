@@ -5,6 +5,7 @@ import './App.css';
 import home from './Pages/home';
 import login from './Pages/login';
 import Registro from './Pages/registro';
+import Adminvtas from './Pages/adminvtas';
 
 
 function App() {
@@ -21,6 +22,9 @@ function App() {
           <Route exact
             path="/registrarse"
             component={Registro} />
+          <Route exact
+            path="/adminvtas"
+            component={Adminvtas} />
         </Switch>
       </HashRouter>
     </div>
