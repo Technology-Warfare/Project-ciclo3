@@ -5,7 +5,7 @@ import './App.css';
 import home from './Pages/home';
 import login from './Pages/login';
 import Registro from './Pages/registro';
-import Adminvtas from './Pages/adminvtas';
+import ventas from './Pages/ventas';
 
 
 function App() {
@@ -23,8 +23,8 @@ function App() {
             path="/registrarse"
             component={Registro} />
           <Route exact
-            path="/adminvtas"
-            component={Adminvtas} />
+            path="/ventas"
+            component={ventas} />
         </Switch>
       </HashRouter>
     </div>
