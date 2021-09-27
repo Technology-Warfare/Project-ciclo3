@@ -8,6 +8,7 @@ import Box from '@mui/material/Box';
 import ModelS from './ModelS';
 import ModelX from './ModelX';
 import ModelT from './ModelT';
+import '../Pages/styles/home.css';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -50,7 +51,8 @@ export default function BasicTabs() {
   };
 
   return (
-    <Box sx={{ width: 'maxwidth', marginTop:'3%'}}>
+    <Box sx={{ width: 'fullwith', marginTop:'3%'}}>
+      <div className="azul"></div>
       <Box sx={{ borderBottom: 1, borderColor: 'divider' ,backgroundColor:'#b5c8e9', paddingTop:'1%', paddingBottom:'1%'}}>
         <Tabs value={value} onChange={handleChange} aria-label="basic tabs example" centered disableRipple>
           <Tab label="Model S" {...a11yProps(0)} />
@@ -58,6 +60,7 @@ export default function BasicTabs() {
           <Tab label="Model Y" {...a11yProps(2)} />
         </Tabs>
       </Box>
+      <div className="azul"></div>
       <TabPanel value={value} index={0}>
         <ModelS />
       </TabPanel>

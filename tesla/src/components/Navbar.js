@@ -7,7 +7,7 @@ const Navbar = () => {
     return(
         <>
             <header>
-                <nav className="navbar navbar-expand-lg navbar-light">
+                <nav className="navbar fixed-top navbar-expand-lg navbar-light">
                     <div class="container-fluid border">
                         <nav className="navbar navbar-light">
                             <Link className="navbar-brand" to="/">
@@ -29,7 +29,7 @@ const Navbar = () => {
                                 <ul className="navbar-nav ml-auto mb-2 mb-lg-0">
                                     <li className="nav-item">
                                         <Link className="nav-link active" aria-current="page" to="/login">
-                                            <img src={"https://img.icons8.com/ios/50/000000/enter-2.png"} alt="signin"/>
+                                            <img className="login" src={"https://img.icons8.com/ios/50/000000/enter-2.png"} alt="signin"/>
                                         </Link>
                                     </li>
                                 </ul>
