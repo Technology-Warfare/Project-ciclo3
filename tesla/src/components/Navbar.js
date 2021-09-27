@@ -11,7 +11,7 @@ const Navbar = () => {
                     <div class="container-fluid">
                         <nav className="navbar navbar-light">
                             <Link className="navbar-brand" to="/">
-                                <img src={logo} alt="logo" width="50"/>
+                                <img src={logo} alt="logo" width="80"/>
                                 Technology Warfare
                             </Link>
                         </nav>

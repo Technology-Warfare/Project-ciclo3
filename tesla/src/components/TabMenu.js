@@ -21,7 +21,7 @@ function TabPanel(props) {
       {...other}
     >
       {value === index && (
-        <Box sx={{ p: 3 }}>
+        <Box sx={{ p: 1 }}>
           <Typography>{children}</Typography>
         </Box>
       )}
@@ -50,8 +50,8 @@ export default function BasicTabs() {
   };
 
   return (
-    <Box sx={{ width: 'maxwidth', marginTop:'3%', padding: '1%' }}>
-      <Box sx={{ borderBottom: 1, borderColor: 'divider' ,backgroundColor:'#b5c8e9'}}>
+    <Box sx={{ width: 'maxwidth', marginTop:'3%'}}>
+      <Box sx={{ borderBottom: 1, borderColor: 'divider' ,backgroundColor:'#b5c8e9', paddingTop:'1%', paddingBottom:'1%'}}>
         <Tabs value={value} onChange={handleChange} aria-label="basic tabs example" centered disableRipple>
           <Tab label="Model S" {...a11yProps(0)} />
           <Tab label="Model X" {...a11yProps(1)} />
