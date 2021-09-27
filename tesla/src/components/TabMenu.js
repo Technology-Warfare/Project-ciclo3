@@ -50,8 +50,8 @@ export default function BasicTabs() {
   };
 
   return (
-    <Box sx={{ width: 'maxwidth', marginTop:'3%' }}>
-      <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+    <Box sx={{ width: 'maxwidth', marginTop:'3%', padding: '1%' }}>
+      <Box sx={{ borderBottom: 1, borderColor: 'divider' ,backgroundColor:'#b5c8e9'}}>
         <Tabs value={value} onChange={handleChange} aria-label="basic tabs example" centered disableRipple>
           <Tab label="Model S" {...a11yProps(0)} />
           <Tab label="Model X" {...a11yProps(1)} />
