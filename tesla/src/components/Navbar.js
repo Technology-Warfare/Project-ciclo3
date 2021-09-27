@@ -8,7 +8,7 @@ const Navbar = () => {
         <>
             <header>
                 <nav className="navbar navbar-expand-lg navbar-light">
-                    <div class="container-fluid">
+                    <div class="container-fluid border">
                         <nav className="navbar navbar-light">
                             <Link className="navbar-brand" to="/">
                                 <img src={logo} alt="logo" width="80"/>
