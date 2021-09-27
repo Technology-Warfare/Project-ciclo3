@@ -1,16 +1,17 @@
 import React from "react";
-import Navbar from "../components/Navbar";
+
 import Admv from "../components/Admv";
 import Footer from "../components/Footer"
 import './styles/ventas.css';
+import NavbarPrivado from "../components/NavbarPrivado";
+
 const Adminvtas = () => {
     return (
         <React.Fragment>
-            <Navbar />
+            <NavbarPrivado />
             <div className="mainContainer">
               <Admv />  
             </div>
-                
             <Footer/>        
         </React.Fragment>
     );
