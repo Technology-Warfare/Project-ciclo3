@@ -2,8 +2,16 @@ import React from "react";
 import '../Pages/styles/navbar.css';
 import logo from '../Pages/img/logo.png';
 import { Link } from "react-router-dom";
+import GoogleLogin from 'react-google-login';
 
 const Navbar = () => {
+
+    const  responseGoogle  =  ( respuesta )  =>  { 
+        console.log ( respuesta ) ; 
+        if (respuesta){
+            window.location="/ventas";
+        }
+      }
     return(
         <>
             <header>
@@ -28,9 +36,15 @@ const Navbar = () => {
                             <div className="ubicacion2">
                                 <ul className="navbar-nav ml-auto mb-2 mb-lg-0">
                                     <li className="nav-item">
-                                        <Link className="nav-link active" aria-current="page" to="/login">
-                                            <img className="login" src={"https://img.icons8.com/ios/50/000000/enter-2.png"} alt="signin"/>
-                                        </Link>
+                                        <div className="login">
+                                        <GoogleLogin
+                            clientId="132477546024-ph4fr4rrpdvpmcd444s7tr9kj5lbnbrj.apps.googleusercontent.com"
+                            buttonText = "Login" 
+                            onSuccess = { responseGoogle } 
+                            onFailure = { responseGoogle } 
+                            CookiePolicy = { 'single_host_origin' }
+                            />
+                                        </div>
                                     </li>
                                 </ul>
                             </div>
