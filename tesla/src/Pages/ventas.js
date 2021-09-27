@@ -7,7 +7,10 @@ const Adminvtas = () => {
     return (
         <React.Fragment>
             <Navbar />
-            <Admv />    
+            <div className="mainContainer">
+              <Admv />  
+            </div>
+                
             <Footer/>        
         </React.Fragment>
     );
