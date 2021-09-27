@@ -10,6 +10,7 @@ import TextField from '@mui/material/TextField';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import Button from '@mui/material/Button';
+import GoogleLogin from 'react-google-login';
 
 import './styles/login.css';
 import logo from './img/logo.png';
@@ -39,6 +40,22 @@ const Login = () => {
       const handleMouseDownPassword = (event) => {
         event.preventDefault();
       };
+
+      const handleLogin = async googleData =>{
+          const res = await fetch("/api/v1/auth/google", {
+              method: "POST",
+              body: JSON.stringify({
+                  token: googleData.tokenId
+              }), 
+              headers: {
+                "Content-Type": "application/json"
+          }
+          })
+         
+          const data = await res.json()
+      }
+      
+      
     return(
         <React.Fragment>
             <div className="main">
@@ -90,11 +107,24 @@ const Login = () => {
                         <div className="boton-login">
                             <Button variant="contained" color="success" component={MyLink}>Iniciar sesion</Button>
                         </div>
+
+                        <div className="google">
+                            <p>O inicia sesión por Google</p>
+                           <GoogleLogin
+                            clientId="132477546024-ph4fr4rrpdvpmcd444s7tr9kj5lbnbrj.apps.googleusercontent.com"
+                            buttonText="Login"
+                            onSuccess={handleLogin}
+                            onFailure={handleLogin}
+                            cookiePolicy={'single_host_origin'}
+                            /> 
+                        </div>
+                        
                         <div className="registrarse">
                             ¿No tienes cuenta?. 
                             <Link to="/registrarse">Registrate aquí</Link>
                         </div>
                     </div>
+
                 </div>
             </div>
         </React.Fragment>
