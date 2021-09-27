@@ -10,7 +10,7 @@ const home = () => {
     return(
         <React.Fragment>
             <Navbar />
-            <div>    
+            <div className="mainContainer">    
                 <section className='section'>
                     En Technology Warfare apoyamos la transición del mundo hacia la energía sustentable, es por ello que somos una sucursal que te brinda la posibilidad de comprar carros de la marca Tesla en Colombia. ¿Qué esperas para obtener el tuyo?
                 </section>

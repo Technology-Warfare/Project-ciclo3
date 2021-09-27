@@ -4,13 +4,33 @@ header{
 
 .navbar{
     background-color: #b5c8e9;
-    
 }
 
 .ubicacion{
-    margin-left: 50%;
-    display: inline;
+    position: absolute;
+    right: 5%;
     padding: 2%;
+}
+
+.ubicacion2{
+    position: absolute;
+    right: 1.5%;
+}
+
+.login{
+    width: 40px;
+}
+
+@media screen and (max-width:600px) {
+    .ubicacion{
+        position: relative;
+        left: 1.5%;
+    }
+
+    .ubicacion2{
+        position: relative;
+        text-align: center;
+    }
 }
 
 
