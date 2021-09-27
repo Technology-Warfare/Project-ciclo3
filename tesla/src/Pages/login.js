@@ -41,18 +41,11 @@ const Login = () => {
         event.preventDefault();
       };
 
-      const handleLogin = async googleData =>{
-          const res = await fetch("/api/v1/auth/google", {
-              method: "POST",
-              body: JSON.stringify({
-                  token: googleData.tokenId
-              }), 
-              headers: {
-                "Content-Type": "application/json"
-          }
-          })
-         
-          const data = await res.json()
+      const  responseGoogle  =  ( respuesta )  =>  { 
+        console.log ( respuesta ) ; 
+        if (respuesta){
+            window.location="/ventas";
+        }
       }
       
       
@@ -112,10 +105,10 @@ const Login = () => {
                             <p>O inicia sesión por Google</p>
                            <GoogleLogin
                             clientId="132477546024-ph4fr4rrpdvpmcd444s7tr9kj5lbnbrj.apps.googleusercontent.com"
-                            buttonText="Login"
-                            onSuccess={handleLogin}
-                            onFailure={handleLogin}
-                            cookiePolicy={'single_host_origin'}
+                            buttonText = "Login" 
+                            onSuccess = { responseGoogle } 
+                            onFailure = { responseGoogle } 
+                            CookiePolicy = { 'single_host_origin' }
                             /> 
                         </div>
                         
