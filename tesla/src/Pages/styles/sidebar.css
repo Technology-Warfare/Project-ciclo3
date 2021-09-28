@@ -1,0 +1,11 @@
+.sidebar{
+    background-color: #b5c8e9;
+    width: 20%;
+    height: 100vh;
+    padding-top: 25%;
+    text-align: center;
+}
+
+ul{
+    list-style: none;
+}
