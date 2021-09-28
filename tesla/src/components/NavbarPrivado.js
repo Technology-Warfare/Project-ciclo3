@@ -1,4 +1,5 @@
 import React from 'react'
+
 import '../Pages/styles/navbar.css';
 import logo from '../Pages/img/logo.png';
 import { Link } from "react-router-dom";
@@ -8,7 +9,7 @@ const NavbarPrivado = () => {
         <>
             <header>
                 <nav className="navbar fixed-top navbar-expand-lg navbar-light">
-                    <div class="container-fluid border">
+                    <div className="container-fluid border">
                         <nav className="navbar navbar-light">
                             <Link className="navbar-brand" to="/">
                                 <img src={logo} alt="logo" width="80"/>
@@ -22,9 +23,10 @@ const NavbarPrivado = () => {
                             <div className="ubicacion2">
                                 <ul className="navbar-nav ml-auto mb-2 mb-lg-0">
                                     <li className="nav-item">
-                                        <div className="login">
-                                        <Link to="/">Logout</Link>
-                                        </div>
+                                        
+                                    </li>
+                                    <li className="nav-item">
+                                        <Link to="/">logout</Link>
                                     </li>
                                 </ul>
                             </div>

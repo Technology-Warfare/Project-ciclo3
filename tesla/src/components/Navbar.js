@@ -7,16 +7,17 @@ import GoogleLogin from 'react-google-login';
 const Navbar = () => {
 
     const  responseGoogle  =  ( respuesta )  =>  { 
-        console.log ( respuesta ) ; 
+        console.log ( respuesta.profileObj.name ) ;
         if (respuesta){
             window.location="/ventas";
         }
-      }
+    }
+
     return(
         <>
             <header>
                 <nav className="navbar fixed-top navbar-expand-lg navbar-light">
-                    <div class="container-fluid border">
+                    <div className="container-fluid border">
                         <nav className="navbar navbar-light">
                             <Link className="navbar-brand" to="/">
                                 <img src={logo} alt="logo" width="80"/>
@@ -38,13 +39,16 @@ const Navbar = () => {
                                     <li className="nav-item">
                                         <div className="login">
                                         <GoogleLogin
-                            clientId="132477546024-ph4fr4rrpdvpmcd444s7tr9kj5lbnbrj.apps.googleusercontent.com"
-                            buttonText = "Login" 
-                            onSuccess = { responseGoogle } 
-                            onFailure = { responseGoogle } 
-                            CookiePolicy = { 'single_host_origin' }
-                            />
+                                            clientId="132477546024-ph4fr4rrpdvpmcd444s7tr9kj5lbnbrj.apps.googleusercontent.com"
+                                            buttonText = "Login" 
+                                            onSuccess = { responseGoogle } 
+                                            onFailure = { responseGoogle } 
+                                            CookiePolicy = { 'single_host_origin' }
+                                        />
                                         </div>
+                                    </li>
+                                    <li className="nav-item">
+                                        
                                     </li>
                                 </ul>
                             </div>
@@ -57,3 +61,4 @@ const Navbar = () => {
 }
 
 export default Navbar;
+export function responseGoogle() {};
