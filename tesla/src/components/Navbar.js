@@ -5,8 +5,8 @@ import { Link } from "react-router-dom";
 import GoogleLogin from 'react-google-login';
 
 const Navbar = () => {
-
-    const  responseGoogle  =  ( respuesta )  =>  { 
+    
+    const  responseGoogle  =  ( respuesta )  =>  {
         console.log ( respuesta.profileObj.name ) ;
         if (respuesta){
             window.location="/ventas";
@@ -47,9 +47,6 @@ const Navbar = () => {
                                         />
                                         </div>
                                     </li>
-                                    <li className="nav-item">
-                                        
-                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -61,4 +58,3 @@ const Navbar = () => {
 }
 
 export default Navbar;
-export function responseGoogle() {};
