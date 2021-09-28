@@ -1,0 +1,9 @@
+.flex{
+    width: 100%;
+    display: inline-flex;
+}
+
+.content{
+    padding-top: 15%;
+    margin-left: 35%;
+}

@@ -7,7 +7,7 @@ const admv = () => {
     return (
         <div>
             <h1 className="title">MODULO ADMINISTRADOR DE VENTAS</h1>
-
+            <div className="ventas">
             <ul className="nav nav-pills mb-3" id="pills-tab" role="tablist">
                 <li className="nav-item" role="presentation">
                     <button className="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Registrar venta</button>
@@ -29,9 +29,6 @@ const admv = () => {
 
                 </div>
                 <div className="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-                   
-                   Aqui listamos y buscamos la venta, cada registro tendra un boton que abrira un popup para eliminar registro
-
                    
                     <div className="row">
                         
@@ -68,13 +65,7 @@ const admv = () => {
 
                 </div>
             </div>
-
-
-
-            
-            
-
-
+            </div>
         </div>
     )
 }

@@ -9,7 +9,7 @@ const Navbar = () => {
     const  responseGoogle  =  ( respuesta )  =>  {
         console.log ( respuesta.profileObj.name ) ;
         if (respuesta){
-            window.location="/ventas";
+            window.location="/dashboard";
         }
     }
 

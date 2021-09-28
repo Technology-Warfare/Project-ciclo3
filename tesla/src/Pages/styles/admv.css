@@ -1,3 +1,8 @@
+.ventas{
+    width: 70%;
+    margin-left: 10%;
+}
+
 .title{
     text-align: center;
 }
@@ -9,14 +14,14 @@
 }
 
 .row{
-    width: 80%;
-    margin-left: 10%;
+    width: 60%;
+    margin-left: 20%;
     margin-top: 5%;
     text-align: justify;
 }
 
 .col{
-    width: 100%;
+    width: 50%;
 }
 
 .list-group-item{
