@@ -12,8 +12,7 @@ const NavbarPrivado = () => {
                     <div className="container-fluid border">
                         <nav className="navbar navbar-light">
                             <Link className="navbar-brand" to="/">
-                                <img src={logo} alt="logo" width="80"/>
-                                Technology Warfare
+                            <h3 className='h'><img src={logo} alt="logo" width="80"/>Technology Warfare</h3>
                             </Link>
                         </nav>
                         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
