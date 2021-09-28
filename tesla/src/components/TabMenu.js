@@ -53,7 +53,7 @@ export default function BasicTabs() {
   return (
     <Box sx={{ width: 'fullwith', marginTop:'3%'}}>
       <div className="azul"></div>
-      <Box sx={{ borderBottom: 1, borderColor: 'divider' ,backgroundColor:'#b5c8e9', paddingTop:'1%', paddingBottom:'1%'}}>
+      <Box sx={{ borderBottom: 1, borderColor: 'divider' ,backgroundColor:'white', paddingTop:'1%', paddingBottom:'1%'}}>
         <Tabs value={value} onChange={handleChange} aria-label="basic tabs example" centered disableRipple>
           <Tab label="Model S" {...a11yProps(0)} />
           <Tab label="Model X" {...a11yProps(1)} />
