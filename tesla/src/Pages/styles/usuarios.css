@@ -1,4 +1,9 @@
 .content-usuarios{
-    margin-left: 8%;
     margin-top: 15%;
+    width: 100%;
+}
+
+.registrar{
+    text-align: center;
+    width: 100%;
 }
