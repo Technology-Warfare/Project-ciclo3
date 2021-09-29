@@ -56,7 +56,7 @@ const admv = () => {
                             
                         </div>
 
-                        <h4>Datos del cliente </h4> 
+                        <h4 className='h4'>Datos del cliente </h4> 
                         <div className="input-group">             
                             <span className="input-group-text">Nombres y apellidos</span>
                             <input type="text" aria-label="First name" className="form-control"/>

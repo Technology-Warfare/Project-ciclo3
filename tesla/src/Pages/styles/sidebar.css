@@ -1,9 +1,9 @@
 .sidebar{
-    background-color: #b5c8e9;
     width: 20%;
     height: 100vh;
     padding-top: 25%;
     text-align: center;
+    background-color: rgb(179, 179, 253);
 }
 
 ul{
