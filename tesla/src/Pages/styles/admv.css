@@ -28,7 +28,7 @@
 
 
 .row{
-    width: 90%;
+    width: 100%;
 }
 
 
@@ -56,8 +56,49 @@
     width:50%;
 }
 .h4{
-    padding-top: 10%;
+    padding-top: 5%;
 }
 h4{
     padding-top: 5%;
+}
+
+.cardData{
+    width: 12%;
+}
+
+
+.card{
+    width: 18rem;
+}
+
+.tit{
+    width: 250px;
+}
+.tit1{
+    width: 550px;
+}
+.lblTit2{
+    position: relative;
+    text-align:right;
+    float:right;
+}
+.lblTit1{
+    position: relative;
+    text-align:left;
+    float:left;
+}
+.imgVenta{
+    width: 55%;
+}
+
+.imgAd{
+    width: 100%;
+}
+
+.padName {
+    margin-left: 2%;
+}
+
+.numero{
+    font-size: 12em;
 }
