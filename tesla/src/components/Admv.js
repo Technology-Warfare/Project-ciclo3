@@ -77,7 +77,7 @@ const admv = () => {
                         </div>
                     </div>
                     <div className="form">
-                        <h4>Datos del Vendedor </h4>
+                    <h4 className="h4">Datos del Vendedor </h4>
                         <div className="input-group">
                             <span className="input-group-text">Nombres y apellidos</span>
                             <input type="text" aria-label="First name" class="form-control" />
