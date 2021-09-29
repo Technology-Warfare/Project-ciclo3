@@ -108,10 +108,11 @@ const admv = () => {
                         <label for="exampleFormControlTextarea1" className="form-label">Observaciones generales</label>
                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
 
-                        <div className="input-group">
-                            <div className="form-floating dat">
-                                <label className="input-group-text" for="inputGroupSelect01">Cantidad</label>
-                                <select className="form-select" id="inputGroupSelect01">
+                        <div class="input-group mb-3">
+
+                            <div className="input-group flex-nowrap">                                
+                                <label className="input-group-text" for="inIdAutomovil">Cantidad</label>
+                                <select className="form-select" id="inIdAutomovil">
                                     <option selected>Seleccione</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -124,14 +125,18 @@ const admv = () => {
                                     <option value="9">9</option>
                                     <option value="10">mas de 9</option>
                                 </select>
+                                <span className="input-group-text">Precio</span>
+                                <div className="form-floating">
+                                    <input type="email" class="form-control" id="inIdVenta" />
+                                    <label for="inIdVenta" class="form-label">$</label>
+                                </div>
                             </div>
-                            
-                            <span className="input-group-text">Precio</span>
-                            <div className="form-floating">
-                                <input type="text" class="form-control" id="precio" />
-                                <label for="precio" class="form-label">$</label>
-                            </div>
+
                         </div>
+
+
+
+
                     </div>
 
                     
