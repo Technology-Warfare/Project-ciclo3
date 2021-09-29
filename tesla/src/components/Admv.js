@@ -18,7 +18,7 @@ const admv = () => {
             </ul>
             <div className="tab-content" id="pills-tabContent">
                 <div className="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-
+                
                     <div className="form">
 
                         <div class="input-group mb-3">
@@ -42,21 +42,23 @@ const admv = () => {
                                 <label className="input-group-text" for="inIdCliente">ID cliente</label>
                                 <select className="form-select" id="inIdCliente">
                                     <option selected>Seleccione</option>
-                                    <option value="1">TW-#-000001</option>
-                                    <option value="2">TW-#-000002</option>
-                                    <option value="3">TW-#-000003</option>
-                                    <option value="4">TW-#-000004</option>
-                                    <option value="5">TW-#-000005</option>
-                                    <option value="6">TW-#-000006</option>
-                                    <option value="7">TW-#-000007</option>
-                                    <option value="8">TW-#-000008</option>
-                                    <option value="9">TW-#-000009</option>
+                                    <option value="1">C#000001</option>
+                                    <option value="2">C#000002</option>
+                                    <option value="3">C#000003</option>
+                                    <option value="4">C#000004</option>
+                                    <option value="5">C#000005</option>
+                                    <option value="6">C#000006</option>
+                                    <option value="7">C#000007</option>
+                                    <option value="8">C#000008</option>
+                                    <option value="9">C#000009</option>
                                 </select>
                             </div>
                             
                         </div>
-
-                        <h4 className='h4'>Datos del cliente </h4> 
+                    </div>
+                <div className="fForm">
+                    <div className="form">
+                        <h4 className="h4">Datos del cliente </h4>
                         <div className="input-group">             
                             <span className="input-group-text">Nombres y apellidos</span>
                             <input type="text" aria-label="First name" className="form-control"/>
@@ -73,6 +75,8 @@ const admv = () => {
                             </div>
                             
                         </div>
+                    </div>
+                    <div className="form">
                         <h4>Datos del Vendedor </h4>
                         <div className="input-group">
                             <span className="input-group-text">Nombres y apellidos</span>
@@ -89,57 +93,81 @@ const admv = () => {
                                 <label for="celular2" className="form-label">Celular</label>
                             </div>
                         </div>
-                        <h4>Detalles de la venta </h4>
-                        <div className="input-group">
-                            <label className="input-group-text" for="inEstado">Estado Venta</label>
-                            <select className="form-select" id="inEstado">
-                                <option selected>Seleccione</option>
-                                <option value="1">Creacion</option>
-                                <option value="2">Embalaje</option>
-                                <option value="3">Despacho</option>
-                                <option value="4">Ruta</option>
-                                <option value="5">Ubicación</option>
-                                <option value="6">Recepción</option>
-                            </select>
+                        
+                    </div>
+                </div>
+                    <h4>Detalles de la venta </h4>
+                <div className="fForm">
+                        <div className="form">
+                            <div class="input-group mb-3">
+                                
+
+                                    
+                                <label className="input-group-text" for="inIdVenta">Precio $</label>
+                                        <input type="email" class="form-control" id="inIdVenta" />
+                                        
+                                    
+                                
+                            </div>
                         </div>
                         
-                        <label for="exampleFormControlTextarea1" className="form-label">Descripcion detallada</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                        <label for="exampleFormControlTextarea1" className="form-label">Observaciones generales</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-
-                        <div class="input-group mb-3">
-
-                            <div className="input-group flex-nowrap">                                
-                                <label className="input-group-text" for="inIdAutomovil">Cantidad</label>
-                                <select className="form-select" id="inIdAutomovil">
-                                    <option selected>Seleccione</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                    <option value="6">6</option>
-                                    <option value="7">7</option>
-                                    <option value="8">8</option>
-                                    <option value="9">9</option>
-                                    <option value="10">mas de 9</option>
-                                </select>
-                                <span className="input-group-text">Precio</span>
-                                <div className="form-floating">
-                                    <input type="email" class="form-control" id="inIdVenta" />
-                                    <label for="inIdVenta" class="form-label">$</label>
-                                </div>
+                        <div className="form">
+                        
+                            <div className="input-group flex-nowrap">
+                                    <label className="input-group-text" for="inEstado">Estado Venta</label>
+                                    <select className="form-select" id="inEstado">
+                                        <option selected>Seleccione</option>
+                                        <option value="1">Creacion</option>
+                                        <option value="2">Embalaje</option>
+                                        <option value="3">Despacho</option>
+                                        <option value="4">Ruta</option>
+                                        <option value="5">Ubicación</option>
+                                        <option value="6">Recepción</option>
+                                    </select>
                             </div>
-
+                            
+                    </div>
+                        <div className="form">
+                       
+                            <div className="input-group flex-nowrap">
+                                
+                                    <label className="input-group-text" for="inIdAutomovil">Cantidad</label>
+                                    <select className="form-select" id="inIdAutomovil">
+                                        <option selected>Seleccione</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
+                                        <option value="10">mas de 9</option>
+                                    </select>
+                            </div>                             
+                            
+                        
+                    </div>
+                
+                   
+                </div>
+                    <div className="fForm">
+                        <div className="form">
+                            <label for="exampleFormControlTextarea1" className="form-label">Descripcion detallada</label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                         </div>
 
-
-
-
+                            
+                        <div className="form">
+                            <label for="exampleFormControlTextarea1" className="form-label">Observaciones generales</label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        </div>
                     </div>
 
-                    
+
+
+                
 
                 </div>
                 <div className="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
@@ -148,7 +176,7 @@ const admv = () => {
                    
                     <div className="row">
                         
-                        <div className="col">
+                        <div className="col-2">
                             
                             <div className="list-group" id="list-tab" role="tablist">
                                 
@@ -162,9 +190,19 @@ const admv = () => {
                             
                         </div>
                         
-                        <div className="col">
+                        <div className="col-10">
                             <div className="tab-content" id="nav-tabContent">
-                                <div className="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">Some placeholder content in a paragraph relating to "Home". And some more content, used here just to pad out and fill this tab panel. In production, you would obviously have more real content here. And not just text. It could be anything, really. Text, images, forms.</div>
+                                <div className="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
+                                    
+                                    <div className="tarjeta">
+                                        <ul className="list-group list-group-flush">
+                                            <li className="list-group-item">An item</li>
+                                            <li className="list-group-item">A second item</li>
+                                            <li className="list-group-item">A third item</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    Some placeholder content in a paragraph relating to "Home". And some more content, used here just to pad out and fill this tab panel. In production, you would obviously have more real content here. And not just text. It could be anything, really. Text, images, forms.</div>
                                 <div className="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">Some placeholder content in a paragraph relating to "Home". And some more content, used here just to pad out and fill this tab panel. In production, you would obviously have more real content here. And not just text. It could be anything, really. Text, images, forms.</div>
                                 <div className="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">Some placeholder content in a paragraph relating to "Home". And some more content, used here just to pad out and fill this tab panel. In production, you would obviously have more real content here. And not just text. It could be anything, really. Text, images, forms.</div>
                                 <div className="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">Some placeholder content in a paragraph relating to "Home". And some more content, used here just to pad out and fill this tab panel. In production, you would obviously have more real content here. And not just text. It could be anything, really. Text, images, forms.</div>

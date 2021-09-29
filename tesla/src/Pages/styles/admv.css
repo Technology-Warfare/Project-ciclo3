@@ -1,3 +1,19 @@
+
+
+@media screen and (max-width:1200px) {
+    .fForm{
+        display: block;
+    }
+
+}
+
+@media screen and (min-width:1200px) {
+    .fForm{
+    display: flex;
+    }
+}
+
+
 .title{
     text-align: center;
 }
@@ -8,23 +24,21 @@
     margin-top: 5%;
 }
 
+
+
+
 .row{
-    width: 80%;
-    margin-left: 10%;
-    margin-top: 5%;
-    text-align: justify;
+    width: 90%;
 }
 
-.col{
-    width: 100%;
-}
 
 .list-group-item{
     width: 100%;
-}
+}    
+
 
 @media screen and (max-width:600px) {
-    
+        
     .row{
         width: 100%;
         margin-left: 0;
@@ -32,11 +46,10 @@
 
 }
 
+
 .form{
-    width: 50%;
-    margin-left: 25%;
-    margin-top: 5%;
-    text-align: justify;
+            
+    width: 100%; 
 }
 
 .dat{
