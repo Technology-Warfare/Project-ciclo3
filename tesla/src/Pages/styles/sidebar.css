@@ -1,6 +1,6 @@
 .sidebar{
     width: 13%;
-    padding-top: 35%;
+    padding-top: 20%;
     text-align: center;
     background-color: rgba(212, 151, 18, 0.582);
     height: auto;
@@ -18,7 +18,7 @@ ul{
 }
 
 .liu{
-    padding-top: 35%;
+    padding-top: 5%;
     height: 100%;
     padding-bottom: 5%;
     color: rgb(47, 19, 126);
