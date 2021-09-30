@@ -10,7 +10,7 @@ const ListarVenta = () => {
         <div>
             <div className="row">
 
-                <div className="col-1">
+                <div className="col-2">
 
                     <div className="list-group" id="list-tab" role="tablist">
 
@@ -28,7 +28,7 @@ const ListarVenta = () => {
 
                 </div>
 
-                <div className="col-11">
+                <div className="col-10">
                     <div className="tab-content" id="nav-tabContent">
 
                         <div className="tab-pane fade show active" id="ID1" role="tabpanel" aria-labelledby="ID1-list">

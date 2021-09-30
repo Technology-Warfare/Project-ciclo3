@@ -47,11 +47,10 @@ const RegistrarUsuario = () => {
                             <TextField
                                 required
                                 id="outlined-number"
-                                label="edad"
+                                label="Edad"
                                 type="number"
-                                InputLabelProps={{
-                                    shrink: true,
-                                }}
+                                min='18'
+                                InputProps={{ inputProps: { min: 18} }}
                             />
                             
                             <TextField

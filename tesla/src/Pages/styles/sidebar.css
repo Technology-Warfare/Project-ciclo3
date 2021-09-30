@@ -1,11 +1,24 @@
 .sidebar{
-    width: 20%;
-    height: 100vh;
-    padding-top: 25%;
+    width: 13%;
+    padding-top: 35%;
     text-align: center;
-    background-color: rgb(179, 179, 253);
+    background-color: rgba(212, 151, 18, 0.582);
+    height: auto;
 }
 
 ul{
-    list-style: none;
+    list-style:circle;
+    padding-left: 15%;
+    text-align: left;
+}
+
+.liu:hover{
+    color: black;
+    font-size: 20px;
+}
+
+.liu{
+    padding-top: 5%;
+    padding-bottom: 5%;
+    color: rgb(47, 19, 126);
 }
