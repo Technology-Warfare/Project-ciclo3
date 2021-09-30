@@ -24,3 +24,10 @@ ul{
     color: rgb(47, 19, 126);
     font-size: 15px
 }
+
+@media screen and (max-width:600px) {
+    .sidebar{
+        width: 100%;
+        margin-top: 30%;
+    }
+}

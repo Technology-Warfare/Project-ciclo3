@@ -47,7 +47,7 @@ const RegistrarUsuario = () => {
                         <Box
                             component="form"
                             sx={{
-                                '& > :not(style)': { m: 1, mt:3, width: '35%' },
+                                '& > :not(style)': { m: 1, mt:3},
                             }}
                             noValidate
                             autoComplete="off"
@@ -93,7 +93,7 @@ const RegistrarUsuario = () => {
                         <Box
                             component="form"
                             sx={{
-                                '& .MuiTextField-root': { m: 1, mt: 3, width: '35%' },
+                                '& .MuiTextField-root': { m: 1, mt: 3},
                             }}
                             noValidate
                             autoComplete="off"
