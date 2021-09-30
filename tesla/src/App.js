@@ -4,6 +4,8 @@ import {BrowserRouter, Switch, Route} from 'react-router-dom';
 import './App.css';
 import dashboard from './Pages/dashboard';
 import home from './Pages/home';
+import Login from './Pages/login';
+import Registro from './Pages/registro';
 import usuarios from './Pages/usuarios';
 import vehiculos from './Pages/vehiculos';
 import ventas from './Pages/ventas';
@@ -29,6 +31,12 @@ function App() {
             <Route exact
             path="/dashboard/usuarios"
             component={usuarios} />
+          <Route exact
+            path="/login"
+            component={Login} />
+          <Route exact
+            path="/registrarse"
+            component={Registro} />
         </Switch>
       </BrowserRouter>
     </div>
