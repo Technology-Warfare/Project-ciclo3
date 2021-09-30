@@ -1,10 +1,18 @@
 .content-usuarios{
     margin-top: 15%;
-    width: 100%;
+    width: 88%;
     padding-bottom: 5%;
 }
 
 .registrar{
     text-align: center;
     width: 100%;
+}
+
+@media screen and (max-width:600px) {
+    
+    .content-usuarios{
+        width: 100%;
+        justify-content: center;
+    }
 }
