@@ -9,6 +9,7 @@
 ul{
     list-style:circle;
     text-align: left;
+    padding-right: 5%;
 }
 
 .liu:hover{
