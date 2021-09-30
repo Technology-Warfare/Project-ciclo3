@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom'
 import '../Pages/styles/admv.css';
 import '../components/ListarVenta.js';
 
-import modelS from "../Pages/img/ModelS/models.jpg";
 import ListarVenta from '../components/ListarVenta.js';
 import RegistrarVenta from './RegistrarVenta';
 const admv = () => {
