@@ -111,14 +111,13 @@ const Registro = () => {
                             <br></br>
                             <TextField
                                 required
-                                id="filled-number"
+                                name="edad"
+                                id="outlined-number"
                                 label="Edad"
                                 type="number"
-                                InputLabelProps={{
-                                    shrink: true,
-                                }}
-                                variant="filled"
-                                helperText="Digíta tu edad"
+                                min='18'
+                                variant='filled'
+                                InputProps={{ inputProps: { min: 18} }}
                             />
                             <TextField 
                                 required 
