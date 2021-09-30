@@ -7,13 +7,13 @@ const Sidebar = () => {
         <div className="sidebar">
             <ul>
                 <li>
-                    <Link to="/dashboard/ventas"><div className='liu'>Admin ventas</div></Link>
+                    <Link to="/dashboard/ventas" style={{ textDecoration: 'none'}}><div className='liu'>Administración de Ventas</div></Link>
                 </li>
                 <li>
-                    <Link to="/dashboard/vehiculos"><div className='liu'>Admin vehiculos</div></Link>
+                    <Link to="/dashboard/vehiculos" style={{ textDecoration: 'none'}}><div className='liu'>Administración de Vehiculos</div></Link>
                 </li>
                 <li>
-                    <Link to="/dashboard/usuarios"><div className='liu'>Usuarios</div></Link>
+                    <Link to="/dashboard/usuarios" style={{ textDecoration: 'none'}}><div className='liu'>Administración de Usuarios</div></Link>
                 </li>
             </ul>
         </div>
