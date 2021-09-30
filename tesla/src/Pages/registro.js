@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import { Button } from "@mui/material";
@@ -76,7 +77,9 @@ const Registro = () => {
             <div className="main-registro">
                 <div className="main-form">
                     <div className="logo">
-                        <img className="logo-main" src={logo} alt="logo" />
+                    <Link to="/">
+                            <img className="logo-main" src={logo} alt="logo" />
+                    </Link>
                     </div>
                     <h1>Bienvenido!!</h1>
                     <p>Por favor completa los campos que se necesitan para poder crear una cuenta.</p>
@@ -105,6 +108,7 @@ const Registro = () => {
                                 variant="filled" 
                                 helperText="Digíta tu apellido"
                             />
+                            <br></br>
                             <TextField
                                 required
                                 id="filled-number"
@@ -213,6 +217,10 @@ const Registro = () => {
                     </div>
                     <div className="boton-registro">
                         <Button variant="contained" color="success">Crear cuenta</Button>
+                    </div>
+                    
+                    <div className="boton-registro">
+                    <Button variant="contained" color="success"><Link to="/login" style={{ textDecoration: 'none', color:'white'}}>Login</Link></Button>
                     </div>
                 </div>
             </div>
