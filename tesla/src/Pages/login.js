@@ -14,6 +14,7 @@ import GoogleLogin from 'react-google-login';
 
 import './styles/login.css';
 import logo from './img/logo.png';
+import { color } from "@mui/system";
 
 const Login = () => {
     const MyLink = props => <Link to="/dashboard" {...props} />
@@ -55,7 +56,9 @@ const Login = () => {
                 <div className="main-login">
                     <div className="form">
                         <div className="logo">
+                        <Link to="/">
                             <img className="logo-main" src={logo} alt="logo" />
+                        </Link>
                         </div>
                         <Box
                             component="form"
@@ -102,7 +105,7 @@ const Login = () => {
                         </div>
 
                         <div className="google">
-                            <p>--------------- Ó ---------------</p>
+                            <p style={{fontSize:15,color:"darkblue"}}>--------------- ó ---------------</p>
                             <GoogleLogin
                                             clientId="132477546024-ph4fr4rrpdvpmcd444s7tr9kj5lbnbrj.apps.googleusercontent.com"
                                             buttonText = "Login" 
@@ -112,12 +115,12 @@ const Login = () => {
                                         /> 
                         </div>
                         
-                        <div className="registrarse">
-                            ¿No tienes cuenta?. 
-                            <Link to="/registrarse">Registrate aquí</Link>
-                        </div>
+                    
                     </div>
-
+                    <div className="registrarse">
+                            ¿No tienes cuenta? 
+                            <Link to="/registrarse"  style={{ textDecorationColor: 'white'}}><div className='border3'> Registrate aquí</div></Link>
+                    </div>
                 </div>
             </div>
         </React.Fragment>
