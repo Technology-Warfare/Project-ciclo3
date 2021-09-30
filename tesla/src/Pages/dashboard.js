@@ -8,7 +8,7 @@ const dashboard = () => {
         <>
             <NavbarPrivado />
                 <div className="flex">
-                    <Sidebar />
+                    <Sidebar/>
                     <div className="content">
                         dashboard
                     </div>
