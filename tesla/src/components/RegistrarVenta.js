@@ -5,10 +5,10 @@ import '../Pages/styles/admv.css';
 
 const RegistrarVenta = () => {
     return (
-        <div>
+        <div className="registrar-venta">
             <div className="form">
                 <div class="input-group mb-3">
-                    <div className="input-group flex-nowrap">
+                    <div className="input-group">
                         <span className="input-group-text">ID venta</span>
                         <div className="form-floating">
                             <input type="email" class="form-control" id="inIdVenta" />

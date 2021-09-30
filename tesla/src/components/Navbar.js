@@ -27,9 +27,9 @@ const Navbar = () => {
                             </div>
                             <div className="ubicacion2">
                                 <ul className="navbar-nav ml-auto mb-2 mb-lg-0">
-                                    <li className="nav-item">
+                                    <li className="nav-item border2">
                                         <div className="login">
-                                        <Link to="/login">Login</Link>
+                                        <Link to="/login" style={{ textDecoration: 'none'}}><div className='border3'>Login</div></Link>
                                         </div>
                                     </li>
                                 </ul>

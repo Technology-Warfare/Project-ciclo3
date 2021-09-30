@@ -19,13 +19,13 @@ const NavbarPrivado = () => {
                             <span className="navbar-toggler-icon"></span>
                         </button>
                         <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
-                            <div className="ubicacion2">
-                                <ul className="navbar-nav ml-auto mb-2 mb-lg-0">
+                            <div className="ubicacion2 ">
+                                <ul className="navbar-nav ml-auto mb-2 mb-lg-0  ">
                                     <li className="nav-item">
                                         
                                     </li>
-                                    <li className="nav-item">
-                                        <Link to="/">logout</Link>
+                                    <li className="nav-item border2">
+                                        <Link to="/" style={{ textDecoration: 'none'}}><div className='border3'>Logout</div></Link>
                                     </li>
                                 </ul>
                             </div>
