@@ -7,13 +7,13 @@ const Sidebar = () => {
         <div className="sidebar">
             <ul>
                 <li>
-                    <Link to="/dashboard/ventas">Admin ventas</Link>
+                    <Link to="/dashboard/ventas"><div className='liu'>Admin ventas</div></Link>
                 </li>
                 <li>
-                    <Link to="/dashboard/vehiculos">Admin vehiculos</Link>
+                    <Link to="/dashboard/vehiculos"><div className='liu'>Admin vehiculos</div></Link>
                 </li>
                 <li>
-                    <Link to="/dashboard/usuarios">Usuarios</Link>
+                    <Link to="/dashboard/usuarios"><div className='liu'>Usuarios</div></Link>
                 </li>
             </ul>
         </div>
