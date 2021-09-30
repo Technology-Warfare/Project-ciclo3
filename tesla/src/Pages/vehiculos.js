@@ -4,6 +4,7 @@ import NavbarPrivado from '../components/NavbarPrivado';
 import Sidebar from '../components/Sidebar';
 import Footer from '../components/Footer';
 import '../Pages/styles/vehiculos.css';
+import RegistrarVehiculo from '../components/RegistrarVehiculo';
 
 const vehiculos = () => {
     return (
@@ -25,7 +26,7 @@ const vehiculos = () => {
                     <div className="tab-content" id="pills-tabContent">
 
                         <div className="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-                            
+                            <RegistrarVehiculo />
                         </div>
                         <div className="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
                            
