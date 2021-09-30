@@ -16,7 +16,7 @@ import './styles/login.css';
 import logo from './img/logo.png';
 
 const Login = () => {
-    const MyLink = props => <Link to="/ventas" {...props} />
+    const MyLink = props => <Link to="/dashboard" {...props} />
 
     const [values, setValues] = React.useState({
         usuario: '',
@@ -102,7 +102,7 @@ const Login = () => {
                         </div>
 
                         <div className="google">
-                            <p>O inicia sesión por Google</p>
+                            <p>--------------- Ó ---------------</p>
                             <GoogleLogin
                                             clientId="132477546024-ph4fr4rrpdvpmcd444s7tr9kj5lbnbrj.apps.googleusercontent.com"
                                             buttonText = "Login" 
