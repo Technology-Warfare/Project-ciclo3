@@ -1,5 +1,6 @@
 import React from 'react'
 import NavbarPrivado from '../components/NavbarPrivado';
+import Footer from '../components/Footer';
 import Sidebar from '../components/Sidebar';
 import '../Pages/styles/dashboard.css';
 
@@ -13,7 +14,7 @@ const dashboard = () => {
                         dashboard
                     </div>
                 </div>
-            
+            <Footer/>
         </>
     )
 }
