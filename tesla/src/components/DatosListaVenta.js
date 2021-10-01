@@ -1,7 +1,46 @@
 import React from 'react'
 import modelS from "../Pages/img/ModelS/models.jpg";
 import '../Pages/styles/ListarVenta.css';
+import Button from '@mui/material/Button';
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import Slide from '@mui/material/Slide';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 const DatosListaVenta = () => {
+    
+    const Transition = React.forwardRef(function Transition(props, ref) {
+        return <Slide direction="up" ref={ref} {...props} />;
+      });
+
+    const [open, setOpen] = React.useState(false);
+
+    const handleClickOpen = () => {
+        setOpen(true);
+    };
+
+    const handleAceptar = () => {
+        setOpen(false);
+        toast.success('Operación exitosa.', {
+            position: "bottom-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+        });
+        window.location="/dashboard/ventas";
+    };
+
+    const handleClose = (e) => {
+        e.preventDefault();
+        setOpen(false);
+    };
+
     return (
         <div>
 
@@ -70,7 +109,8 @@ const DatosListaVenta = () => {
 
                     <div class="card">
                         <div class="card-body">
-                            <button type="button" class="btn btn-success buttonEdit">Editar registro</button>
+                            <button type="button" onClick={handleClickOpen} class="btn btn-success buttonEdit">Editar registro</button>
+                            <ToastContainer />
                         </div>
                     </div>
 
@@ -159,7 +199,25 @@ const DatosListaVenta = () => {
                         </ul>
                         <div class="card">
                             <div class="card-body">
-                                <button type="button" class="btn btn-danger buttonEdit">Eliminar registro</button>
+                                <button type="button" onClick={handleClickOpen} class="btn btn-danger buttonEdit">Eliminar registro</button>
+                                <Dialog
+                            open={open}
+                            TransitionComponent={Transition}
+                            keepMounted
+                            onClose={handleAceptar}
+                            aria-describedby="alert-dialog-slide-description"
+                        >
+                            <DialogContent>
+                                <DialogContentText id="alert-dialog-slide-description">
+                                    Estas seguro que deseas realizar esta acción, luego no podrás
+                                    recuperar lo perdido.
+                                </DialogContentText>
+                            </DialogContent>
+                            <DialogActions>
+                                <Button onClick={handleClose}>Cancelar</Button>
+                                <Button onClick={handleAceptar}>Aceptar</Button>
+                            </DialogActions>
+                        </Dialog>
                             </div>
                         </div>
                     </div>
