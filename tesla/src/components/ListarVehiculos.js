@@ -1,10 +1,19 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import DatosVehiculo from './DatosVehiculo'
+import '../Pages/styles/ListarVehiculos.css';
 
 const ListarVehiculos = () => {
     return (
         <div>
+            <nav class="navbar navbar-light bg-light SearchPosition">
+                <div class="container-fluid">
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search"/>
+                        <button class ="btn btn-outline-success" type ="submit">Buscar</button>
+                    </form>
+                </div>
+            </nav>
             <div className="row">
 
                 <div className="col-2">

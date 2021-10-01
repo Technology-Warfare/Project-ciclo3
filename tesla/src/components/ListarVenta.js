@@ -2,13 +2,22 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 import '../Pages/styles/admv.css';
+import '../Pages/styles/ListarVenta.css';
 
-import modelS from "../Pages/img/ModelS/models.jpg";
 import DatosListaVenta from './DatosListaVenta';
 
 const ListarVenta = () => {
     return (
         <div>
+            <nav class="navbar navbar-light bg-light searchPosition">
+                <div class="container-fluid">
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search"/>
+                        <button class ="btn btn-outline-success" type ="submit">Buscar</button>
+                    </form>
+                </div>
+            </nav>
+
             <div className="row">
 
                 <div className="col-2">
