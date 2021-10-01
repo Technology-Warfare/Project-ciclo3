@@ -1,5 +1,6 @@
 import React from 'react'
 import modelS from "../Pages/img/ModelS/models.jpg";
+import '../Pages/styles/ListarVenta.css';
 const DatosListaVenta = () => {
     return (
         <div>
@@ -65,7 +66,14 @@ const DatosListaVenta = () => {
                             </label>
                             <p class="card-text">El cliente quiere el modelo S en color Beige, paneles digitales, interfaz Onion, con acceso a motor de juegos 3D</p>
                         </div>
+                    </div>   
+
+                    <div class="card">
+                        <div class="card-body">
+                            <button type="button" class="btn btn-success buttonEdit">Editar registro</button>
+                        </div>
                     </div>
+
                 </div>
 
                 <div className="Form imgVenta">
@@ -114,15 +122,16 @@ const DatosListaVenta = () => {
                                     </div>
                                 </div>
                             </li>
-                            <div class="card">
-                                <div class="card-body">
-                                    <label className="input-group-text">Observaciones
-                                    </label>
-                                    <p class="card-text">Entregar al centro de distribución</p>
-                                </div>
+                        </ul>
+                        <div class="card">
+                            <div class="card-body">
+                                <label className="input-group-text">Observaciones
+                                </label>
+                                <p class="card-text">Entregar al centro de distribución</p>
                             </div>
+                        </div>
 
-
+                        <ul className="list-group list-group-flush">
                             <li className="list-group-item">
                                 <div className="tit">
                                     <div className="lblTit1">
@@ -148,6 +157,11 @@ const DatosListaVenta = () => {
                                 </div>
                             </li>
                         </ul>
+                        <div class="card">
+                            <div class="card-body">
+                                <button type="button" class="btn btn-danger buttonEdit">Eliminar registro</button>
+                            </div>
+                        </div>
                     </div>
 
 

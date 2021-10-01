@@ -212,6 +212,16 @@ const DatosVehiculo = () => {
                         </div>
                     </div>
                 </div>
+
+                
+                    <div className="boxButtons">
+                    <button type="button" class="btn btn-success sizeButtons">Editar Registro</button>
+
+                    <button type="button" class="btn btn-danger sizeButtons">Eliminar Registro</button>
+                    </div>
+                
+
+
             </div>
 
            

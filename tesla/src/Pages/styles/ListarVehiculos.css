@@ -1,3 +1,11 @@
 .SearchPosition{
     float: right;
 }
+.boxButtons{
+    padding-top: 10px;
+    width: 23%;
+}
+
+.sizeButtons{
+    width: 50%;
+}
