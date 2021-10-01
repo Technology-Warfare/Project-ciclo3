@@ -36,4 +36,4 @@ const usuarios = () => {
     );
 }
 
-export default usuarios
+export default usuarios;
