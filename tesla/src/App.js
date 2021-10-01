@@ -5,6 +5,7 @@ import './App.css';
 import approval from './Pages/approval';
 import dashboard from './Pages/dashboard';
 import home from './Pages/home';
+import infouser from './Pages/infouser';
 import Login from './Pages/login';
 import Registro from './Pages/registro';
 import usuarios from './Pages/usuarios';
@@ -41,6 +42,9 @@ function App() {
           <Route exact
             path="/approval"
             component={approval} />
+          <Route exact
+            path="/dashboard/usuarios/info"
+            component={infouser} />
         </Switch>
       </BrowserRouter>
     </div>

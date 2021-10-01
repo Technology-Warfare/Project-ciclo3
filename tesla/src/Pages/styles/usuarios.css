@@ -9,6 +9,31 @@
     width: 100%;
 }
 
+.RegistrarUsuario{
+    width: 100%;
+}
+
+.search{
+    width: 30%;
+    margin-left: 65%;
+    margin-top: 5%;
+}
+
+.table{
+    text-align: center;
+    width: 90%;
+    margin-left: 5%;
+}
+
+.ids{
+    background-color: rgb(56, 120, 240);
+    color: white;
+}
+
+td{
+    text-align: center;
+}
+
 @media screen and (max-width:600px) {
     
     .content-usuarios{
