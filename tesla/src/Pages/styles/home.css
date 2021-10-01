@@ -93,6 +93,17 @@
     background-color: rgb(7, 3, 39);
 }
 
+.appr{
+    justify-content: space-between;
+    height: 92.5vh;
+    text-align: center;
+    padding-top: 18%;
+    background: rgb(108, 160, 255);
+    text-shadow: rgb(16, 50, 114);
+    font-weight: 300;
+    font-size: large;
+}
+
 @media screen and (max-width:600px) {
     
     .mainContainer{

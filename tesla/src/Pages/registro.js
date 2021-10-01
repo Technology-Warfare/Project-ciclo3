@@ -215,7 +215,7 @@ const Registro = () => {
                         </Box>
                     </div>
                     <div className="boton-registro">
-                        <Button variant="contained" color="success">Crear cuenta</Button>
+                        <Button variant="contained" color="success"><Link to="/approval" style={{ textDecoration: 'none', color:'white'}}>Crear cuenta</Link></Button>
                     </div>
                     
                     <div className="boton-registro">

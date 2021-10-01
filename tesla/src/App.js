@@ -2,6 +2,7 @@ import React from 'react';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
 
 import './App.css';
+import approval from './Pages/approval';
 import dashboard from './Pages/dashboard';
 import home from './Pages/home';
 import Login from './Pages/login';
@@ -37,6 +38,9 @@ function App() {
           <Route exact
             path="/registrarse"
             component={Registro} />
+          <Route exact
+            path="/approval"
+            component={approval} />
         </Switch>
       </BrowserRouter>
     </div>
