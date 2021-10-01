@@ -14,7 +14,6 @@ import GoogleLogin from 'react-google-login';
 
 import './styles/login.css';
 import logo from './img/logo.png';
-import { color } from "@mui/system";
 
 const Login = () => {
     const MyLink = props => <Link to="/dashboard" {...props} />
