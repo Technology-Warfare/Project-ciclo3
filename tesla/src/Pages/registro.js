@@ -118,6 +118,7 @@ const Registro = () => {
                                 min='18'
                                 variant='filled'
                                 InputProps={{ inputProps: { min: 18} }}
+                                helperText="Digíta tu edad"
                             />
                             <TextField 
                                 required 
@@ -214,13 +215,11 @@ const Registro = () => {
                             </Box>
                         </Box>
                     </div>
-                    <div className="boton-registro">
+                    <div className="boton-registro mt-3 ">
                         <Button variant="contained" color="success"><Link to="/approval" style={{ textDecoration: 'none', color:'white'}}>Crear cuenta</Link></Button>
+                        <Button className='ms-4' variant="contained" color="info"><Link to="/login" style={{ textDecoration: 'none', color:'white'}}>Login</Link></Button>
                     </div>
                     
-                    <div className="boton-registro">
-                    <Button variant="contained" color="success"><Link to="/login" style={{ textDecoration: 'none', color:'white'}}>Login</Link></Button>
-                    </div>
                 </div>
             </div>
         </React.Fragment>

@@ -1,12 +1,13 @@
 .main{
-    background-image: url("https://tesla-cdn.thron.com/delivery/public/image/tesla/195458a0-ff67-488c-b972-14d23d2c42fb/bvlatuR/std/1200x630/ms-homepage-social");
+    /* background-image: url("https://tesla-cdn.thron.com/delivery/public/image/tesla/195458a0-ff67-488c-b972-14d23d2c42fb/bvlatuR/std/1200x630/ms-homepage-social"); */
     background-size: cover;
     display: flex;
     height: 100vh;
+    background-image: url("https://cdni.rt.com/actualidad/public_images/2021.09/article/6136b85859bf5b52685b45f2.JPG");
 }
 
 .main-login{
-    background-color: #a2bbe7;
+    background-color: #a2bbe7e8;
     justify-content: center;
     width: 50%;
     height: 90%;
