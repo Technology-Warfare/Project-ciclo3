@@ -5,3 +5,7 @@
 .buttonEdit{
     width: 100%;
 }
+
+.ModalDialogEdit{
+    max-width: 50%;
+}
