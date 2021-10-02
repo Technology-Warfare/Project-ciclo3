@@ -14,7 +14,7 @@ const vehiculos = () => {
             <div className="flex">
                 <Sidebar />
                 <div className="content-vehiculos">
-                    <h1 className="title">MODULO ADMINISTRADOR DE VEHICULOS</h1>
+                    <h1 className="title">Módulo Administrador de Vehículos</h1>
 
                     <ul className="nav nav-pills mb-3" id="pills-tab" role="tablist">
                         <li className="nav-item" role="presentation">

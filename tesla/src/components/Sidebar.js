@@ -5,8 +5,9 @@ import '../Pages/styles/sidebar.css';
 const Sidebar = () => {
     return (
         <div className="sidebar">
-            <ul>
-                <li>
+            <ul className='mt-4'>
+                <block className=' h5'>Interfaz de navegación</block>
+                <li className='mt-4'>
                     <Link to="/dashboard/ventas" style={{ textDecoration: 'none'}}><div className='liu'>Administración de Ventas</div></Link>
                 </li>
                 <li>
