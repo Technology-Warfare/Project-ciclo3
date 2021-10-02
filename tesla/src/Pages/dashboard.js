@@ -10,12 +10,37 @@ const dashboard = () => {
             <NavbarPrivado />
                 <div className="flex">
                     <Sidebar/>
-                    <div className="content justify-content-between d-flex flex-column pb-5">
-                        <div className='title'><h3>Nombre del Usuario</h3></div>
-                        <div className='pt-5 pb-4'><h6>Email :</h6> pepitojuarez@gmail.com</div>
-                        <div className='pb-4'><h6>Edad :</h6> 20 años</div>
-                        <div className='pb-5'><h6>Celular :</h6> 3006587689</div>
-                        <button className='rounded '>Editar Info</button>
+                    <div className="content justify-content-between d-flex  pb-5 displayFlexContent">
+                        <div className="ColorBar">
+                        <div className='title card DisplayBlock Titulo'><h4 className="h4">Pepito Juarez</h4></div>
+                            <div className='card DisplayBlock'>
+                                <div className="FloatLeft">
+                                    <h6>Email:</h6> 
+                                </div>
+                                <div className="FloatRight">
+                                    pepitojuarez@gmail.com
+                                </div>
+                            </div>
+                            <div className='card DisplayBlock'>
+                                <div className="FloatLeft">
+                                    <h6>Edad:</h6>
+                                </div>
+                                <div className="FloatRight">
+                                    20 años
+                                </div>
+                            </div>
+                            <div className='card DisplayBlock'>
+                                <div className="FloatLeft">
+                                    <h6>Celular:</h6>
+                                </div>
+                                <div className="FloatRight">
+                                    3006587689
+                                </div>                         
+                            </div>
+                        <div className="card DisplayBlock">
+                            <button className='rounded ButtonSize'>Editar Info</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             <Footer/>

@@ -16,6 +16,9 @@ const Sidebar = () => {
                 <li>
                     <Link to="/dashboard/usuarios" style={{ textDecoration: 'none'}}><div className='liu'>Administración de Usuarios</div></Link>
                 </li>
+                <li>
+                    <Link to="/dashboard/" style={{ textDecoration: 'none' }}><div className='liu'>Darchboard</div></Link>
+                </li>
             </ul>
         </div>
     )

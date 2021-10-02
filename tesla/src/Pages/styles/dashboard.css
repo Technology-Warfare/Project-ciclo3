@@ -4,8 +4,9 @@
 }
 
 .content{
-    padding-top: 20%;
-    margin-left: 10%;
+    padding-top: 150px;
+    margin-left: 5%;
+    
 }
 
 @media screen and (max-width:600px) {
@@ -19,4 +20,50 @@
         margin-left: 0;
         width: 100%;
     }
+}
+
+.displayFlexContent{
+    display: flex;
+    
+}
+
+.FloatLeft{
+    float: left;
+    width: 30%;
+    padding-top: 0%;
+    padding-bottom: 0%;
+}
+
+.FloatRight{
+    float: right;
+    width: 70%;
+    padding-top: 0%;
+    padding-bottom: 0%;
+}
+
+.DisplayBlock{
+    display: block;
+    padding-top: 12px;
+    padding-bottom: 0%;
+    background-color: transparent;
+    justify-items: center;
+}
+
+.h4{
+    padding-top: 0px;
+}
+
+.ColorBar{
+    background-color: rgb(128, 179, 238);
+    display: flex;
+    height: 50px;
+    width: 100%;
+}
+
+.ButtonSize{
+    width: 100%;
+}
+
+.Titulo{
+    top: -20px;
 }
