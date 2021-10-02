@@ -25,7 +25,7 @@ const NavbarPrivado = () => {
                                         
                                     </li>
                                     <li className="nav-item border2">
-                                        <Link to="/" style={{ textDecoration: 'none'}}><div className='border3'>Logout</div></Link>
+                                        <Link to="/login" style={{ textDecoration: 'none'}}><div className='border3'>Logout</div></Link>
                                     </li>
                                 </ul>
                             </div>
