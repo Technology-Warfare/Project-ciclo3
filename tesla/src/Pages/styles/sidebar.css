@@ -1,6 +1,6 @@
 .sidebar{
     width: 13%;
-    padding-top: 25%;
+    padding-top: 20%;
     text-align: center;
     background-color: rgba(219, 160, 32, 0.904);
     height: auto;
@@ -9,7 +9,7 @@
 ul{
     list-style:circle;
     text-align: center;
-    padding-right: 5%;
+    padding-right: 15%;
     padding-top: 4%;  
     list-style: none;  
 }
