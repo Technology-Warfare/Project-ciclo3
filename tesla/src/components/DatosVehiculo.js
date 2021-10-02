@@ -1,8 +1,47 @@
 import React from 'react'
 
+import Button from '@mui/material/Button';
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import Slide from '@mui/material/Slide';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import modelS from "../Pages/img/ModelS/models.jpg";
-
+import RegistrarVehiculo from "../components/RegistrarVehiculo";
 const DatosVehiculo = () => {
+
+    const Transition = React.forwardRef(function Transition(props, ref) {
+        return <Slide direction="up" ref={ref} {...props} />;
+    });
+
+    const [open, setOpen] = React.useState(false);
+
+    const handleClickOpen = () => {
+        setOpen(true);
+    };
+
+    const handleAceptar = () => {
+        setOpen(false);
+        toast.success('Operación exitosa.', {
+            position: "bottom-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+        });
+        window.location = "/dashboard/vehiculos";
+    };
+
+    const handleClose = (e) => {
+        e.preventDefault();
+        setOpen(false);
+        window.location = "/dashboard/vehiculos";
+    };
+
     return (
         <div>
 
@@ -215,9 +254,47 @@ const DatosVehiculo = () => {
 
                 
                     <div className="boxButtons">
-                    <button type="button" class="btn btn-success sizeButtons">Editar Registro</button>
+                    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Editar registro</button>
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog ModalDialogEdit">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Editar</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
 
-                    <button type="button" class="btn btn-danger sizeButtons">Eliminar Registro</button>
+                                    <RegistrarVehiculo />
+
+
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                    <button type="button" class="btn btn-primary">Guardar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <button type="button" onClick={handleClickOpen} class="btn btn-danger">Eliminar registro</button>
+                    <Dialog
+                        open={open}
+                        TransitionComponent={Transition}
+                        keepMounted
+                        onClose={handleAceptar}
+                        aria-describedby="alert-dialog-slide-description">
+                        <DialogContent>
+                            <DialogContentText id="alert-dialog-slide-description">
+                                Estas seguro que deseas realizar esta acción, luego no podrás
+                                recuperar lo perdido.
+                            </DialogContentText>
+                        </DialogContent>
+                        <DialogActions>
+                            <Button onClick={handleClose}>Cancelar</Button>
+                            <Button onClick={handleAceptar}>Aceptar</Button>
+                        </DialogActions>
+                    </Dialog>
                     </div>
                 
 

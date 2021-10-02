@@ -9,7 +9,7 @@ import DialogContentText from '@mui/material/DialogContentText';
 import Slide from '@mui/material/Slide';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+import RegistrarVenta from "../components/RegistrarVenta";
 const DatosListaVenta = () => {
     
     const Transition = React.forwardRef(function Transition(props, ref) {
@@ -39,6 +39,7 @@ const DatosListaVenta = () => {
     const handleClose = (e) => {
         e.preventDefault();
         setOpen(false);
+        window.location = "/dashboard/ventas";
     };
 
     return (
@@ -108,9 +109,25 @@ const DatosListaVenta = () => {
                     </div>   
 
                     <div class="card">
-                        <div class="card-body">
-                            <button type="button" onClick={handleClickOpen} class="btn btn-success buttonEdit">Editar registro</button>
-                            <ToastContainer />
+                        <button type="button" class="btn btn-success buttonEdit" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Editar registro</button>
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog ModalDialogEdit">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Editar</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+
+                                        <RegistrarVenta />
+
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                        <button type="button" class="btn btn-primary">Guardar</button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -201,23 +218,22 @@ const DatosListaVenta = () => {
                             <div class="card-body">
                                 <button type="button" onClick={handleClickOpen} class="btn btn-danger buttonEdit">Eliminar registro</button>
                                 <Dialog
-                            open={open}
-                            TransitionComponent={Transition}
-                            keepMounted
-                            onClose={handleAceptar}
-                            aria-describedby="alert-dialog-slide-description"
-                        >
-                            <DialogContent>
-                                <DialogContentText id="alert-dialog-slide-description">
-                                    Estas seguro que deseas realizar esta acción, luego no podrás
-                                    recuperar lo perdido.
-                                </DialogContentText>
-                            </DialogContent>
-                            <DialogActions>
-                                <Button onClick={handleClose}>Cancelar</Button>
-                                <Button onClick={handleAceptar}>Aceptar</Button>
-                            </DialogActions>
-                        </Dialog>
+                                    open={open}
+                                    TransitionComponent={Transition}
+                                    keepMounted
+                                    onClose={handleAceptar}
+                                    aria-describedby="alert-dialog-slide-description">
+                                    <DialogContent>
+                                        <DialogContentText id="alert-dialog-slide-description">
+                                            Estas seguro que deseas realizar esta acción, luego no podrás
+                                            recuperar lo perdido.
+                                        </DialogContentText>
+                                    </DialogContent>
+                                    <DialogActions>
+                                        <Button onClick={handleClose}>Cancelar</Button>
+                                        <Button onClick={handleAceptar}>Aceptar</Button>
+                                    </DialogActions>
+                                </Dialog>
                             </div>
                         </div>
                     </div>
