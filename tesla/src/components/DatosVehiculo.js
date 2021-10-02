@@ -270,7 +270,8 @@ const DatosVehiculo = () => {
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                                    <button type="button" class="btn btn-primary">Guardar</button>
+                                    <button type="button" onClick={handleAceptar} class="btn btn-primary">Guardar</button>
+                                    <ToastContainer />
                                 </div>
                             </div>
                         </div>

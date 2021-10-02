@@ -95,8 +95,6 @@ const RegistrarVehiculo = () => {
                     <textarea class="form-control" id="observaciones" rows="3"></textarea>
                 </div>
             </div>
-
-            
         </div>
     )
 }

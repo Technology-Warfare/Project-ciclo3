@@ -34,6 +34,15 @@ td{
     text-align: center;
 }
 
+.info-user{
+    text-align:center;
+}
+
+.link{
+    text-align: center;
+    margin-top: 5%;
+}
+
 @media screen and (max-width:600px) {
     
     .content-usuarios{
