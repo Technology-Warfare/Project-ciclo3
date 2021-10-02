@@ -8,9 +8,10 @@
 
 ul{
     list-style:circle;
-    text-align: left;
+    text-align: center;
     padding-right: 5%;
-    padding-top: 4%;
+    padding-top: 4%;  
+    list-style: none;  
 }
 
 .liu:hover{
@@ -22,13 +23,23 @@ ul{
     padding-top: 10%;
     height: 100%;
     padding-bottom: 5%;
-    color: rgb(47, 19, 126);
-    font-size: 15px
+    color:wheat;
+    font-size: 15px;  
 }
+
 
 @media screen and (max-width:600px) {
     .sidebar{
         width: 100%;
         margin-top: 30%;
     }
+}
+
+.ButtonSidebar{
+    border-radius: 20px;
+    padding-left: 20px;
+    padding-top: 10px;
+    width: 100%;
+    border-color: whitesmoke;
+    
 }
