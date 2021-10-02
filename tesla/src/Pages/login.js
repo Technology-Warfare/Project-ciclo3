@@ -113,12 +113,12 @@ const Login = () => {
                                         /> 
                         </div>
                         
-                    
-                    </div>
-                    <div className="registrarse">
+                        <div className="registrarse">
                             ¿No tienes cuenta? 
-                            <Link to="/registrarse"  style={{ textDecorationColor: 'white'}}><div className='border3'> Registrate aquí</div></Link>
+                            <Link to="/registrarse" style={{ textDecoration: 'none'}}><div className='border3'> Registrate aquí</div></Link>
+                        </div>
                     </div>
+                   
                 </div>
             </div>
         </React.Fragment>

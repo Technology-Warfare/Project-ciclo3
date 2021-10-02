@@ -10,7 +10,7 @@ const ListarUsuario = () => {
                     <button className="btn btn-outline-success" type="submit">Search</button>
                 </form>
             </div>
-            <h2 className="title mt-3">
+            <h2 className="title mt-3 pb-5">
                 Lista de usuarios
             </h2>
 
@@ -18,7 +18,7 @@ const ListarUsuario = () => {
                 <tr className="ids">
                     <td>Nombre</td>
                     <td>ID</td>
-                    <td>opcion</td>
+                    <td>Opción</td>
                 </tr>
                 <tr>
                     <td>Jorge Carrascal</td>

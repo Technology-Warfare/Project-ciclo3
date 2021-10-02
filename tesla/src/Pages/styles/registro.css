@@ -1,13 +1,14 @@
 .main-registro{
-    background-image: url("https://img.freepik.com/foto-gratis/fondo-geometrico-colorido-armonico_23-2147668458.jpg?size=626&ext=jpg");
-    background-size: cover;
+    /* background-image: url("https://img.freepik.com/foto-gratis/fondo-geometrico-colorido-armonico_23-2147668458.jpg?size=626&ext=jpg"); */
+    background-size:contain;
     display: flex;
     height: 100%;
+    background-color: rgba(7, 58, 85, 0.61);
 }
 
 .main-form{
     text-align: center;
-    background-color: #bfcde6;
+    background-color: #9ec0fc;
     width: 70%;
     margin-left: 15%;
     margin-right: 15%;
