@@ -1,7 +1,6 @@
 .sidebar{
-    width: 13%;
+    width: 250px;
     padding-top: 20%;
-    text-align: center;
     background-color: rgba(219, 160, 32, 0.904);
     height: auto;
 }
@@ -9,22 +8,18 @@
 ul{
     list-style:circle;
     text-align: center;
-    padding-right: 15%;
+    padding-left: 0%;
     padding-top: 4%;  
     list-style: none;  
 }
 
-.liu:hover{
-    color: black;
-    font-size: 16px;
-}
 
 .liu{
     padding-top: 10%;
     height: 100%;
     padding-bottom: 5%;
     color:wheat;
-    font-size: 15px;  
+    font-size: 15px;
 }
 
 
@@ -37,9 +32,9 @@ ul{
 
 .ButtonSidebar{
     border-radius: 20px;
-    padding-left: 20px;
-    padding-top: 10px;
-    width: 100%;
+    padding-top: 1%;
+    width:150px;
     border-color: whitesmoke;
+    background-color: rgb(179, 179, 253);;
     
 }

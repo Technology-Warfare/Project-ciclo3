@@ -16,7 +16,7 @@ const ListarVehiculos = () => {
             </nav>
             <div className="row">
 
-                <div className="col-2">
+                <div className="col-2 pt-5">
 
                     <div className="list-group" id="list-tab" role="tablist">
 

@@ -44,7 +44,11 @@ const DatosVehiculo = () => {
 
     return (
         <div>
-
+             <div className="Form imgVenta p-5">
+                    <div class="card bg-dark text-white imgAd">
+                        <img src={modelS} alt="img1" />
+                    </div>
+                </div>
             <div className="fForm">
                 <div className="Form">
                     <div className="cardData">
@@ -97,36 +101,7 @@ const DatosVehiculo = () => {
                                     </div>
                                 </div>
                             </li>
-                        </ul>
-                    </div>
 
-                    <div class="card">
-                        <div class="card-body">
-                            <label className="input-group-text">Descripción
-                            </label>
-                            <p class="card-text">190 kw (258 cv) Transmisión automática, deportivo aerodinámico</p>
-                        </div>
-                    </div>
-
-                    
-                </div>
-                
-
-                <div className="Form">
-                    <div className="cardData">
-                        <ul className="list-group list-group-flush">
-                            <li className="list-group-item">
-                                <div className="tit">
-                                    <div className="">
-                                        <label className="input-group-text">Modificación
-                                        </label>
-                                    </div>
-                                    <div className="">
-                                        <label className="lblTit">190kw (258 cv) Transmisión automática
-                                        </label>
-                                    </div>
-                                </div>
-                            </li>
                             <li className="list-group-item">
                                 <div className="tit">
                                     <div className="lblTit1">
@@ -152,15 +127,19 @@ const DatosVehiculo = () => {
                                     </div>
                                 </div>
                             </li>
-                            <div class="card">
-                                <div class="card-body">
-                                    <label className="input-group-text">Observaciones
-                                    </label>
-                                    <p class="card-text">Modelo para exhibición</p>
+
+                            <li className="list-group-item">
+                                <div className="tit">
+                                    <div className="">
+                                        <label className="input-group-text">Modificación
+                                        </label>
+                                    </div>
+                                    <div className="">
+                                        <label className="lblTit">190kw (258 cv) Transmisión automática
+                                        </label>
+                                    </div>
                                 </div>
-                            </div>
-
-
+                            </li>
                             <li className="list-group-item">
                                 <div className="tit">
                                     <div className="lblTit1">
@@ -173,6 +152,7 @@ const DatosVehiculo = () => {
                                     </div>
                                 </div>
                             </li>
+                            
                             <li className="list-group-item">
                                 <div className="tit">
                                     <div className="lblTit1">
@@ -185,76 +165,57 @@ const DatosVehiculo = () => {
                                     </div>
                                 </div>
                             </li>
+                
                         </ul>
                     </div>
-
-
-
                 </div>
-
-                <div className="Form imgVenta">
-                    <div class="card bg-dark text-white imgAd">
-                        <img src={modelS} alt="img1" />
+            <div>
+            <div class="card">
+                <div class="card-body">
+                    <label className="input-group-text">Descripción
+                        </label>
+                    <p class="card-text">190 kw (258 cv) Transmisión automática, deportivo aerodinámico</p>
                     </div>
                 </div>
+             <div class="card">
+                                <div class="card-body">
+                                    <label className="input-group-text">Observaciones
+                                    </label>
+                                    <p class="card-text">Modelo para exhibición</p>
+                                </div>
+                            </div>
+            <div class="card">
+                <div class="card-body">
+                    <label className="input-group-text">Cantidad
+                        </label>
+                    <p class="card-text">250</p>
+                </div>
+            </div>
+             <div class="card">
+                                <div class="card-body">
+                                    <label className="input-group-text">Valor Unitario
+                                    </label>
+                                    <p class="card-text">$24'000.000</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-body">
+                                    <label className="input-group-text">Valor Total
+                                    </label>
+                                    <p class="card-text">$ 6.000.000.000</p>
+                                </div>
+                            </div>
+            </div>
 
 
             </div>
-            <div className="fForm">
-                <div className="card form">
-                    <div class="card-body">
-                        <div className="cardData">
-                            <div className="tit">
-                                <div className="lblTit1">
-                                    <label className="input-group-text">Cantidad
-                                    </label>
-                                </div>
-                                <div className="lblTit2">
-                                    <label className="lblTit">250
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
-                <div className="card form">
-                    <div class="card-body">
-                        <div className="cardData">
-                            <div className="tit">
-                                <div className="lblTit1">
-                                    <label className="input-group-text">Vr. Unitario
-                                    </label>
-                                </div>
-                                <div className="lblTit2">
-                                    <label className="lblTit">24'000.000
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div className="card form">
-                    <div class="card-body">
-                        <div className="cardData">
-                            <div className="tit">
-                                <div className="lblTit1">
-                                    <label className="input-group-text">Vr. Total
-                                </label>
-                                </div>
-                                <div className="lblTit2">
-                                    <label className="lblTit">$ 6.000.000.000
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
                 
+
+                    
                     <div className="boxButtons">
-                    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Editar registro</button>
+                    <button type="button" class="btn btn-success mt-5" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Editar registro</button>
                     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog ModalDialogEdit">
                             <div class="modal-content">
@@ -278,7 +239,7 @@ const DatosVehiculo = () => {
                     </div>
 
 
-                    <button type="button" onClick={handleClickOpen} class="btn btn-danger">Eliminar registro</button>
+                    <button type="button" onClick={handleClickOpen} class="btn btn-danger mt-3">Eliminar registro</button>
                     <Dialog
                         open={open}
                         TransitionComponent={Transition}
@@ -305,7 +266,7 @@ const DatosVehiculo = () => {
            
 
 
-        </div>
+        
 
     )
 }

@@ -15,8 +15,8 @@ const Adminvtas = () => {
                 <div className="content-ventas">
                     <Admv />
                 </div>
-            </div>
-            <Footer/>        
+            </div>    
+            <Footer/>    
         </React.Fragment>
     );
 }

@@ -4,7 +4,7 @@
 }
 
 .content{
-    padding-top: 150px;
+    padding-top: 15%;
     margin-left: 5%;
     
 }
@@ -37,20 +37,20 @@
 .FloatRight{
     float: right;
     width: 70%;
-    padding-top: 0%;
-    padding-bottom: 0%;
+
 }
 
 .DisplayBlock{
     display: block;
-    padding-top: 12px;
-    padding-bottom: 0%;
+    margin-bottom: 0%;
     background-color: transparent;
     justify-items: center;
+    text-align: center;
 }
 
 .h4{
-    padding-top: 0px;
+    margin-top: 0%;
+    font-weight: bold;
 }
 
 .ColorBar{
