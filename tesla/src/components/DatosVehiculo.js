@@ -192,7 +192,7 @@ const DatosVehiculo = () => {
 
                 </div>
 
-                <div className="Form imgVenta">
+                <div className="Form imgVehiculos">
                     <div class="card bg-dark text-white imgAd">
                         <img src={modelS} alt="img1" />
                     </div>
@@ -254,7 +254,7 @@ const DatosVehiculo = () => {
 
                 
                     <div className="boxButtons">
-                    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Editar registro</button>
+                    <button type="button" className="btn btn-success form" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Editar registro</button>
                     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog ModalDialogEdit">
                             <div class="modal-content">
@@ -278,7 +278,7 @@ const DatosVehiculo = () => {
                     </div>
 
 
-                    <button type="button" onClick={handleClickOpen} class="btn btn-danger">Eliminar registro</button>
+                    <button type="button" onClick={handleClickOpen} class="btn btn-danger form">Eliminar registro</button>
                     <Dialog
                         open={open}
                         TransitionComponent={Transition}

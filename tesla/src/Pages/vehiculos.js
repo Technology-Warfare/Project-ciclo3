@@ -24,13 +24,21 @@ const vehiculos = () => {
                             <button className="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">LISTAR/BUSCAR</button>
                         </li>
                     </ul>
-                    <div className="tab-content" id="pills-tabContent">
+                    <div className="tab-content sizeCont" id="pills-tabContent" >
 
                         <div className="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
                             <RegistrarVehiculo />
                         </div>
-                        <div className="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-                           <ListarVehiculos />
+                        <div className="tab-pane fade colorPane" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                            <nav class="navbar navbar-light bg-light SearchPosition">
+                                <div class="container-fluid">
+                                    <form class="d-flex">
+                                        <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" />
+                                        <button class="btn btn-outline-success" type="submit">Buscar</button>
+                                    </form>
+                                </div>
+                            </nav>
+                            <ListarVehiculos />
                         </div>
                     </div>
                 </div>

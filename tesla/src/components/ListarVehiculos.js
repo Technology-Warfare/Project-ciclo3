@@ -1,22 +1,15 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import DatosVehiculo from './DatosVehiculo'
-import '../Pages/styles/ListarVehiculos.css';
+import '../Pages/styles/vehiculos.css';
 
 const ListarVehiculos = () => {
     return (
         <div>
-            <nav class="navbar navbar-light bg-light SearchPosition">
-                <div class="container-fluid">
-                    <form class="d-flex">
-                        <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search"/>
-                        <button class ="btn btn-outline-success" type ="submit">Buscar</button>
-                    </form>
-                </div>
-            </nav>
+            
             <div className="row">
 
-                <div className="col-2">
+                <div className="DataCol">
 
                     <div className="list-group" id="list-tab" role="tablist">
 
@@ -34,7 +27,7 @@ const ListarVehiculos = () => {
 
                 </div>
 
-                <div className="col-10">
+                <div className="DataContent">
                     <div className="tab-content" id="nav-tabContent">
                         <div className="tab-pane fade show active" id="ID1" role="tabpanel" aria-labelledby="ID1-list">
                             

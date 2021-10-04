@@ -1,17 +1,13 @@
 
 
-@media screen and (max-width:1200px) {
-    .fForm{
-        display: block;
-    }
 
-}
 
-@media screen and (min-width:1200px) {
-    .fForm{
+
+
+.fForm{
     display: flex;
-    }
 }
+
 
 
 .title{

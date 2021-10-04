@@ -9,7 +9,7 @@
 ul{
     list-style:circle;
     text-align: center;
-    padding-right: 15%;
+    padding-left:0% ;
     padding-top: 4%;  
     list-style: none;  
 }
@@ -35,11 +35,12 @@ ul{
     }
 }
 
+
 .ButtonSidebar{
     border-radius: 20px;
-    padding-left: 20px;
     padding-top: 10px;
     width: 100%;
     border-color: whitesmoke;
-    
+        
 }
+
