@@ -15,36 +15,8 @@ const dashboard = () => {
                 <div className="flex">
                     <Sidebar/>
                     <div className="content justify-content-between">
-                        <div className="ColorBar">
-                            <div className='title card DisplayBlock '><div className='h4 py-2'>Pepito Juarez</div></div>
-                                <div className='card DisplayBlock pt-3'>
-                                    <div className="FloatLeft">
-                                        <h6>Email:</h6> 
-                                    </div>
-                                    <div className="FloatRight">
-                                        pepitojuarez@gmail.com
-                                    </div>
-                                </div>
-                                <div className='card DisplayBlock pt-3'>
-                                    <div className="FloatLeft">
-                                        <h6>Edad:</h6>
-                                    </div>
-                                    <div className="FloatRight">
-                                        20 años
-                                    </div>
-                                </div>
-                                <div className='card DisplayBlock pt-3'>
-                                    <div className="FloatLeft">
-                                        <h6>Celular:</h6>
-                                    </div>
-                                    <div className="FloatRight">
-                                        3006587689
-                                    </div>                         
-                                </div>
-                            <div className="card DisplayBlock pt-2">
-                                <button className='rounded ButtonSize'>Editar Info</button>
-                            </div>
-                        </div>
+                    <div><h4 className='FloatLeft mb-5'>Pepito Juarez</h4></div>
+                    
 
                     <div id="carouselExampleControls" class="carousel slide Carusel" data-bs-ride="carousel">
                         <div class="carousel-inner">
@@ -67,11 +39,44 @@ const dashboard = () => {
                             <span class="visually-hidden">Next</span>
                         </button>
                     </div>
-
-
+                    <div className="ColorBar mb-3">
+                                <div className='card DisplayBlock'>
+                                    <div className="FloatLeft">
+                                        <h6>Email:</h6> 
+                                    </div>
+                                    <div className="FloatRight">
+                                        pepitojuarez@gmail.com
+                                    </div>
+                                </div>
+                                <div className='card DisplayBlock'>
+                                    <div className="FloatLeft">
+                                        <h6>Edad:</h6>
+                                    </div>
+                                    <div className="FloatRight">
+                                        20 años
+                                    </div>
+                                </div>
+                                <div className='card DisplayBlock'>
+                                    <div className="FloatLeft">
+                                        <h6>Celular:</h6>
+                                    </div>
+                                    <div className="FloatRight">
+                                        3006587689
+                                    </div>                         
+                                </div>
+                                
+                        </div>
+                        
+                        <div className="card DisplayBlock pt-0 mb-3">
+                                <button className='rounded ButtonSize'>Editar Info</button>
+                        </div>
+                        
                     </div>
                     
+                    
                 </div>
+                
+                
             <Footer/>
         </>
     )
