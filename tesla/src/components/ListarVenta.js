@@ -18,9 +18,9 @@ const ListarVenta = () => {
                 </div>
             </nav>
 
-            <div className="row">
+            <div className="row ">
 
-                <div className="col-2">
+                <div className="col-2 mt-5">
 
                     <div className="list-group" id="list-tab" role="tablist">
 
