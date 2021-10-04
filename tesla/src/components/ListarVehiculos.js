@@ -39,7 +39,7 @@ const ListarVehiculos = () => {
                         <div className="tab-pane fade show active" id="ID1" role="tabpanel" aria-labelledby="ID1-list">
                             
                             <div className="numeroRegistro">
-                                <p class="card-text numero">1</p>
+                                
                             </div>
                             <DatosVehiculo />
                         </div>
@@ -47,7 +47,7 @@ const ListarVehiculos = () => {
                         <div className="tab-pane fade" id="ID2" role="tabpanel" aria-labelledby="ID2-list">
                             
                             <div className="numeroRegistro">
-                                <p class="card-text numero">2</p>
+                            
                             </div>
                             <DatosVehiculo />
                         </div>
