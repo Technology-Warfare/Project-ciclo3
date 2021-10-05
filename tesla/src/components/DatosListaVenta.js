@@ -44,7 +44,7 @@ const DatosListaVenta = () => {
 
     return (
         <div>
-            <div class="box">
+            <div class="box mt-4 border border-dark">
                 <img src={modelS} alt="img1" />
             </div>
             

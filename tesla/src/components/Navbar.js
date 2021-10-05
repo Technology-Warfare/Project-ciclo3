@@ -19,12 +19,7 @@ const Navbar = () => {
                             <span className="navbar-toggler-icon"></span>
                         </button>
                         <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
-                            <div className="ubicacion">
-                                <form class="d-flex">
-                                    <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                                    <button className="btn btn-outline-success" type="submit">Search</button>
-                                </form>
-                            </div>
+                            
                             <div className="ubicacion2">
                                 <ul className="navbar-nav ml-auto mb-2 mb-lg-0">
                                     <li className="nav-item border2">

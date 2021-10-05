@@ -22,7 +22,7 @@ const ListarVenta = () => {
 
                 <div className="listaId">
 
-                    <div className="list-group" id="list-tab" role="tablist">
+                    <div className="list-group mt-4 border border-dark" id="list-tab" role="tablist">
 
                         <Link className="list-group-item list-group-item-action active" id="ID1-list" data-bs-toggle="list" to="#ID1" role="tab" aria-controls="ID1">TWM!001 </Link>
 

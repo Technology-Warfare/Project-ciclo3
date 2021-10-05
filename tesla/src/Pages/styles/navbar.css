@@ -20,7 +20,7 @@ header{
 }
 
 .border3:hover{
-   color:rgb(174, 188, 224);
+   color:rgb(240, 225, 12);
 }
 
 
@@ -32,7 +32,7 @@ header{
 
 .ubicacion2{
     position: absolute;
-    right: 15%;
+    right: 5%;
 }
 
 .login{

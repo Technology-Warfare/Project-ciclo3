@@ -170,7 +170,7 @@ const DatosVehiculo = () => {
                     </div>
                 </div>
             <div>
-                <div class="card">
+                <div class="card mt-4">
                     <div class="card-body">
                         <label className="input-group-text">Descripción
                             </label>
@@ -198,7 +198,7 @@ const DatosVehiculo = () => {
                         <p class="card-text">$24'000.000</p>
                     </div>
                 </div>
-                <div class="card">
+                <div class="card mt-1 border border-primary border-2 ">
                     <div class="card-body">
                         <label className="input-group-text">Valor Total
                             </label>
@@ -214,7 +214,7 @@ const DatosVehiculo = () => {
             <div className="fForm">
                 <div className="Form">
                     <div className="boxButtons">
-                <button type="button" class="btn btn-success mt-3" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Editar registro</button>
+                <button type="button mr-3" class="btn btn-success mt-3 mx-4" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Editar registro</button>
                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog ModalDialogEdit">
                         <div class="modal-content">
@@ -236,7 +236,9 @@ const DatosVehiculo = () => {
                                     <ToastContainer />
                             </div>
                         </div>
+                        
                     </div>
+                    
                 </div>
 
 
