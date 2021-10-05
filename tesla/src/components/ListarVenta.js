@@ -43,7 +43,7 @@ const ListarVenta = () => {
                         <div className="tab-pane fade show active" id="ID1" role="tabpanel" aria-labelledby="ID1-list">
                             <DatosListaVenta />
                             <div className="numeroRegistro">
-                                <p class="card-text numero">1</p>
+                               
                             </div>
                             
                         </div>
