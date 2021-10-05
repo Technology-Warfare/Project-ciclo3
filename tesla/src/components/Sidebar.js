@@ -21,7 +21,7 @@ const Sidebar = () => {
                     <Link to="/dashboard/usuarios" style={{ textDecoration: 'none' }}><div className='liu'><button type="button" class="btn btn-dark ButtonSidebar">Usuarios </button></div></Link>
                 </li>
                 <li>
-                    <Link to="/dashboard/" style={{ textDecoration: 'none' }}><div className='liu'><button type="button" class="btn btn-dark ButtonSidebar">Darchboard</button></div></Link>
+                    <Link to="/dashboard/" style={{ textDecoration: 'none' }}><div className='liu'><button type="button" class="btn btn-dark ButtonSidebar">Dashboard</button></div></Link>
                 </li>
             </ul>
         </div>

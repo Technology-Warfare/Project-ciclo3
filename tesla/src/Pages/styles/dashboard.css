@@ -29,16 +29,18 @@
 
 .FloatLeft{
     float: left;
-    width: 30%;
+    width: auto;
     padding-top: 0%;
     padding-bottom: 0%;
+    margin-left: 5%;
 }
 
 .FloatRight{
     float: right;
-    width: 70%;
+    width:auto;
     padding-top: 0%;
     padding-bottom: 0%;
+    padding-right: 5%;
 }
 
 .DisplayBlock{

@@ -6,6 +6,8 @@
 
 .fForm{
     display: flex;
+    
+    justify-content:center;
 }
 
 
@@ -43,9 +45,10 @@
 }
 
 
-.form{
-            
-    width: 100%; 
+.Form{
+    margin-top: 3%;        
+    margin-left: 3%;
+    margin-right: 3%;
 }
 
 .dat{
@@ -83,9 +86,7 @@ h4{
     text-align:left;
     float:left;
 }
-.imgVenta{
-    width: 55%;
-}
+
 
 .imgAd{
     width: 100%;
@@ -104,4 +105,19 @@ h4{
     left: 50%;
     top: 50%;
     color: aliceblue;
+}
+
+.contenidoCol6{
+    width: 80%;
+}
+.listaId{
+    width: 20%;
+}
+
+@supports(object-fit: cover){
+    .box img{
+      width: 100%;
+      object-fit: cover;
+      object-position: center center;
+    }
 }

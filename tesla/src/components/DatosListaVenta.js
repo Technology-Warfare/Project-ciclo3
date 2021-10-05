@@ -44,7 +44,10 @@ const DatosListaVenta = () => {
 
     return (
         <div>
-
+            <div class="box">
+                <img src={modelS} alt="img1" />
+            </div>
+            
             <div className="fForm">
                 <div className="Form">
                     <div className="cardData">
@@ -97,99 +100,6 @@ const DatosListaVenta = () => {
                                     </div>
                                 </div>
                             </li>
-                        </ul>
-                    </div>
-
-                    <div class="card">
-                        <div class="card-body">
-                            <label className="input-group-text">Descripción
-                            </label>
-                            <p class="card-text">El cliente quiere el modelo S en color Beige, paneles digitales, interfaz Onion, con acceso a motor de juegos 3D</p>
-                        </div>
-                    </div>   
-
-                    <div class="card">
-                        <button type="button" class="btn btn-success buttonEdit" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Editar registro</button>
-                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog ModalDialogEdit">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Editar</h5>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-
-                                        <RegistrarVenta />
-
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                                        <button type="button" onClick={handleAceptar} class="btn btn-primary">Guardar</button>
-                                        <ToastContainer />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div className="Form imgVenta">
-                    <div class="card bg-dark text-white imgAd">
-                        <img src={modelS} alt="img1" />
-                    </div>
-                </div>
-
-                <div className="Form">
-                    <div className="cardData">
-                        <ul className="list-group list-group-flush">
-                            <li className="list-group-item">
-                                <div className="tit">
-                                    <div className="lblTit1">
-                                        <label className="input-group-text">ID Automovil
-                                        </label>
-                                    </div>
-                                    <div className="lblTit2">
-                                        <label className="lblTit">TWM!005
-                                        </label>
-                                    </div>
-                                </div>
-                            </li>
-                            <li className="list-group-item">
-                                <div className="tit">
-                                    <div className="lblTit1">
-                                        <label className="input-group-text">ID Cliente
-                                        </label>
-                                    </div>
-                                    <div className="lblTit2">
-                                        <label className="lblTit">C#000004
-                                        </label>
-                                    </div>
-                                </div>
-                            </li>
-
-                            <li className="list-group-item">
-                                <div className="tit">
-                                    <div className="lblTit1">
-                                        <label className="input-group-text">Estado
-                                        </label>
-                                    </div>
-                                    <div className="lblTit2">
-                                        <label className="lblTit">Despacho
-                                        </label>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                        <div class="card">
-                            <div class="card-body">
-                                <label className="input-group-text">Observaciones
-                                </label>
-                                <p class="card-text">Entregar al centro de distribución</p>
-                            </div>
-                        </div>
-
-                        <ul className="list-group list-group-flush">
                             <li className="list-group-item">
                                 <div className="tit">
                                     <div className="lblTit1">
@@ -214,9 +124,97 @@ const DatosListaVenta = () => {
                                     </div>
                                 </div>
                             </li>
+                            <li className="list-group-item">
+                                <div className="tit">
+                                    <div className="lblTit1">
+                                        <label className="input-group-text">ID Automovil
+                                        </label>
+                                    </div>
+                                    <div className="lblTit2">
+                                        <label className="lblTit">TWM!005
+                                        </label>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li className="list-group-item">
+                                <div className="tit">
+                                    <div className="lblTit1">
+                                        <label className="input-group-text">ID Cliente
+                                        </label>
+                                    </div>
+                                    <div className="lblTit2">
+                                        <label className="lblTit">C#000004
+                                        </label>
+                                    </div>
+                                </div>
+                            </li>
+                            
+                        </ul>
+                    </div>
+
+                </div>
+
+        
+
+                <div className="Form">
+                    <div className="cardData">
+                        <ul className="list-group list-group-flush">
+                        <li className="list-group-item">
+                                <div className="tit">
+                                    <div className="lblTit1">
+                                        <label className="input-group-text">Estado
+                                        </label>
+                                    </div>
+                                    <div className="lblTit2">
+                                        <label className="lblTit">Despacho
+                                        </label>
+                                    </div>
+                                </div>
+                            </li>
+            
                         </ul>
                         <div class="card">
+                        <div class="card-body">
+                            <label className="input-group-text">Descripción
+                            </label>
+                            <p class="card-text">El cliente quiere el modelo S en color Beige, paneles digitales, interfaz Onion, con acceso a motor de juegos 3D</p>
+                        </div>
+                        </div>   
+
+                        <div class="card">
                             <div class="card-body">
+                                <label className="input-group-text">Observaciones
+                                </label>
+                                <p class="card-text">Entregar al centro de distribución</p>
+                            </div>
+                        </div>
+                        <div className='mt-4'>
+                        <div class="card">
+                        <button type="button" class="btn btn-success buttonEdit" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Editar registro</button>
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog ModalDialogEdit">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Editar</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+
+                                        <RegistrarVenta />
+
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                        <button type="button" onClick={handleAceptar} class="btn btn-primary">Guardar</button>
+                                        <ToastContainer />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                        <div class="card mt-2">
+                           
                                 <button type="button" onClick={handleClickOpen} class="btn btn-danger buttonEdit">Eliminar registro</button>
                                 <Dialog
                                     open={open}
@@ -236,9 +234,9 @@ const DatosListaVenta = () => {
                                     </DialogActions>
                                 </Dialog>
                             </div>
-                        </div>
+                     
                     </div>
-
+                    </div>
 
 
                 </div>
@@ -249,7 +247,7 @@ const DatosListaVenta = () => {
 
 
 
-            <div className="fForm">
+            <div className="fForm mt-5">
                 <div className="form">
                     <div className="tit1">
                         <div className="lblTit1">
@@ -275,10 +273,12 @@ const DatosListaVenta = () => {
                         </div>
 
                     </div>
+                    </div>
 
 
 
                 </div>
+                <div className="fForm mt-2">
                 <div className="form">
                     <div className="tit1">
                         <div className="lblTit1">
@@ -306,11 +306,8 @@ const DatosListaVenta = () => {
                     </div>
 
                 </div>
+                </div>
             </div>
-
-
-
-        </div>
     )
 }
 
