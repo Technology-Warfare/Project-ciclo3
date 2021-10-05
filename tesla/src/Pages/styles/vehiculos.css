@@ -61,89 +61,17 @@
     color: aliceblue;
 }
 
-@media screen and (min-width:1470px) and (max-width:1595px){
-    .imgVehiculos{
-    width: 48.4%;
-    }
 
-    .DataCol {
-        width: 10%;
-    
-    }
-    .DataContent {
-        width: 90%;
-    }
 
-}
-
-@media screen and (min-width:1366px) and (max-width:1469px){
-    .imgVehiculos{
-    width: 44%;
-    }
-
-    .DataCol {
-        width: 10%;
-    
-    }
-    .DataContent {
-        width: 90%;
-    }
-
-}
-@media screen and (min-width:1287px) and (max-width:1365px){
-    .imgVehiculos{
-    width: 39%;
-    }
-
-    .DataCol {
-        width: 12%;
-    
-    }
-    .DataContent {
-        width: 88%;
-    }
-
-}
-@media screen and (min-width:1205px) and (max-width:1286px){
-    .imgVehiculos{
-    width: 35%;
-    }
-
-    .DataCol {
-        width: 12%;
-    
-    }
-    .DataContent {
-        width: 88%;
-    }
-
-}
-@media screen and (min-width:1146px) and (max-width:1204px){
-    .imgVehiculos{
-    width: 44.3%;
-    }
     .DataCol {
         width: 20%;
     
     }
-    
     .DataContent {
-        width: 78%;
-    }
-    
-}
-
-@media screen and (max-width:1145px){
-    .imgVehiculos{
-    width: 44.3%;
+        width: 80%;
     }
 
-    
-    .DataContent {
-        width: 88%;
-    }
-    
-}
+
 
 
 
