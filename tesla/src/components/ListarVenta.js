@@ -43,7 +43,7 @@ const ListarVenta = () => {
                         <div className="tab-pane fade show active" id="ID1" role="tabpanel" aria-labelledby="ID1-list">
                             <DatosListaVenta />
                             <div className="numeroRegistro">
-                                
+                                <p class="card-text numero">1</p>
                             </div>
                             
                         </div>
@@ -51,28 +51,28 @@ const ListarVenta = () => {
                         <div className="tab-pane fade" id="ID2" role="tabpanel" aria-labelledby="ID2-list">
                             <DatosListaVenta />
                             <div className="numeroRegistro">
-                                
+                                <p class="card-text numero">2</p>
                             </div>
                         </div>
 
                         <div className="tab-pane fade" id="ID3" role="tabpanel" aria-labelledby="ID3-list">
                             <DatosListaVenta />
                             <div className="numeroRegistro">
-                               
+                                <p class="card-text numero">3</p>
                             </div>
                         </div>
 
                         <div className="tab-pane fade" id="ID4" role="tabpanel" aria-labelledby="ID4-list">
                             <DatosListaVenta />
                             <div className="numeroRegistro">
-                               
+                                <p class="card-text numero">4</p>
                             </div>
                         </div>
 
                         <div className="tab-pane fade" id="ID5" role="tabpanel" aria-labelledby="ID5-list">
                             <DatosListaVenta />
                             <div className="numeroRegistro">
-                                
+                                <p class="card-text numero">5</p>
                             </div>
                         </div>
 

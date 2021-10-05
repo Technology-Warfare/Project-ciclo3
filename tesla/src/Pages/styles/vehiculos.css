@@ -27,11 +27,11 @@
     width: 56%;
     }
     .DataCol {
-        width: 10%;
+        width: 20%;
     
     }
     .DataContent {
-        width: 90%;
+        width: 80%;
     }
     
    
@@ -42,7 +42,7 @@
 }
 .boxButtons{
     padding-top: 0px;
-    width: 15%;
+    width: 100%;
 }
 
 .sizeButtons{
@@ -52,6 +52,13 @@
 
 .ModalDialogEdit{
     max-width: 50%;
+}
+
+.numeroRegistro2 {
+    position: absolute;
+    left: 40%;
+    top: 80%;
+    color: aliceblue;
 }
 
 @media screen and (min-width:1470px) and (max-width:1595px){

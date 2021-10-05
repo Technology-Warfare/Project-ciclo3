@@ -170,98 +170,100 @@ const DatosVehiculo = () => {
                     </div>
                 </div>
             <div>
-            <div class="card">
-                <div class="card-body">
-                    <label className="input-group-text">Descripción
-                        </label>
-                    <p class="card-text">190 kw (258 cv) Transmisión automática, deportivo aerodinámico</p>
+                <div class="card">
+                    <div class="card-body">
+                        <label className="input-group-text">Descripción
+                            </label>
+                        <p class="card-text">190 kw (258 cv) Transmisión automática, deportivo aerodinámico</p>
                     </div>
                 </div>
-             <div class="card">
-                                <div class="card-body">
-                                    <label className="input-group-text">Observaciones
-                                    </label>
-                                    <p class="card-text">Modelo para exhibición</p>
-                                </div>
-                            </div>
-            <div class="card">
-                <div class="card-body">
-                    <label className="input-group-text">Cantidad
+                <div class="card">
+                    <div class="card-body">
+                        <label className="input-group-text">Observaciones
                         </label>
-                    <p class="card-text">250</p>
+                        <p class="card-text">Modelo para exhibición</p>
+                    </div>
                 </div>
-            </div>
-             <div class="card">
-                                <div class="card-body">
-                                    <label className="input-group-text">Valor Unitario
-                                    </label>
-                                    <p class="card-text">$24'000.000</p>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-body">
-                                    <label className="input-group-text">Valor Total
-                                    </label>
-                                    <p class="card-text">$ 6.000.000.000</p>
-                                </div>
-                            </div>
-            </div>
-
-
+                <div class="card">
+                    <div class="card-body">
+                        <label className="input-group-text">Cantidad
+                            </label>
+                        <p class="card-text">250</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <label className="input-group-text">Valor Unitario
+                        </label>
+                        <p class="card-text">$24'000.000</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <label className="input-group-text">Valor Total
+                            </label>
+                        <p class="card-text">$ 6.000.000.000</p>
+                        </div>
+                    </div>
+                </div>
             </div>
 
 
                 
 
-                    
+            <div className="fForm">
+                <div className="Form">
                     <div className="boxButtons">
-                    <button type="button" class="btn btn-success mt-5" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Editar registro</button>
-                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog ModalDialogEdit">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Editar</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
+                <button type="button" class="btn btn-success mt-3" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Editar registro</button>
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog ModalDialogEdit">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Editar</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">         
+                                </button>
+                            </div>
+                            <div class="modal-body">
 
-                                    <RegistrarVehiculo />
+                                <RegistrarVehiculo />
 
 
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                                    <button type="button" onClick={handleAceptar} class="btn btn-primary">Guardar</button>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                <button type="button" onClick={handleAceptar} class="btn btn-primary">Guardar
+                                </button>
                                     <ToastContainer />
-                                </div>
                             </div>
                         </div>
                     </div>
+                </div>
 
 
-                    <button type="button" onClick={handleClickOpen} class="btn btn-danger mt-3">Eliminar registro</button>
-                    <Dialog
-                        open={open}
-                        TransitionComponent={Transition}
-                        keepMounted
-                        onClose={handleAceptar}
-                        aria-describedby="alert-dialog-slide-description">
-                        <DialogContent>
-                            <DialogContentText id="alert-dialog-slide-description">
-                                Estas seguro que deseas realizar esta acción, luego no podrás
-                                recuperar lo perdido.
-                            </DialogContentText>
-                        </DialogContent>
-                        <DialogActions>
-                            <Button onClick={handleClose}>Cancelar</Button>
-                            <Button onClick={handleAceptar}>Aceptar</Button>
-                        </DialogActions>
-                    </Dialog>
-                    </div>
-                
-
-
+                <button type="button" onClick={handleClickOpen} class="btn btn-danger mt-3">Eliminar registro</button>
+                <Dialog
+                    open={open}
+                    TransitionComponent={Transition}
+                    keepMounted
+                    onClose={handleAceptar}
+                    aria-describedby="alert-dialog-slide-description">
+                    <DialogContent>
+                        <DialogContentText id="alert-dialog-slide-description">
+                            Estas seguro que deseas realizar esta acción, luego no podrás
+                            recuperar lo perdido.
+                        </DialogContentText>
+                    </DialogContent>
+                    <DialogActions>
+                        <Button onClick={handleClose}>Cancelar</Button>
+                        <Button onClick={handleAceptar}>Aceptar</Button>
+                    </DialogActions>
+                </Dialog>
             </div>
+                </div>
+            </div>
+
+
+        </div>
 
            
 
