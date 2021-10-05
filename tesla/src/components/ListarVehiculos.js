@@ -9,9 +9,9 @@ const ListarVehiculos = () => {
             
             <div className="row">
 
-                <div className="col-70 pt-5">
+                <div className="DataCol pt-5 p-1">
 
-                    <div className="list-group" id="list-tab" role="tablist">
+                    <div className="list-group pt-4" id="list-tab" role="tablist">
 
                         <Link className="list-group-item list-group-item-action active" id="ID1-list" data-bs-toggle="list" to="#ID1" role="tab" aria-controls="ID1">TWM!001 </Link>
 
@@ -30,43 +30,42 @@ const ListarVehiculos = () => {
                 <div className="DataContent">
                     <div className="tab-content" id="nav-tabContent">
                         <div className="tab-pane fade show active" id="ID1" role="tabpanel" aria-labelledby="ID1-list">
-                            
-                            <div className="numeroRegistro">
-                                <p class="card-text numero">1</p>
-                            </div>
                             <DatosVehiculo />
+                            <div className="numeroRegistro2">
+                            </div>
+                            
                         </div>
 
                         <div className="tab-pane fade" id="ID2" role="tabpanel" aria-labelledby="ID2-list">
-                            
-                            <div className="numeroRegistro">
+                            <DatosVehiculo />
+                            <div className="numeroRegistro2">
                                 <p class="card-text numero">2</p>
                             </div>
-                            <DatosVehiculo />
+                            
                         </div>
 
                         <div className="tab-pane fade" id="ID3" role="tabpanel" aria-labelledby="ID3-list">
-                           
-                            <div className="numeroRegistro">
+                            <DatosVehiculo />
+                            <div className="numeroRegistro2">
                                 <p class="card-text numero">3</p>
                             </div>
-                            <DatosVehiculo />
+                            
                         </div>
 
                         <div className="tab-pane fade" id="ID4" role="tabpanel" aria-labelledby="ID4-list">
-                            
-                            <div className="numeroRegistro">
+                            <DatosVehiculo />
+                            <div className="numeroRegistro2">
                                 <p class="card-text numero">4</p>
                             </div>
-                            <DatosVehiculo />
+                            
                         </div>
 
                         <div className="tab-pane fade" id="ID5" role="tabpanel" aria-labelledby="ID5-list">
-                            
-                            <div className="numeroRegistro">
+                            <DatosVehiculo />
+                            <div className="numeroRegistro2">
                                 <p class="card-text numero">5</p>
                             </div>
-                            <DatosVehiculo />
+                           
                         </div>
 
                     </div>
