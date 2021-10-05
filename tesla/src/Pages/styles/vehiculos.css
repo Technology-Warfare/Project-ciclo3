@@ -122,10 +122,13 @@
     .imgVehiculos{
     width: 44.3%;
     }
-
+    .DataCol {
+        width: 20%;
+    
+    }
     
     .DataContent {
-        width: 88%;
+        width: 78%;
     }
     
 }
