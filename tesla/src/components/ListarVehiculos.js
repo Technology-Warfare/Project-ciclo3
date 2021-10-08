@@ -21,56 +21,38 @@ import { Link } from 'react-router-dom'
 const vehiculosBackend = [
     //Lista de vehiculos del backend (Borrar codigo de este archivo)
     {
-        Tipo: "Eléctrico",
         Marca: "Tesla",
         Modelo: "S",
         Generacion: "1ra [2012 - 2020]",
         Serie: "Liftbek",
         Equipamento: "Model S",
         Modificacion: "60 (306 cv)",
-        FechaCompra: "23/09/2021",
-        FechaDePago: "31/12/2021",
         Descripcion: "Transmisión automática, deportivo aerodinámico",
-        Observaciones: "Modelo para exhibición",
-        Cantidad: "250",
-        ValorUnitario: "$24'000.000",
-        ValorTotal: "$6.000.000.000"
+        Observaciones: "Modelo para exhibición"
 
 
     },
     {
-        Tipo: "Eléctrico",
         Marca: "Tesla",
         Modelo: "X",
         Generacion: "1ra [2015 - 2021]",
         Serie: "Crossover",
         Equipamento: "Model X",
         Modificacion: "AT 4WD (333 cv)",
-        FechaCompra: "23/09/2021",
-        FechaDePago: "31/12/2021",
         Descripcion: "Transmisión automática, deportivo aerodinámico",
-        Observaciones: "Modelo para exhibición",
-        Cantidad: "250",
-        ValorUnitario: "$24'000.000",
-        ValorTotal: "$6.000.000.000"
+        Observaciones: "Modelo para exhibición"
 
 
     },
     {
-        Tipo: "Eléctrico",
         Marca: "Tesla",
         Modelo: "Y",
         Generacion: "1ra generación",
         Serie: "Crossover",
         Equipamento: "Model Y",
         Modificacion: "AT (271 cv)",
-        FechaCompra: "23/09/2021",
-        FechaDePago: "31/12/2021",
         Descripcion: "Transmisión automática, deportivo aerodinámico",
-        Observaciones: "Modelo para exhibición",
-        Cantidad: "250",
-        ValorUnitario: "$24'000.000",
-        ValorTotal: "$6.000.000.000"
+        Observaciones: "Modelo para exhibición"
 
 
     }
@@ -143,20 +125,14 @@ const ListarVehiculos = () =>
             <div className="designDesktop">
                 <table>
                     <thead>
-                        <th>Tipo</th>
                         <th>Marca</th>
                         <th>Modelo</th>
                         <th>Generación</th>
                         <th>Serie</th>
                         <th>Equipamento</th>
                         <th>Modificación</th>
-                        <th>Fecha compra</th>
-                        <th>Fecha de pago</th>
                         <th>Descripción</th>
                         <th>Observaciones</th>
-                        <th>Cantidad</th>
-                        <th>Vr Unitario</th>
-                        <th>Vr Total</th>
                         <th>Actividad</th>
                     </thead>
 
@@ -171,20 +147,14 @@ const ListarVehiculos = () =>
                                     
 
                                     <tbody>
-                                        <td>{vehiculos.Tipo}</td>
                                         <td>{vehiculos.Marca}</td>
                                         <td>{vehiculos.Modelo}</td>
                                         <td>{vehiculos.Generacion}</td>
                                         <td>{vehiculos.Serie}</td>
                                         <td>{vehiculos.Equipamento}</td>
                                         <td>{vehiculos.Modificacion}</td>
-                                        <td>{vehiculos.FechaCompra}</td>
-                                        <td>{vehiculos.FechaDePago}</td>
                                         <td>{vehiculos.Descripcion}</td>
                                         <td>{vehiculos.Observaciones}</td>
-                                        <td>{vehiculos.Cantidad}</td>
-                                        <td>{vehiculos.ValorUnitario}</td>
-                                        <td>{vehiculos.ValorTotal}</td>
                                         <td>
                                             <div className="boxButtons">
                                                 <button type="button mr-3" className="btn btn-success mt-3 mx-4" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">E</button>
@@ -274,18 +244,7 @@ const ListarVehiculos = () =>
                                         <div className="Form">
                                             <div className="cardData">
                                                 <ul className="list-group list-group-flush">
-                                                    <li className="list-group-item">
-                                                        <div className="tit">
-                                                            <div className="lblTit1">
-                                                                <label className="input-group-text">Tipo
-                                                                </label>
-                                                            </div>
-                                                            <div className="lblTit2">
-                                                                <label className="lblTit">{vehiculos.Tipo}
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                    </li>
+                                                    
                                                     <li className="list-group-item">
                                                         <div className="tit">
                                                             <div className="lblTit1">
@@ -361,31 +320,7 @@ const ListarVehiculos = () =>
                                                             </div>
                                                         </div>
                                                     </li>
-                                                    <li className="list-group-item">
-                                                        <div className="tit">
-                                                            <div className="lblTit1">
-                                                                <label className="input-group-text">Fecha compra
-                                                                </label>
-                                                            </div>
-                                                            <div className="lblTit2">
-                                                                <label className="lblTit">{vehiculos.FechaCompra}
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-
-                                                    <li className="list-group-item">
-                                                        <div className="tit">
-                                                            <div className="lblTit1">
-                                                                <label className="input-group-text">Fecha de pago
-                                                                </label>
-                                                            </div>
-                                                            <div className="lblTit2">
-                                                                <label className="lblTit">{vehiculos.FechaDePago}
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                    </li>
+                                                    
 
                                                 </ul>
                                             </div>
@@ -405,27 +340,7 @@ const ListarVehiculos = () =>
                                                     <p className="card-text">{vehiculos.Observaciones}</p>
                                                 </div>
                                             </div>
-                                            <div className="card">
-                                                <div className="card-body">
-                                                    <label className="input-group-text">Cantidad
-                                                    </label>
-                                                    <p className="card-text">{vehiculos.Cantidad}</p>
-                                                </div>
-                                            </div>
-                                            <div className="card">
-                                                <div className="card-body">
-                                                    <label className="input-group-text">Valor Unitario
-                                                    </label>
-                                                    <p className="card-text">{vehiculos.ValorUnitario}</p>
-                                                </div>
-                                            </div>
-                                            <div className="card mt-1 border border-2 ">
-                                                <div className="card-body">
-                                                    <label className="input-group-text">Valor Total
-                                                    </label>
-                                                    <p className="card-text">{vehiculos.ValorTotal}</p>
-                                                </div>
-                                            </div>
+                                            
                                         </div>
                                     </div>
 
