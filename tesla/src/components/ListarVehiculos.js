@@ -37,34 +37,26 @@ const ListarVehiculos = () => {
                         </div>
 
                         <div className="tab-pane fade" id="ID2" role="tabpanel" aria-labelledby="ID2-list">
-                            <DatosVehiculo />
-                            <div className="numeroRegistro2">
-                                <p class="card-text numero">2</p>
-                            </div>
+                            
+                            
                             
                         </div>
 
                         <div className="tab-pane fade" id="ID3" role="tabpanel" aria-labelledby="ID3-list">
-                            <DatosVehiculo />
-                            <div className="numeroRegistro2">
-                                <p class="card-text numero">3</p>
-                            </div>
+                            
+                          
                             
                         </div>
 
                         <div className="tab-pane fade" id="ID4" role="tabpanel" aria-labelledby="ID4-list">
-                            <DatosVehiculo />
-                            <div className="numeroRegistro2">
-                                <p class="card-text numero">4</p>
-                            </div>
+                            
+                          
                             
                         </div>
 
                         <div className="tab-pane fade" id="ID5" role="tabpanel" aria-labelledby="ID5-list">
-                            <DatosVehiculo />
-                            <div className="numeroRegistro2">
-                                <p class="card-text numero">5</p>
-                            </div>
+                           
+                          
                            
                         </div>
 
