@@ -45,10 +45,8 @@
 }
 
 
-.Form{
-    margin-top: 3%;        
-    margin-left: 3%;
-    margin-right: 3%;
+.form{
+    width: 100%;
 }
 
 .dat{
@@ -88,9 +86,7 @@ h4{
 }
 
 
-.imgAd{
-    width: 100%;
-}
+
 
 .padName {
     margin-left: 2%;
@@ -116,7 +112,7 @@ h4{
 
 @supports(object-fit: cover){
     .box img{
-      width: 100%;
+      width: 80%;
       object-fit: cover;
       object-position: center center;
     }

@@ -7,6 +7,7 @@ import Sidebar from "../components/Sidebar";
 
 
 import '../Pages/styles/admv.css';
+
 import ListarVenta from '../components/ListarVenta.js';
 import RegistrarVenta from '../components/RegistrarVenta';
 
@@ -36,8 +37,8 @@ const ventas = () => {
                         <div className="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
                             <RegistrarVenta />
                         </div>
-                        <div className="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-                            <ListarVenta />
+                        <div className="tab-pane fade colorPaneVt" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                            
                         </div>
                     </div>
 
