@@ -6,18 +6,6 @@ const RegistrarVehiculo = () => {
             <div className="form">
                 <div class="input-group mb-3">
                     <div className="input-group flex-nowrap">
-                        <span className="input-group-text">ID vehiculo</span>
-                        <div className="form-floating">
-                            <input type="text" name="idVehiculo" class="form-control" id="inIdVehiculo" />
-                            <label for="inIdVehiculo" class="form-label">
-                                TMM
-                            </label>
-                        </div>
-                        <label className="input-group-text" for="tipo">Tipo</label>
-                        <select name="tipo" className="form-select" id="tipo">
-                            <option selected>Seleccione</option>
-                            <option value="1">Electrico</option>
-                        </select>
                         <label className="input-group-text" for="marca">Marca</label>
                         <select name="marca" className="form-select" id="marca">
                             <option selected>Seleccione</option>
