@@ -25,19 +25,7 @@ const RegistrarVenta = () => {
                             <option value="5">TMM5</option>
                             <option value="6">TMM6</option>
                         </select>
-                        <label className="input-group-text" for="inIdCliente">ID cliente</label>
-                        <select className="form-select" id="inIdCliente">
-                            <option selected>Seleccione</option>
-                            <option value="1">C#000001</option>
-                            <option value="2">C#000002</option>
-                            <option value="3">C#000003</option>
-                            <option value="4">C#000004</option>
-                            <option value="5">C#000005</option>
-                            <option value="6">C#000006</option>
-                            <option value="7">C#000007</option>
-                            <option value="8">C#000008</option>
-                            <option value="9">C#000009</option>
-                        </select>
+                       
                     </div>
                 </div>
             </div>
