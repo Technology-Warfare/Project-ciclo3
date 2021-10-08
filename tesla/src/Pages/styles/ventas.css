@@ -5,3 +5,12 @@
     padding-bottom: 5%;
     width: 100%;
 }
+
+
+.buttonEdit{
+    width: 100%;
+}
+
+.ModalDialogEdit{
+    max-width: 50%;
+}

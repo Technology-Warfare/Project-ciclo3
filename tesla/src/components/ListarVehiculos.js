@@ -1,5 +1,5 @@
 
-import DatosVehiculo from './DatosVehiculo'
+
 import '../Pages/styles/vehiculos.css';
 
 

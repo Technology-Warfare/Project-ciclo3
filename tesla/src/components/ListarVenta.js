@@ -1,12 +1,54 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 
 import '../Pages/styles/admv.css';
-import '../Pages/styles/ListarVenta.css';
+import '../Pages/styles/ventas.css';
 
-import DatosListaVenta from './DatosListaVenta';
+
+import modelS from "../Pages/img/ModelS/models.jpg";
+import Button from '@mui/material/Button';
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import Slide from '@mui/material/Slide';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import RegistrarVenta from "../components/RegistrarVenta";
+
 
 const ListarVenta = () => {
+    const Transition = React.forwardRef(function Transition(props, ref) {
+        return <Slide direction="up" ref={ref} {...props} />;
+    });
+
+    const [open, setOpen] = React.useState(false);
+
+    const handleClickOpen = () => {
+        setOpen(true);
+    };
+
+    const handleAceptar = () => {
+        setOpen(false);
+        toast.success('Operación exitosa.', {
+            position: "bottom-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+        });
+        window.location = "/dashboard/ventas";
+    };
+
+    const handleClose = (e) => {
+        e.preventDefault();
+        setOpen(false);
+        window.location = "/dashboard/ventas";
+    };
+
+
+
     return (
         <div>
             <nav class="navbar navbar-light bg-light searchPosition">
@@ -17,68 +59,283 @@ const ListarVenta = () => {
                     </form>
                 </div>
             </nav>
+      
+            <div>
+                <div class="box mt-4 border border-dark">
+                    <img src={modelS} alt="img1" />
+                </div>
 
-            <div className="row">
-
-                <div className="listaId">
-
-                    <div className="list-group mt-4 border border-dark" id="list-tab" role="tablist">
-
-                        <Link className="list-group-item list-group-item-action active" id="ID1-list" data-bs-toggle="list" to="#ID1" role="tab" aria-controls="ID1">TWM!001 </Link>
-
-                        <Link className="list-group-item list-group-item-action" id="ID2-list" data-bs-toggle="list" to="#ID2" role="tab" aria-controls="ID2">TWM!002 </Link>
-
-                        <Link className="list-group-item list-group-item-action" id="ID3-list" data-bs-toggle="list" to="#ID3" role="tab" aria-controls="ID3">TWM!003</Link>
-
-                        <Link className="list-group-item list-group-item-action" id="ID4-list" data-bs-toggle="list" to="#ID4" role="tab" aria-controls="ID4">TWM!004</Link>
-
-                        <Link className="list-group-item list-group-item-action" id="ID5-list" data-bs-toggle="list" to="#ID5" role="tab" aria-controls="ID5">TWM!005</Link>
+                <div className="fForm">
+                    <div className="Form">
+                        <div className="cardData">
+                            <ul className="list-group list-group-flush">
+                                <li className="list-group-item">
+                                    <div className="tit">
+                                        <div className="lblTit1">
+                                            <label className="input-group-text">Referencia
+                                            </label>
+                                        </div>
+                                        <div className="lblTit2">
+                                            <label className="lblTit">Plaid
+                                            </label>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li className="list-group-item">
+                                    <div className="tit">
+                                        <div className="lblTit1">
+                                            <label className="input-group-text">Modelo
+                                            </label>
+                                        </div>
+                                        <div className="lblTit2">
+                                            <label className="lblTit">S
+                                            </label>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li className="list-group-item">
+                                    <div className="tit">
+                                        <div className="lblTit1">
+                                            <label className="input-group-text">Cantidad
+                                            </label>
+                                        </div>
+                                        <div className="lblTit2">
+                                            <label className="lblTit">1
+                                            </label>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li className="list-group-item">
+                                    <div className="tit">
+                                        <div className="lblTit1">
+                                            <label className="input-group-text">Valor
+                                            </label>
+                                        </div>
+                                        <div className="lblTit2">
+                                            <label>$45'000.000
+                                            </label>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li className="list-group-item">
+                                    <div className="tit">
+                                        <div className="lblTit1">
+                                            <label className="input-group-text">Fecha compra
+                                            </label>
+                                        </div>
+                                        <div className="lblTit2">
+                                            <label className="lblTit">23/09/2021
+                                            </label>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li className="list-group-item">
+                                    <div className="tit">
+                                        <div className="lblTit1">
+                                            <label className="input-group-text">Fecha de pago
+                                            </label>
+                                        </div>
+                                        <div className="lblTit2">
+                                            <label className="lblTit">31/12/2021
+                                            </label>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li className="list-group-item">
+                                    <div className="tit">
+                                        <div className="lblTit1">
+                                            <label className="input-group-text">ID Automovil
+                                            </label>
+                                        </div>
+                                        <div className="lblTit2">
+                                            <label className="lblTit">TWM!005
+                                            </label>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li className="list-group-item">
+                                    <div className="tit">
+                                        <div className="lblTit1">
+                                            <label className="input-group-text">ID Cliente
+                                            </label>
+                                        </div>
+                                        <div className="lblTit2">
+                                            <label className="lblTit">C#000004
+                                            </label>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
 
                     </div>
 
+
+
+                    <div className="Form">
+                        <div className="cardData">
+                            <ul className="list-group list-group-flush">
+                                <li className="list-group-item">
+                                    <div className="tit">
+                                        <div className="lblTit1">
+                                            <label className="input-group-text">Estado
+                                            </label>
+                                        </div>
+                                        <div className="lblTit2">
+                                            <label className="lblTit">Despacho
+                                            </label>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="card">
+                                <div class="card-body">
+                                    <label className="input-group-text">Descripción
+                                    </label>
+                                    <p class="card-text">El cliente quiere el modelo S en color Beige, paneles digitales, interfaz Onion, con acceso a motor de juegos 3D</p>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card-body">
+                                    <label className="input-group-text">Observaciones
+                                    </label>
+                                    <p class="card-text">Entregar al centro de distribución</p>
+                                </div>
+                            </div>
+                            <div className='mt-4'>
+                                <div class="card">
+                                    <button type="button" class="btn btn-success buttonEdit" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Editar registro</button>
+                                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog ModalDialogEdit">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Editar
+                                                    </h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+
+                                                    <RegistrarVenta />
+
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar
+                                                    </button>
+                                                    <button type="button" onClick={handleAceptar} class="btn btn-primary">Guardar
+                                                    </button>
+                                                    <ToastContainer />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card mt-2">
+                                    <button type="button" onClick={handleClickOpen} class="btn btn-danger buttonEdit">Eliminar registro
+                                    </button>
+                                    <Dialog
+                                        open={open}
+                                        TransitionComponent={Transition}
+                                        keepMounted
+                                        onClose={handleAceptar}
+                                        aria-describedby="alert-dialog-slide-description">
+                                        <DialogContent>
+                                            <DialogContentText id="alert-dialog-slide-description">
+                                                Estas seguro que deseas realizar esta acción, luego no podrás
+                                                recuperar lo perdido.
+                                            </DialogContentText>
+                                        </DialogContent>
+                                        <DialogActions>
+                                            <Button onClick={handleClose}>Cancelar
+                                            </Button>
+                                            <Button onClick={handleAceptar}>Aceptar
+                                            </Button>
+                                        </DialogActions>
+                                    </Dialog>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
                 </div>
 
-                <div className="contenidoCol6">
-                    <div className="tab-content" id="nav-tabContent">
-                        <div className="tab-pane fade show active" id="ID1" role="tabpanel" aria-labelledby="ID1-list">
-                            <DatosListaVenta />
-                            <div className="numeroRegistro">
-                               
-                            </div>
-                            
-                        </div>
 
-                        <div className="tab-pane fade" id="ID2" role="tabpanel" aria-labelledby="ID2-list">
-                            <DatosListaVenta />
-                            <div className="numeroRegistro">
-                                <p class="card-text numero">2</p>
+
+
+                <div className="fForm mt-5">
+                    <div className="form">
+                        <div className="tit1">
+                            <div className="lblTit1">
+                                <span className="input-group-text">Vendedor</span>
+                            </div>
+                            <div>
+                                <label className="padName">Juan Alberto Jimenez
+                                </label>
                             </div>
                         </div>
-
-                        <div className="tab-pane fade" id="ID3" role="tabpanel" aria-labelledby="ID3-list">
-                            <DatosListaVenta />
-                            <div className="numeroRegistro">
-                                <p class="card-text numero">3</p>
+                        <div className="input-group">
+                            <div className="form-floating dat">
+                                <label className="form-control">Juanji93@gmail.com
+                                </label>
+                                <input type="email" className="form-control" id="inputEmail" />
+                                <label for="inputEmail" className="form-label">Email
+                                </label>
+                            </div>
+                            <div className="form-floating dat">
+                                <label className="form-control">3157415468
+                                </label>
+                                <input type="text" className="form-control" id="celular" />
+                                <label for="celular" className="form-label">Celular
+                                </label>
                             </div>
                         </div>
+                    </div>
+                </div>
 
-                        <div className="tab-pane fade" id="ID4" role="tabpanel" aria-labelledby="ID4-list">
-                            <DatosListaVenta />
-                            <div className="numeroRegistro">
-                                <p class="card-text numero">4</p>
+                <div className="fForm mt-2">
+                    <div className="form">
+                        <div className="tit1">
+                            <div className="lblTit1">
+                                <span className="input-group-text">Cliente</span>
+                            </div>
+                            <div>
+                                <label className="padName">Juan Carlos Zambrano
+                                </label>
                             </div>
                         </div>
-
-                        <div className="tab-pane fade" id="ID5" role="tabpanel" aria-labelledby="ID5-list">
-                            <DatosListaVenta />
-                            <div className="numeroRegistro">
-                                <p class="card-text numero">5</p>
+                        <div className="input-group">
+                            <div className="form-floating dat">
+                                <label className="form-control">JuanCZambrano@gmail.com
+                                </label>
+                                <input type="email" className="form-control" id="inputEmail" />
+                                <label for="inputEmail" className="form-label">Email
+                                </label>
+                            </div>
+                            <div className="form-floating dat">
+                                <label className="form-control">3183457962
+                                </label>
+                                <input type="text" className="form-control" id="celular" />
+                                <label for="celular" className="form-label">Celular
+                                </label>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
+                           
+
+                        
+
+                        
+
+                        
+
+                        
+
+            
         </div>
     )
 }
