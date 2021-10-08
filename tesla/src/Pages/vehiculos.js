@@ -30,11 +30,11 @@ const vehiculos = () => {
                             <RegistrarVehiculo />
                         </div>
                         <div className="tab-pane fade colorPane" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-                            <nav class="navbar navbar-light bg-light SearchPosition">
-                                <div class="container-fluid">
-                                    <form class="d-flex">
-                                        <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" />
-                                        <button class="btn btn-outline-success" type="submit">Buscar</button>
+                            <nav className="navbar navbar-light bg-light SearchPosition">
+                                <div className="container-fluid">
+                                    <form className="d-flex">
+                                        <input className="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" />
+                                        <button className="btn btn-outline-success" type="submit">Buscar</button>
                                     </form>
                                 </div>
                             </nav>
