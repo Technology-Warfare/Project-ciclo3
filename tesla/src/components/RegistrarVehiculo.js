@@ -1,15 +1,71 @@
-import React from 'react'
+import React, { useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import axios from 'axios';
+import { Button } from '@mui/material';
 
 const RegistrarVehiculo = () => {
+
+    const [vehiculos, setVehiculos] = useState({
+        marca:'',
+        modelo:'',
+        generacion:'',
+        serie:'',
+        modificacion:'',
+        equipamiento:'',
+        descripcion:'',
+        observaciones:''
+    })
+
+    const handleChange = (event) => {
+        setVehiculos({
+            ...vehiculos,
+            [event.target.name]:event.target.value
+        })
+    };
+
+    const handleSubmit = async (e) => {
+        console.log(vehiculos.marca+" "+vehiculos.modelo+" "+vehiculos.generacion+" "+vehiculos.serie+" "+vehiculos.modificacion+" "+vehiculos.descripcion+" "+
+        vehiculos.equipamiento+" "+vehiculos.observaciones)
+        e.preventDefault();
+        const options = {
+            method: 'POST',
+            url: 'http://localhost:5000/vehiculos/nuevo',
+            headers: { 'Content-Type': 'application/json' },
+            data:{
+                marca : vehiculos.marca,
+                modelo: vehiculos.modelo,
+                generacion : vehiculos.generacion,
+                serie : vehiculos.serie,
+                modificacion : vehiculos.modificacion,
+                equipamiento : vehiculos.equipamiento,
+                descripcion : vehiculos.descripcion,
+                observaciones : vehiculos.observaciones
+            },
+        };
+        await axios
+            .request(options)
+            .then(function (response) {
+                console.log(response.data);
+                toast.success('Vehículo agregado con éxito');
+                window.location="/dashboard/vehiculos";
+            })
+            .catch(function (error) {
+                console.error(error);
+                toast.error('Error creando un vehículo');
+            });
+    }
+
     return (
         <div>
+            <form onSubmit={handleSubmit}>
             <div className="form">
                 <div class="input-group mb-3">
                     <div className="input-group flex-nowrap">
                         <label className="input-group-text" for="marca">Marca</label>
-                        <select name="marca" className="form-select" id="marca">
+                        <select onChange={handleChange} name="marca" className="form-select" id="marca">
                             <option selected>Seleccione</option>
-                            <option value="1">Tesla</option>
+                            <option value="Tesla">Tesla</option>
                         </select>
                     </div>
                 </div>
@@ -18,23 +74,23 @@ const RegistrarVehiculo = () => {
                 <div className="form">
                     <div className="input-group">
                         <label className="input-group-text" for="modelo">Modelo</label>
-                        <select name="modelo" className="form-select" id="modelo">
+                        <select onChange={handleChange} name="modelo" className="form-select" id="modelo">
                             <option selected>Seleccione</option>
-                            <option value="1">Model S</option>
-                            <option value="2">Model 3</option>
-                            <option value="3">Model X</option>
-                            <option value="4">Model Y</option>
-                            <option value="5">Solar Roof</option>
-                            <option value="6">Solar Panels</option>
+                            <option value="Model S">Model S</option>
+                            <option value="Model 3">Model 3</option>
+                            <option value="Model X">Model X</option>
+                            <option value="Model Y">Model Y</option>
+                            <option value="Solar Roof">Solar Roof</option>
+                            <option value="Solar Panels">Solar Panels</option>
                         </select>
                     </div>
                 </div>
                 <div className="form">
                     <div className="input-group">
                         <label className="input-group-text" for="generacion">Generación</label>
-                        <select name="generacion" className="form-select" id="generacion">
+                        <select onChange={handleChange} name="generacion" className="form-select" id="generacion">
                             <option selected>Seleccione</option>
-                            <option value="1">1ra generación [2017 - 2021]</option>
+                            <option value="1ra generación [2017 - 2021]">1ra generación [2017 - 2021]</option>
                         </select>
                     </div>
                 </div>
@@ -43,33 +99,33 @@ const RegistrarVehiculo = () => {
                 <div className="form">
                     <div class="input-group mb-3">
                         <label className="input-group-text" for="serie">Serie</label>
-                        <select name="serie" className="form-select" id="serie">
+                        <select onChange={handleChange} name="serie" className="form-select" id="serie">
                             <option selected>Seleccione</option>
-                            <option value="1">Sedan</option>
+                            <option value="Sedan">Sedan</option>
                         </select>
                     </div>
                 </div>
                 <div className="form">
                     <div className="input-group flex-nowrap">
                         <label className="input-group-text" for="modificacion">Modificación</label>
-                        <select name="modificacion" className="form-select" id="modificacion">
+                        <select onChange={handleChange} name="modificacion" className="form-select" id="modificacion">
                             <option selected>Seleccione</option>
-                            <option value="1">190kw (258 cv) tracción, transmisión automática</option>
-                            <option value="2">258kw (351 cv) tracción, transmisión automática</option>
-                            <option value="3">262 cv transmisión automática</option>
-                            <option value="4">340 kVt (462 cv) tracción, transmisión automática</option>
-                            <option value="5">340kw (462 cv a) tracción, transmisión automática</option>
-                            <option value="6">AT (341 kVt) 4WD</option>
+                            <option value="190kw (258 cv) tracción, transmisión automática">190kw (258 cv) tracción, transmisión automática</option>
+                            <option value="258kw (351 cv) tracción, transmisión automática">258kw (351 cv) tracción, transmisión automática</option>
+                            <option value="262 cv transmisión automática">262 cv transmisión automática</option>
+                            <option value="340 kVt (462 cv) tracción, transmisión automática">340 kVt (462 cv) tracción, transmisión automática</option>
+                            <option value="340kw (462 cv a) tracción, transmisión automática">340kw (462 cv a) tracción, transmisión automática</option>
+                            <option value="AT (341 kVt) 4WD">AT (341 kVt) 4WD</option>
                         </select>
                     </div>
                 </div>
                 <div className="form">
                     <div className="input-group flex-nowrap">
                         <label className="input-group-text" for="equipamento">Equipamento</label>
-                        <select name="equipamiento" className="form-select" id="equipamento">
+                        <select onChange={handleChange} name="equipamiento" className="form-select" id="equipamento">
                             <option selected>Seleccione</option>
-                            <option value="1">Long Range</option>
-                            <option value="2">Performance</option>
+                            <option value="Long Range">Long Range</option>
+                            <option value="Performance">Performance</option>
                         </select>
                     </div>
                 </div>
@@ -77,13 +133,24 @@ const RegistrarVehiculo = () => {
             <div className="fForm">
                 <div className="form">
                     <label for="descripcion" className="form-label">Descripcion detallada</label>
-                    <textarea name="descripcion" class="form-control" id="descripcion" rows="3"></textarea>
+                    <textarea onChange={handleChange} name="descripcion" type="text" class="form-control" id="descripcion" rows="3"></textarea>
                 </div>
                 <div className="form">
                     <label for="observaciones" className="form-label">Observaciones generales</label>
-                    <textarea name="observaciones" class="form-control" id="observaciones" rows="3"></textarea>
+                    <textarea onChange={handleChange} name="observaciones" type="text" class="form-control" id="observaciones" rows="3"></textarea>
                 </div>
             </div>
+            <Button type="submit" className="button mt-3 mb-5" variant="contained">Submit</Button>
+            <ToastContainer
+                position="bottom-center"
+                autoClose={2500}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                draggable
+            />
+            </form>
         </div>
     )
 }
