@@ -3,7 +3,7 @@
     margin-right: 8%;
     margin-top: 15%;
     padding-bottom: 5%;
-    width: 100%;
+    width: 70%;
 }
 
 
@@ -14,3 +14,46 @@
 .ModalDialogEdit{
     max-width: 50%;
 }
+
+@media screen and (max-width:600px){
+
+    .designMovilVt{
+        visibility:visible;
+    }
+    .designDesktopVt{
+        display: none;
+        
+
+    }
+}
+@media screen and (min-width:601px){
+
+    .designMovil{
+        visibility:hidden;
+    }
+    .designDesktop{
+        visibility:visible;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+
+
+    }
+
+    .scrollDivTab{
+        width: 100%;
+        overflow:scroll;
+        border: 1px solid #666;
+        background-color: rgb(190, 30, 30);
+        padding: 8px;
+    }
+}
+
+    .colorPaneVt{
+    width: 90%;
+    }
+
+    .TextHeight{
+        height: 100%;
+    }
+

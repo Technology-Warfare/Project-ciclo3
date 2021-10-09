@@ -59,9 +59,12 @@ const ListarVenta = () => {
                     </form>
                 </div>
             </nav>
+
+
+            <TablaVentas />
       
-            <div>
-                <div class="box mt-4 border border-dark">
+            
+                <div class="box mt-4">
                     <img src={modelS} alt="img1" />
                 </div>
 
@@ -324,7 +327,7 @@ const ListarVenta = () => {
                         </div>
                     </div>
                 </div>
-            </div>
+            
                            
 
                         
@@ -337,7 +340,58 @@ const ListarVenta = () => {
 
             
         </div>
-    )
-}
+    );
+};
+
+const TablaVentas = () => {
+    return (
+        <div className="scrollDivTab">
+            <table>
+                <thead>
+                    <tr>
+                        <th>idVenta</th>
+                        <th>idAutomovil</th>
+                        <th>NombreCliente</th>
+                        <th>ApellidoCliente</th>
+                        <th>EmailCliente</th>
+                        <th>CelularCliente</th>
+                        <th>NombreVendedor</th>
+                        <th>ApellidoVendedor</th>
+                        <th>EmailVendedor</th>
+                        <th>CelularVendedor</th>
+                        <th>PrecioAutomovil</th>
+                        <th>EstadoVenta</th>
+                        <th>Cantidad</th>
+                        <th>Descripcion</th>
+                        <th>Observaciones</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    );
+};
+
 
 export default ListarVenta
