@@ -11,66 +11,7 @@ import Slide from '@mui/material/Slide';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import RegistrarVenta from "../components/RegistrarVenta";
-
-const ventasBackend = [
-    {
-        //Lista de ventas del backend (Borrar codigo de este archivo)
-
-        idVenta: "TWMV00001",
-        idAutomovil: "TmMs001",
-        NombreCliente: "Roberto",
-        ApellidoCliente: "Jimenez",
-        EmailCliente: "Robzen@gmail.com",
-        CelularCliente: "3256894575",
-        NombreVendedor: "Elon",
-        ApellidoVendedor: "Musk",
-        EmailVendedor: "Stargate @gmail.com",
-        CelularVendedor: "3156598753",
-        PrecioAutomovil: "35'000.000",
-        EstadoVenta: "Despacho",
-        Cantidad: "2",
-        Descripcion: "Automovil color Gris, aire acondicionado",
-        Observaciones: "El cliente lo paga en cuotas de 24 meses"
-
-    },
-
-    {
-        idVenta: "TWMV00002",
-        idAutomovil: "TmMs002",
-        NombreCliente: "Julia",
-        ApellidoCliente: "Robert",
-        EmailCliente: "Juli2021@gmail.com",
-        CelularCliente: "3131594652",
-        NombreVendedor: "Marcos",
-        ApellidoVendedor: "Zukaritas",
-        EmailVendedor: "markbook@gmail.com",
-        CelularVendedor: "3183264578",
-        PrecioAutomovil: "50'000.000",
-        EstadoVenta: "Ruta",
-        Cantidad: "4",
-        Descripcion: "Diseño aerodinamico, 5 dias de bateria",
-        Observaciones: "Pago por transferencia bancaria"
-
-    },
-    {
-        idVenta: "TWMV00003",
-        idAutomovil: "TmMx002",
-        NombreCliente: "Donald",
-        ApellidoCliente: "Asange",
-        EmailCliente: "Wikitrump@gmail.com",
-        CelularCliente: "3143692645",
-        NombreVendedor: "Hilari",
-        ApellidoVendedor: "Killiguer",
-        EmailVendedor: "hillarykill@gmail.com",
-        CelularVendedor: "3187564123",
-        PrecioAutomovil: "15'000.000",
-        EstadoVenta: "Recepcion",
-        Cantidad: "1",
-        Descripcion: "Paneles solares para carga lenta",
-        Observaciones: "Se entrega modelo de exhibicion"
-
-    }
-]
+import axios from "axios";
 
 
 const ListarVenta = () => {
@@ -110,8 +51,15 @@ const ListarVenta = () => {
         (
             () => 
             {
+                const options = { method: 'GET', url: 'http://localhost:5000/ventas' };
+
+                axios.request(options).then(function (response) {
+                    console.log(response.data);
+                }).catch(function (error) {
+                    console.error(error);
+                });
                 // Obtener lista de ventas desde el backend
-                setVentas(ventasBackend);
+                  
             }, []
         )
 
@@ -125,7 +73,7 @@ const ListarVenta = () => {
     return (
         <div>
             
-            <div className="scrollDivTab designDesktopVt">
+            
                
                     <table>
                         <thead>
@@ -241,7 +189,7 @@ const ListarVenta = () => {
                     </table>
                 
 
-            </div>
+           
 
             
 

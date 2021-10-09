@@ -12,45 +12,7 @@ import modelS from "../Pages/img/ModelS/models.jpg";
 import RegistrarVehiculo from "../components/RegistrarVehiculo";
 //import { tableRowClasses } from '@mui/material';
 
-const vehiculosBackend = [
-    //Lista de vehiculos del backend (Borrar codigo de este archivo)
-    {
-        Marca: "Tesla",
-        Modelo: "S",
-        Generacion: "1ra [2012 - 2020]",
-        Serie: "Liftbek",
-        Equipamento: "Model S",
-        Modificacion: "60 (306 cv)",
-        Descripcion: "Transmisión automática, deportivo aerodinámico",
-        Observaciones: "Modelo para exhibición"
 
-
-    },
-    {
-        Marca: "Tesla",
-        Modelo: "X",
-        Generacion: "1ra [2015 - 2021]",
-        Serie: "Crossover",
-        Equipamento: "Model X",
-        Modificacion: "AT 4WD (333 cv)",
-        Descripcion: "Transmisión automática, deportivo aerodinámico",
-        Observaciones: "Modelo para exhibición"
-
-
-    },
-    {
-        Marca: "Tesla",
-        Modelo: "Y",
-        Generacion: "1ra generación",
-        Serie: "Crossover",
-        Equipamento: "Model Y",
-        Modificacion: "AT (271 cv)",
-        Descripcion: "Transmisión automática, deportivo aerodinámico",
-        Observaciones: "Modelo para exhibición"
-
-
-    }
-]
 
 
 const ListarVehiculos = () => 
@@ -102,8 +64,8 @@ const ListarVehiculos = () =>
         (
             () => 
             {
-                // Obtener lista de vehiculos desde el fronted
-                setVehiculos(vehiculosBackend);
+                // Obtener lista de vehiculos desde el backend
+                setVehiculos([]);
             }, []
         )
 
