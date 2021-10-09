@@ -38,7 +38,7 @@ const ventas = () => {
                             <RegistrarVenta />
                         </div>
                         <div className="tab-pane fade colorPaneVt" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-                            
+                            <ListarVenta />
                         </div>
                     </div>
 

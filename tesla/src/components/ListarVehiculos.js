@@ -16,7 +16,6 @@ import 'react-toastify/dist/ReactToastify.css';
 import modelS from "../Pages/img/ModelS/models.jpg";
 import RegistrarVehiculo from "../components/RegistrarVehiculo";
 //import { tableRowClasses } from '@mui/material';
-import { Link } from 'react-router-dom'
 
 const vehiculosBackend = [
     //Lista de vehiculos del backend (Borrar codigo de este archivo)
