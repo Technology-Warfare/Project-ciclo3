@@ -125,7 +125,7 @@ const ListarVenta = () => {
     return (
         <div>
             
-            <div className="designDesktop scrollDivTab">
+            <div className="scrollDivTab designDesktopVt">
                
                     <table>
                         <thead>
@@ -159,22 +159,76 @@ const ListarVenta = () => {
 
 
                                             <tr>
-                                                <td>ventas.idVenta</td>
-                                                <td>ventas.idAutomovil</td>
-                                                <td>ventas.NombreCliente</td>
-                                                <td>ventas.ApellidoCliente</td>
-                                                <td>ventas.EmailCliente</td>
-                                                <td>ventas.CelularCliente</td>
-                                                <td>ventas.NombreVendedor</td>
-                                                <td>ventas.ApellidoVendedor</td>
-                                                <td>ventas.EmailVendedor</td>
-                                                <td>ventas.CelularVendedor</td>
-                                                <td>ventas.PrecioAutomovil</td>
-                                                <td>ventas.EstadoVenta</td>
-                                                <td>ventas.Cantidad</td>
-                                                <td>ventas.Descripcion</td>
-                                                <td>ventas.Observaciones</td>
-                                                <td>ventas.Acciones</td>
+                                                <td>{ventas.idVenta}</td>
+                                                <td>{ventas.idAutomovil}</td>
+                                                <td>{ventas.NombreCliente}</td>
+                                                <td>{ventas.ApellidoCliente}</td>
+                                                <td>{ventas.EmailCliente}</td>
+                                                <td>{ventas.CelularCliente}</td>
+                                                <td>{ventas.NombreVendedor}</td>
+                                                <td>{ventas.ApellidoVendedor}</td>
+                                                <td>{ventas.EmailVendedor}</td>
+                                                <td>{ventas.CelularVendedor}</td>
+                                                <td>{ventas.PrecioAutomovil}</td>
+                                                <td>{ventas.EstadoVenta}</td>
+                                                <td>{ventas.Cantidad}</td>
+                                                <td>{ventas.Descripcion}</td>
+                                                <td>{ventas.Observaciones}</td>
+                                                <td>
+                                                    
+                                                        
+                                                            <button type="button" class="btn btn-success buttonEdit" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">E</button>
+                                                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                                <div class="modal-dialog ModalDialogEdit">
+                                                                    <div class="modal-content">
+                                                                        <div class="modal-header">
+                                                                            <h5 class="modal-title" id="exampleModalLabel">Editar
+                                                                            </h5>
+                                                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                                                                            </button>
+                                                                        </div>
+                                                                        <div class="modal-body">
+
+                                                                            <RegistrarVenta />
+
+                                                                        </div>
+                                                                        <div class="modal-footer">
+                                                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar
+                                                                            </button>
+                                                                            <button type="button" onClick={handleAceptar} class="btn btn-primary">Guardar
+                                                                            </button>
+                                                                            <ToastContainer />
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        
+                                                        
+                                                            <button type="button" onClick={handleClickOpen} class="btn btn-danger buttonEdit">E
+                                                            </button>
+                                                            <Dialog
+                                                                open={open}
+                                                                TransitionComponent={Transition}
+                                                                keepMounted
+                                                                onClose={handleAceptar}
+                                                                aria-describedby="alert-dialog-slide-description">
+                                                                <DialogContent>
+                                                                    <DialogContentText id="alert-dialog-slide-description">
+                                                                        Estas seguro que deseas realizar esta acción, luego no podrás
+                                                                        recuperar lo perdido.
+                                                                    </DialogContentText>
+                                                                </DialogContent>
+                                                                <DialogActions>
+                                                                    <Button onClick={handleClose}>Cancelar
+                                                                    </Button>
+                                                                    <Button onClick={handleAceptar}>Aceptar
+                                                                    </Button>
+                                                                </DialogActions>
+                                                            </Dialog>
+                                                       
+
+                                                    
+                                                </td>
 
 
                                             </tr>
