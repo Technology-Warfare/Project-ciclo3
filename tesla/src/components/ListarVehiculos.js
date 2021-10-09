@@ -10,8 +10,8 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import modelS from "../Pages/img/ModelS/models.jpg";
 import RegistrarVehiculo from "../components/RegistrarVehiculo";
-//import { tableRowClasses } from '@mui/material';
-
+import { tableRowClasses } from '@mui/material';
+import axios from "axios";
 
 
 
@@ -64,6 +64,14 @@ const ListarVehiculos = () =>
         (
             () => 
             {
+                const options = { method: 'GET', url: 'http://localhost:5000/vehiculos' };
+
+                axios.request(options).then(function (response) {
+                    setVehiculos(response.data);
+                    console.log(response.data);
+                }).catch(function (error) {
+                    console.error(error);
+                });
                 // Obtener lista de vehiculos desde el backend
                 setVehiculos([]);
             }, []
@@ -101,14 +109,14 @@ const ListarVehiculos = () =>
                             {
                                 return (
                                     <tr>
-                                        <td>{vehiculos.Marca}</td>
-                                        <td>{vehiculos.Modelo}</td>
-                                        <td>{vehiculos.Generacion}</td>
-                                        <td>{vehiculos.Serie}</td>
-                                        <td>{vehiculos.Equipamento}</td>
-                                        <td>{vehiculos.Modificacion}</td>
-                                        <td>{vehiculos.Descripcion}</td>
-                                        <td>{vehiculos.Observaciones}</td>
+                                        <td>{vehiculos.marca}</td>
+                                        <td>{vehiculos.modelo}</td>
+                                        <td>{vehiculos.generacion}</td>
+                                        <td>{vehiculos.serie}</td>
+                                        <td>{vehiculos.equipamiento}</td>
+                                        <td>{vehiculos.modificacion}</td>
+                                        <td>{vehiculos.descripcion}</td>
+                                        <td>{vehiculos.observaciones}</td>
                                         <td>
                                             <div className="boxButtons">
                                                 <button type="button mr-3" className="btn btn-success mt-3 mx-4" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">E</button>
@@ -200,7 +208,7 @@ const ListarVehiculos = () =>
                                                                 </label>
                                                             </div>
                                                             <div className="lblTit2">
-                                                                <label className="lblTit">{vehiculos.Marca}
+                                                                <label className="lblTit">{vehiculos.marca}
                                                                 </label>
                                                             </div>
                                                         </div>
@@ -212,7 +220,7 @@ const ListarVehiculos = () =>
                                                                 </label>
                                                             </div>
                                                             <div className="lblTit2">
-                                                                <label className="lblTit">{vehiculos.Modelo}
+                                                                <label className="lblTit">{vehiculos.modelo}
                                                                 </label>
                                                             </div>
                                                         </div>
@@ -224,7 +232,7 @@ const ListarVehiculos = () =>
                                                                 </label>
                                                             </div>
                                                             <div className="lblTit2">
-                                                                <label>{vehiculos.Generacion}
+                                                                <label>{vehiculos.generacion}
                                                                 </label>
                                                             </div>
                                                         </div>
@@ -237,7 +245,7 @@ const ListarVehiculos = () =>
                                                                 </label>
                                                             </div>
                                                             <div className="lblTit2">
-                                                                <label className="lblTit">{vehiculos.Serie}
+                                                                <label className="lblTit">{vehiculos.serie}
                                                                 </label>
                                                             </div>
                                                         </div>
@@ -250,7 +258,7 @@ const ListarVehiculos = () =>
                                                                 </label>
                                                             </div>
                                                             <div className="lblTit2">
-                                                                <label className="lblTit">{vehiculos.Equipamento}
+                                                                <label className="lblTit">{vehiculos.equipamiento}
                                                                 </label>
                                                             </div>
                                                         </div>
@@ -263,7 +271,7 @@ const ListarVehiculos = () =>
                                                                 </label>
                                                             </div>
                                                             <div className="">
-                                                                <label className="lblTit">{vehiculos.Modificacion}
+                                                                <label className="lblTit">{vehiculos.modificacion}
                                                                 </label>
                                                             </div>
                                                         </div>
@@ -278,14 +286,14 @@ const ListarVehiculos = () =>
                                                 <div className="card-body">
                                                     <label className="input-group-text">Descripción
                                                     </label>
-                                                    <p className="card-text">{vehiculos.Descripcion}</p>
+                                                    <p className="card-text">{vehiculos.descripcion}</p>
                                                 </div>
                                             </div>
                                             <div className="card">
                                                 <div className="card-body">
                                                     <label className="input-group-text">Observaciones
                                                     </label>
-                                                    <p className="card-text">{vehiculos.Observaciones}</p>
+                                                    <p className="card-text">{vehiculos.observaciones}</p>
                                                 </div>
                                             </div>
                                             
