@@ -38,6 +38,7 @@ const ventas = () => {
                             <RegistrarVenta />
                         </div>
                         <div className="tab-pane fade colorPaneVt" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+
                             <nav class="navbar navbar-light bg-light searchPosition">
                                 <div class="container-fluid">
                                     <form class="d-flex">
@@ -46,6 +47,7 @@ const ventas = () => {
                                     </form>
                                 </div>
                             </nav>
+
                             <ListarVenta />
                         </div>
                     </div>

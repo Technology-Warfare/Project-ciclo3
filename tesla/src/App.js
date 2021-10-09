@@ -9,7 +9,6 @@ import './App.css';
 import approval from './Pages/approval';
 import dashboard from './Pages/dashboard';
 import home from './Pages/home';
-import infouser from './Pages/infouser';
 import Login from './Pages/login';
 import Registro from './Pages/registro';
 import usuarios from './Pages/usuarios';
@@ -18,7 +17,7 @@ import ventas from './Pages/ventas';
 
 function CircularProgressWithLabel(props) {
   return (
-    <Box position="relative" marginTop={"30%"} marginLeft={"50%"} marginRight={"50%"} display="inline-flex">
+    <Box position="relative" marginTop={"15%"} marginLeft={"50%"} marginRight={"50%"} display="inline-flex">
       <CircularProgress variant="determinate" {...props} />
       <Box
         sx={{
@@ -97,9 +96,6 @@ function App() {
           <Route exact
             path="/approval"
             component={approval} />
-          <Route exact
-            path="/dashboard/usuarios/info"
-            component={infouser} />
         </Switch>
       </BrowserRouter></>
       )}
