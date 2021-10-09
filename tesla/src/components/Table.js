@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
+//import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
 
 const DatosBack = () => {
