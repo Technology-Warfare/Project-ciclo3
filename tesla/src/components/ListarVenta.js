@@ -51,15 +51,18 @@ const ListarVenta = () => {
         (
             () => 
             {
+                
+
                 const options = { method: 'GET', url: 'http://localhost:5000/ventas' };
 
-                axios.request(options).then(function (response) {
+                axios.request(options).then(function (response) {                   
+                    setVentas(response.data);
                     console.log(response.data);
                 }).catch(function (error) {
                     console.error(error);
                 });
                 // Obtener lista de ventas desde el backend
-                  
+                setVentas([]);
             }, []
         )
 
@@ -73,7 +76,7 @@ const ListarVenta = () => {
     return (
         <div>
             
-            
+            <div className="scrollDivTab designDesktopVt">
                
                     <table>
                         <thead>
@@ -108,20 +111,20 @@ const ListarVenta = () => {
 
                                             <tr>
                                                 <td>{ventas.idVenta}</td>
-                                                <td>{ventas.idAutomovil}</td>
-                                                <td>{ventas.NombreCliente}</td>
-                                                <td>{ventas.ApellidoCliente}</td>
-                                                <td>{ventas.EmailCliente}</td>
-                                                <td>{ventas.CelularCliente}</td>
-                                                <td>{ventas.NombreVendedor}</td>
-                                                <td>{ventas.ApellidoVendedor}</td>
-                                                <td>{ventas.EmailVendedor}</td>
-                                                <td>{ventas.CelularVendedor}</td>
-                                                <td>{ventas.PrecioAutomovil}</td>
-                                                <td>{ventas.EstadoVenta}</td>
-                                                <td>{ventas.Cantidad}</td>
-                                                <td>{ventas.Descripcion}</td>
-                                                <td>{ventas.Observaciones}</td>
+                                                <td>{ventas.idAuto}</td>
+                                                <td>{ventas.firstName}</td>
+                                                <td>{ventas.lastName}</td>
+                                                <td>{ventas.email}</td>
+                                                <td>{ventas.celular}</td>
+                                                <td>{ventas.fNVendedor}</td>
+                                                <td>{ventas.lNVendedor}</td>
+                                                <td>{ventas.emailVendedor}</td>
+                                                <td>{ventas.celularVendedor}</td>
+                                                <td>{ventas.precio}</td>
+                                                <td>{ventas.estado}</td>
+                                                <td>{ventas.cantidad}</td>
+                                                <td>{ventas.descripcion}</td>
+                                                <td>{ventas.observacion}</td>
                                                 <td>
                                                     
                                                         
@@ -187,7 +190,7 @@ const ListarVenta = () => {
                              }
                         </tbody>
                     </table>
-                
+            </div>
 
            
 
