@@ -1,10 +1,5 @@
-
-
 import '../Pages/styles/vehiculos.css';
-
-
 import React, { useState, useEffect } from 'react';
-
 import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
@@ -104,13 +99,13 @@ const ListarVehiculos = () =>
 
 
     useEffect
-    (
-        () => 
-        {
-            // Obtener lista de vehiculos desde el fronted
-            setVehiculos(vehiculosBackend);
-        }, []
-    )
+        (
+            () => 
+            {
+                // Obtener lista de vehiculos desde el fronted
+                setVehiculos(vehiculosBackend);
+            }, []
+        )
 
     const TablaVehiculos = ({ listaVehiculos }) => {
         useEffect(() => 
@@ -124,28 +119,26 @@ const ListarVehiculos = () =>
             <div className="designDesktop">
                 <table>
                     <thead>
-                        <th>Marca</th>
-                        <th>Modelo</th>
-                        <th>Generación</th>
-                        <th>Serie</th>
-                        <th>Equipamento</th>
-                        <th>Modificación</th>
-                        <th>Descripción</th>
-                        <th>Observaciones</th>
-                        <th>Actividad</th>
+                        <tr>
+                            <th>Marca</th>
+                            <th>Modelo</th>
+                            <th>Generación</th>
+                            <th>Serie</th>
+                            <th>Equipamento</th>
+                            <th>Modificación</th>
+                            <th>Descripción</th>
+                            <th>Observaciones</th>
+                            <th>Actividad</th>
+                        </tr>
                     </thead>
+                    <tbody>
 
                     { 
-                        listaVehiculos.map
-                        (
+                        listaVehiculos.map(
                             (vehiculos) => 
                             {
-
-
                                 return (
-                                    
-
-                                    <tbody>
+                                    <tr>
                                         <td>{vehiculos.Marca}</td>
                                         <td>{vehiculos.Modelo}</td>
                                         <td>{vehiculos.Generacion}</td>
@@ -206,26 +199,20 @@ const ListarVehiculos = () =>
                                                 </Dialog>
                                             </div>
                                         </td>
-                                    </tbody>
-
-
-
-
-                                    
-
+                                    </tr>
                                 );
 
                             }
                         )
                     }
+                    </tbody>
 
                 </table>
             </div>
 
 
             {
-                listaVehiculos.map
-                (
+                listaVehiculos.map(
                     (vehiculos) => 
                     {
 
@@ -424,4 +411,4 @@ const ListarVehiculos = () =>
 }
 
 
-export default ListarVehiculos
+export default ListarVehiculos;

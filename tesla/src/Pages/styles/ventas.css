@@ -42,15 +42,16 @@
 
     .scrollDivTab{
         width: 100%;
+        height: 1000px;
         overflow:scroll;
         border: 1px solid #666;
-        background-color: rgb(190, 30, 30);
+        background-color: rgb(226, 240, 243);
         padding: 8px;
     }
 }
 
     .colorPaneVt{
-    width: 90%;
+    width: 100%;
     }
 
     .TextHeight{

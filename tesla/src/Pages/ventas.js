@@ -38,6 +38,16 @@ const ventas = () => {
                             <RegistrarVenta />
                         </div>
                         <div className="tab-pane fade colorPaneVt" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+
+                            <nav class="navbar navbar-light bg-light searchPosition">
+                                <div class="container-fluid">
+                                    <form class="d-flex">
+                                        <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" />
+                                        <button class="btn btn-outline-success" type="submit">Buscar</button>
+                                    </form>
+                                </div>
+                            </nav>
+
                             <ListarVenta />
                         </div>
                     </div>

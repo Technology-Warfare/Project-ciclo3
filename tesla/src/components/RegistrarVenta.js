@@ -110,7 +110,7 @@ const RegistrarVenta = () => {
                         <div className="card-body">
                             <h5 className="card-title">Datos cliente</h5>
                             <div className="form-floating">
-                                <input nombre="firstName" onChange={handleChange} type="text" aria-label="First name" className="form-control" id="inputName" />
+                                <input name="firstName" onChange={handleChange} type="text" aria-label="First name" className="form-control" id="inputName" />
                                 <label for="inputName" className="form-label">Nombres</label>
                             </div>
                             <div className="form-floating">
