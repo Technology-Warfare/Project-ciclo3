@@ -2,49 +2,236 @@ import React, { useState, useEffect } from 'react';
 import '../Pages/styles/admv.css';
 import '../Pages/styles/ventas.css';
 import modelS from "../Pages/img/ModelS/models.jpg";
-import Button from '@mui/material/Button';
-import Dialog from '@mui/material/Dialog';
-import DialogActions from '@mui/material/DialogActions';
-import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
-import Slide from '@mui/material/Slide';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import RegistrarVenta from "../components/RegistrarVenta";
 import axios from "axios";
+import { nanoid } from 'nanoid';
+
+
+
+const FilaVenta = ({ventas}) => {
+    console.log('ventas', ventas);
+    const [edit, setEdit] = useState(false);
+    const [infoNuevaVenta, setInfoNuevaVenta] = useState({
+        cantidad: ventas.cantidad,
+        celular: ventas.celular,
+        celularVendedor: ventas.celularVendedor,
+        descripcion: ventas.descripcion,
+        email: ventas.email,
+        emailVendedor: ventas.emailVendedor,
+        estado: ventas.estado,
+        fNVendedor: ventas.fNVendedor,
+        firstName: ventas.firstName,
+        idAuto: ventas.idAuto,
+        idVenta: ventas.idVenta,
+        lNVendedor: ventas.lNVendedor,
+        lastName: ventas.lastName,
+        observacion: ventas.observacion,
+        precio: ventas.precio,
+        
+    })
+
+    const actualizarVenta = async () => {
+        console.log(infoNuevaVenta);
+        //enviar la info al backend
+
+        const options = {
+            method: 'PATCH',
+            url: 'http://localhost:5000/ventas/editar',
+            headers: { 'Content-Type': 'application/json' },
+            data: { ...infoNuevaVenta, id: ventas._id}
+        };
+
+        await axios.request(options).then(function (response) {
+            console.log(response.data);
+            toast.success('Venta modificada con exito')
+            setEdit(false);
+
+        }).catch(function (error) {
+            toast.error('Error en la actualizacion del registro de venta')
+            console.error(error);
+        });
+
+    };
+
+    const eliminarVehiculo = async () => {
+
+        const options = {
+            method: 'DELETE',
+            url: 'http://localhost:5000/ventas/eliminar',
+            headers: { 'Content-Type': 'application/json' },
+            data: { id: ventas._id }
+        };
+
+        await axios.request(options).then(function (response) {
+            toast.success("Registro de venta eliminado satisfactoriamente")
+            console.log(response.data);
+        }).catch(function (error) {
+            toast.error("Error al eliminar el registro de venta")
+            console.error(error);
+        });
+    }
+
+    return (
+        
+            <tr>
+                {
+                    edit ? (
+                    <>
+                    
+                        <td>
+                            <input 
+                                type="text" 
+                                className="InputSize" 
+                                value ={infoNuevaVenta.idVenta}
+                                onChange={(e) => setInfoNuevaVenta({ ...infoNuevaVenta, idVenta: e.target.value})}/>
+                        </td>
+                        <td>
+                            <input 
+                                type="text" 
+                                className="InputSize" 
+                                value={infoNuevaVenta.idAuto} 
+                                onChange={(e) => setInfoNuevaVenta({ ...infoNuevaVenta, idAuto: e.target.value })}/>
+                        </td>
+                        <td>
+                            <input 
+                                type="text" 
+                                className="InputSize" 
+                                value={infoNuevaVenta.firstName} 
+                                onChange={(e) => setInfoNuevaVenta({ ...infoNuevaVenta, firstName: e.target.value })}/>
+                        </td>
+                        <td>
+                            <input 
+                                type="text" 
+                                className="InputSize" 
+                                value={infoNuevaVenta.lastName}
+                                onChange={(e) => setInfoNuevaVenta({ ...infoNuevaVenta, lastName: e.target.value })}/>
+                        </td>
+                        <td>
+                            <input 
+                                type="text" 
+                                className="InputSize" 
+                                value={infoNuevaVenta.email} 
+                                onChange={(e) => setInfoNuevaVenta({ ...infoNuevaVenta, email: e.target.value })}/>
+                        </td>
+                        <td>
+                            <input 
+                                type="text" 
+                                className="InputSize" 
+                                value={infoNuevaVenta.celular} 
+                                onChange={(e) => setInfoNuevaVenta({ ...infoNuevaVenta, celular: e.target.value })}/>
+                        </td>
+                        <td>
+                            <input 
+                                type="text" 
+                                className="InputSize" 
+                                value={infoNuevaVenta.fNVendedor} 
+                                onChange={(e) => setInfoNuevaVenta({ ...infoNuevaVenta, fNVendedor: e.target.value })}/>
+                        </td>
+                        <td>
+                            <input 
+                                type="text" 
+                                className="InputSize" 
+                                value={infoNuevaVenta.lNVendedor} 
+                                onChange={(e) => setInfoNuevaVenta({ ...infoNuevaVenta, lNVendedor: e.target.value })}/>
+                        </td>
+                        <td>
+                            <input 
+                                type="text" 
+                                className="InputSize" 
+                                value={infoNuevaVenta.emailVendedor} 
+                                onChange={(e) => setInfoNuevaVenta({ ...infoNuevaVenta, emailVendedor: e.target.value })}/>
+                        </td>
+                        <td>
+                            <input 
+                                type="text" 
+                                className="InputSize" 
+                                value={infoNuevaVenta.celularVendedor} 
+                                onChange={(e) => setInfoNuevaVenta({ ...infoNuevaVenta, celularVendedor: e.target.value })}/>
+                        </td>
+                        <td>
+                            <input 
+                                type="text" 
+                                className="InputSize" 
+                                dvalue={infoNuevaVenta.precio} 
+                                onChange={(e) => setInfoNuevaVenta({ ...infoNuevaVenta, precio: e.target.value })}/>
+                        </td>
+                        <td>
+                            <input 
+                                type="text" 
+                                className="InputSize" 
+                                value={infoNuevaVenta.estado} 
+                                onChange={(e) => setInfoNuevaVenta({ ...infoNuevaVenta, estado: e.target.value })}/>
+                        </td>
+                        <td>
+                            <input 
+                                type="text" 
+                                className="InputSize" 
+                                value={infoNuevaVenta.cantidad} 
+                                onChange={(e) => setInfoNuevaVenta({ ...infoNuevaVenta, cantidad: e.target.value })}/>
+                        </td>
+                        <td>
+                            <input 
+                                type="text" 
+                                className="InputSize" 
+                                value={infoNuevaVenta.descripcion} 
+                                onChange={(e) => setInfoNuevaVenta({ ...infoNuevaVenta, descripcion: e.target.value })}/>
+                        </td>
+                        <td>
+                            <input 
+                                type="text" 
+                                className="InputSize" 
+                                value={infoNuevaVenta.observacion} 
+                                onChange={(e) => setInfoNuevaVenta({ ...infoNuevaVenta, observacion: e.target.value })}/>
+                        </td>
+                        
+                    </>
+                     ) :(
+                    <>
+                        <td>{ventas.idVenta}</td>
+                        <td>{ventas.idAuto}</td>
+                        <td>{ventas.firstName}</td>
+                        <td>{ventas.lastName}</td>
+                        <td>{ventas.email}</td>
+                        <td>{ventas.celular}</td>
+                        <td>{ventas.fNVendedor}</td>
+                        <td>{ventas.lNVendedor}</td>
+                        <td>{ventas.emailVendedor}</td>
+                        <td>{ventas.celularVendedor}</td>
+                        <td>{ventas.precio}</td>
+                        <td>{ventas.estado}</td>
+                        <td>{ventas.cantidad}</td>
+                        <td>{ventas.descripcion}</td>
+                        <td>{ventas.observacion}</td>
+                    </>
+                )}
+                
+                <td>
+                    {edit? ( 
+                        
+                            <i onClick={() => actualizarVenta()} className="fas fa-check" />
+                        
+                        ):(
+                            <i onClick={() => setEdit(!edit)} className="fas fa-pencil-alt" />
+
+                        )}
+                    <i onClick={() => eliminarVehiculo()} className="fas fa-trash" />
+
+                </td>
+
+
+            </tr>
+        
+    )
+}
 
 
 const ListarVenta = () => {
     const [ventas, setVentas] = useState([]);
-    const Transition = React.forwardRef(function Transition(props, ref) {
-        return <Slide direction="up" ref={ref} {...props} />;
-    });
+    
 
-    const [open, setOpen] = React.useState(false);
 
-    const handleClickOpen = () => {
-        setOpen(true);
-    };
-
-    const handleAceptar = () => {
-        setOpen(false);
-        toast.success('Operación exitosa.', {
-            position: "bottom-center",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-        });
-        window.location = "/dashboard/ventas";
-    };
-
-    const handleClose = (e) => {
-        e.preventDefault();
-        setOpen(false);
-        window.location = "/dashboard/ventas";
-    };
+    
 
 
     useEffect
@@ -67,9 +254,31 @@ const ListarVenta = () => {
         )
 
     const TablaVentas = ({ listaVentas }) => {
+        //const form = useRef(null)
         useEffect(() => {
             console.log("Este es el listado de ventas en el componente de tabla", listaVentas);
         }, [listaVentas])
+
+    const EliminarVenta = () => {
+        const options = {
+            method: 'DELETE',
+            url: 'http://localhost:5000/ventas/eliminar',
+            headers: { 'Content-Type': 'application/json' },
+            data: { id: ventas._id }
+        };
+
+         axios
+            .request(options)
+            .then(function (response) {
+            console.log(response.data);
+                toast.success("Registro de venta eliminada con exito")
+        }).catch(function (error) {
+            console.error(error);
+            toast.error("Error al eliminar el registro de venta")
+        });
+    }         
+
+    
 
 
 
@@ -105,91 +314,14 @@ const ListarVenta = () => {
                                 listaVentas.map(
                                     (ventas) => 
                                     {
-                                        return (
-
-
-
-                                            <tr>
-                                                <td>{ventas.idVenta}</td>
-                                                <td>{ventas.idAuto}</td>
-                                                <td>{ventas.firstName}</td>
-                                                <td>{ventas.lastName}</td>
-                                                <td>{ventas.email}</td>
-                                                <td>{ventas.celular}</td>
-                                                <td>{ventas.fNVendedor}</td>
-                                                <td>{ventas.lNVendedor}</td>
-                                                <td>{ventas.emailVendedor}</td>
-                                                <td>{ventas.celularVendedor}</td>
-                                                <td>{ventas.precio}</td>
-                                                <td>{ventas.estado}</td>
-                                                <td>{ventas.cantidad}</td>
-                                                <td>{ventas.descripcion}</td>
-                                                <td>{ventas.observacion}</td>
-                                                <td>
-                                                    
-                                                        
-                                                            <button type="button" class="btn btn-success buttonEdit" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">E</button>
-                                                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                                                <div class="modal-dialog ModalDialogEdit">
-                                                                    <div class="modal-content">
-                                                                        <div class="modal-header">
-                                                                            <h5 class="modal-title" id="exampleModalLabel">Editar
-                                                                            </h5>
-                                                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-                                                                            </button>
-                                                                        </div>
-                                                                        <div class="modal-body">
-
-                                                                            <RegistrarVenta />
-
-                                                                        </div>
-                                                                        <div class="modal-footer">
-                                                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar
-                                                                            </button>
-                                                                            <button type="button" onClick={handleAceptar} class="btn btn-primary">Guardar
-                                                                            </button>
-                                                                            <ToastContainer />
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        
-                                                        
-                                                            <button type="button" onClick={handleClickOpen} class="btn btn-danger buttonEdit">E
-                                                            </button>
-                                                            <Dialog
-                                                                open={open}
-                                                                TransitionComponent={Transition}
-                                                                keepMounted
-                                                                onClose={handleAceptar}
-                                                                aria-describedby="alert-dialog-slide-description">
-                                                                <DialogContent>
-                                                                    <DialogContentText id="alert-dialog-slide-description">
-                                                                        Estas seguro que deseas realizar esta acción, luego no podrás
-                                                                        recuperar lo perdido.
-                                                                    </DialogContentText>
-                                                                </DialogContent>
-                                                                <DialogActions>
-                                                                    <Button onClick={handleClose}>Cancelar
-                                                                    </Button>
-                                                                    <Button onClick={handleAceptar}>Aceptar
-                                                                    </Button>
-                                                                </DialogActions>
-                                                            </Dialog>
-                                                       
-
-                                                    
-                                                </td>
-
-
-                                            </tr>
-                                        );
+                                        return <FilaVenta key={nanoid()} ventas = {ventas}/>;
                                     }
                                 )
 
                              }
                         </tbody>
                     </table>
+                
             </div>
 
            
@@ -400,57 +532,16 @@ const ListarVenta = () => {
                                         <div class="card">
                                             <div class="card-body">
                                                 <button type="button" class="btn btn-success buttonEdit" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Editar registro</button>
-                                                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                                    <div class="modal-dialog ModalDialogEdit">
-                                                        <div class="modal-content">
-                                                            <div class="modal-header">
-                                                                <h5 class="modal-title" id="exampleModalLabel">Editar
-                                                                </h5>
-                                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-                                                                </button>
-                                                            </div>
-                                                            <div class="modal-body">
-
-                                                                <RegistrarVenta />
-
-                                                            </div>
-                                                            <div class="modal-footer">
-                                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar
-                                                                </button>
-                                                                <button type="button" onClick={handleAceptar} class="btn btn-primary">Guardar
-                                                                </button>
-                                                                <ToastContainer />
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                               
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col">
                                         <div class="card">
                                             <div class="card-body">
-                                                <button type="button" onClick={handleClickOpen} class="btn btn-danger buttonEdit">Eliminar registro
+                                                <button type="button" onClick={() => EliminarVenta()} class="btn btn-danger buttonEdit">Eliminar registro
                                                 </button>
-                                                <Dialog
-                                                    open={open}
-                                                    TransitionComponent={Transition}
-                                                    keepMounted
-                                                    onClose={handleAceptar}
-                                                    aria-describedby="alert-dialog-slide-description">
-                                                    <DialogContent>
-                                                        <DialogContentText id="alert-dialog-slide-description">
-                                                            Estas seguro que deseas realizar esta acción, luego no podrás
-                                                            recuperar lo perdido.
-                                                        </DialogContentText>
-                                                    </DialogContent>
-                                                    <DialogActions>
-                                                        <Button onClick={handleClose}>Cancelar
-                                                        </Button>
-                                                        <Button onClick={handleAceptar}>Aceptar
-                                                        </Button>
-                                                    </DialogActions>
-                                                </Dialog>
+                                               
                                             </div>
                                         </div>
                                     </div>

@@ -49,6 +49,7 @@ const ListarVehiculos = () =>
                 progress: undefined,
             }
         );
+        
         window.location = "/dashboard/vehiculos";
     };
 
