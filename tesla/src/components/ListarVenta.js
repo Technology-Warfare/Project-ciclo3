@@ -9,7 +9,7 @@ import { nanoid } from 'nanoid';
 
 
 
-const FilaVenta = ({ventas}) => {
+const FilaVenta = ({ ventas, setEjecutarConsulta }) => {
     console.log('ventas', ventas);
     const [edit, setEdit] = useState(false);
     const [infoNuevaVenta, setInfoNuevaVenta] = useState({
@@ -28,7 +28,7 @@ const FilaVenta = ({ventas}) => {
         lastName: ventas.lastName,
         observacion: ventas.observacion,
         precio: ventas.precio,
-        
+
     })
 
     const actualizarVenta = async () => {
@@ -39,13 +39,14 @@ const FilaVenta = ({ventas}) => {
             method: 'PATCH',
             url: 'http://localhost:5000/ventas/editar',
             headers: { 'Content-Type': 'application/json' },
-            data: { ...infoNuevaVenta, id: ventas._id}
+            data: { ...infoNuevaVenta, id: ventas._id }
         };
 
         await axios.request(options).then(function (response) {
             console.log(response.data);
             toast.success('Venta modificada con exito')
             setEdit(false);
+            setEjecutarConsulta(true);
 
         }).catch(function (error) {
             toast.error('Error en la actualizacion del registro de venta')
@@ -54,7 +55,7 @@ const FilaVenta = ({ventas}) => {
 
     };
 
-    const eliminarVehiculo = async () => {
+    const EliminarVenta = async () => {
 
         const options = {
             method: 'DELETE',
@@ -66,127 +67,131 @@ const FilaVenta = ({ventas}) => {
         await axios.request(options).then(function (response) {
             toast.success("Registro de venta eliminado satisfactoriamente")
             console.log(response.data);
+            setEjecutarConsulta(true);
         }).catch(function (error) {
             toast.error("Error al eliminar el registro de venta")
             console.error(error);
         });
     }
 
+    
+
+
     return (
-        
-            <tr>
-                {
-                    edit ? (
+
+        <tr>
+            {
+                edit ? (
                     <>
-                    
+
                         <td>
-                            <input 
-                                type="text" 
-                                className="InputSize" 
-                                value ={infoNuevaVenta.idVenta}
-                                onChange={(e) => setInfoNuevaVenta({ ...infoNuevaVenta, idVenta: e.target.value})}/>
+                            <input
+                                type="text"
+                                className="InputSize"
+                                value={infoNuevaVenta.idVenta}
+                                onChange={(e) => setInfoNuevaVenta({ ...infoNuevaVenta, idVenta: e.target.value })} />
                         </td>
                         <td>
-                            <input 
-                                type="text" 
-                                className="InputSize" 
-                                value={infoNuevaVenta.idAuto} 
-                                onChange={(e) => setInfoNuevaVenta({ ...infoNuevaVenta, idAuto: e.target.value })}/>
+                            <input
+                                type="text"
+                                className="InputSize"
+                                value={infoNuevaVenta.idAuto}
+                                onChange={(e) => setInfoNuevaVenta({ ...infoNuevaVenta, idAuto: e.target.value })} />
                         </td>
                         <td>
-                            <input 
-                                type="text" 
-                                className="InputSize" 
-                                value={infoNuevaVenta.firstName} 
-                                onChange={(e) => setInfoNuevaVenta({ ...infoNuevaVenta, firstName: e.target.value })}/>
+                            <input
+                                type="text"
+                                className="InputSize"
+                                value={infoNuevaVenta.firstName}
+                                onChange={(e) => setInfoNuevaVenta({ ...infoNuevaVenta, firstName: e.target.value })} />
                         </td>
                         <td>
-                            <input 
-                                type="text" 
-                                className="InputSize" 
+                            <input
+                                type="text"
+                                className="InputSize"
                                 value={infoNuevaVenta.lastName}
-                                onChange={(e) => setInfoNuevaVenta({ ...infoNuevaVenta, lastName: e.target.value })}/>
+                                onChange={(e) => setInfoNuevaVenta({ ...infoNuevaVenta, lastName: e.target.value })} />
                         </td>
                         <td>
-                            <input 
-                                type="text" 
-                                className="InputSize" 
-                                value={infoNuevaVenta.email} 
-                                onChange={(e) => setInfoNuevaVenta({ ...infoNuevaVenta, email: e.target.value })}/>
+                            <input
+                                type="text"
+                                className="InputSize"
+                                value={infoNuevaVenta.email}
+                                onChange={(e) => setInfoNuevaVenta({ ...infoNuevaVenta, email: e.target.value })} />
                         </td>
                         <td>
-                            <input 
-                                type="text" 
-                                className="InputSize" 
-                                value={infoNuevaVenta.celular} 
-                                onChange={(e) => setInfoNuevaVenta({ ...infoNuevaVenta, celular: e.target.value })}/>
+                            <input
+                                type="text"
+                                className="InputSize"
+                                value={infoNuevaVenta.celular}
+                                onChange={(e) => setInfoNuevaVenta({ ...infoNuevaVenta, celular: e.target.value })} />
                         </td>
                         <td>
-                            <input 
-                                type="text" 
-                                className="InputSize" 
-                                value={infoNuevaVenta.fNVendedor} 
-                                onChange={(e) => setInfoNuevaVenta({ ...infoNuevaVenta, fNVendedor: e.target.value })}/>
+                            <input
+                                type="text"
+                                className="InputSize"
+                                value={infoNuevaVenta.fNVendedor}
+                                onChange={(e) => setInfoNuevaVenta({ ...infoNuevaVenta, fNVendedor: e.target.value })} />
                         </td>
                         <td>
-                            <input 
-                                type="text" 
-                                className="InputSize" 
-                                value={infoNuevaVenta.lNVendedor} 
-                                onChange={(e) => setInfoNuevaVenta({ ...infoNuevaVenta, lNVendedor: e.target.value })}/>
+                            <input
+                                type="text"
+                                className="InputSize"
+                                value={infoNuevaVenta.lNVendedor}
+                                onChange={(e) => setInfoNuevaVenta({ ...infoNuevaVenta, lNVendedor: e.target.value })} />
                         </td>
                         <td>
-                            <input 
-                                type="text" 
-                                className="InputSize" 
-                                value={infoNuevaVenta.emailVendedor} 
-                                onChange={(e) => setInfoNuevaVenta({ ...infoNuevaVenta, emailVendedor: e.target.value })}/>
+                            <input
+                                type="text"
+                                className="InputSize"
+                                value={infoNuevaVenta.emailVendedor}
+                                onChange={(e) => setInfoNuevaVenta({ ...infoNuevaVenta, emailVendedor: e.target.value })} />
                         </td>
                         <td>
-                            <input 
-                                type="text" 
-                                className="InputSize" 
-                                value={infoNuevaVenta.celularVendedor} 
-                                onChange={(e) => setInfoNuevaVenta({ ...infoNuevaVenta, celularVendedor: e.target.value })}/>
+                            <input
+                                type="text"
+                                className="InputSize"
+                                value={infoNuevaVenta.celularVendedor}
+                                onChange={(e) => setInfoNuevaVenta({ ...infoNuevaVenta, celularVendedor: e.target.value })} />
                         </td>
                         <td>
-                            <input 
-                                type="text" 
-                                className="InputSize" 
-                                dvalue={infoNuevaVenta.precio} 
-                                onChange={(e) => setInfoNuevaVenta({ ...infoNuevaVenta, precio: e.target.value })}/>
+                            <input
+                                type="text"
+                                className="InputSize"
+                                dvalue={infoNuevaVenta.precio}
+                                onChange={(e) => setInfoNuevaVenta({ ...infoNuevaVenta, precio: e.target.value })} />
                         </td>
                         <td>
-                            <input 
-                                type="text" 
-                                className="InputSize" 
-                                value={infoNuevaVenta.estado} 
-                                onChange={(e) => setInfoNuevaVenta({ ...infoNuevaVenta, estado: e.target.value })}/>
+                            <input
+                                type="text"
+                                className="InputSize"
+                                value={infoNuevaVenta.estado}
+                                onChange={(e) => setInfoNuevaVenta({ ...infoNuevaVenta, estado: e.target.value })} />
                         </td>
                         <td>
-                            <input 
-                                type="text" 
-                                className="InputSize" 
-                                value={infoNuevaVenta.cantidad} 
-                                onChange={(e) => setInfoNuevaVenta({ ...infoNuevaVenta, cantidad: e.target.value })}/>
+                            <input
+                                type="text"
+                                className="InputSize"
+                                value={infoNuevaVenta.cantidad}
+                                onChange={(e) => setInfoNuevaVenta({ ...infoNuevaVenta, cantidad: e.target.value })} />
                         </td>
                         <td>
-                            <input 
-                                type="text" 
-                                className="InputSize" 
-                                value={infoNuevaVenta.descripcion} 
-                                onChange={(e) => setInfoNuevaVenta({ ...infoNuevaVenta, descripcion: e.target.value })}/>
+                            <input
+                                type="text"
+                                className="InputSize"
+                                value={infoNuevaVenta.descripcion}
+                                onChange={(e) => setInfoNuevaVenta({ ...infoNuevaVenta, descripcion: e.target.value })} />
                         </td>
                         <td>
-                            <input 
-                                type="text" 
-                                className="InputSize" 
-                                value={infoNuevaVenta.observacion} 
-                                onChange={(e) => setInfoNuevaVenta({ ...infoNuevaVenta, observacion: e.target.value })}/>
+                            <input
+                                type="text"
+                                className="InputSize"
+                                value={infoNuevaVenta.observacion}
+                                onChange={(e) => setInfoNuevaVenta({ ...infoNuevaVenta, observacion: e.target.value })} />
                         </td>
-                        
+
                     </>
-                     ) :(
+                ) : (
                     <>
                         <td>{ventas.idVenta}</td>
                         <td>{ventas.idAuto}</td>
@@ -205,88 +210,76 @@ const FilaVenta = ({ventas}) => {
                         <td>{ventas.observacion}</td>
                     </>
                 )}
-                
-                <td>
-                    {edit? ( 
-                        
-                            <i onClick={() => actualizarVenta()} className="fas fa-check" />
-                        
-                        ):(
-                            <i onClick={() => setEdit(!edit)} className="fas fa-pencil-alt" />
 
-                        )}
-                    <i onClick={() => eliminarVehiculo()} className="fas fa-trash" />
+            <td>
+                {edit ? (
 
-                </td>
+                    <i onClick={() => actualizarVenta()} className="fas fa-check" />
+
+                ) : (
+                    <i onClick={() => setEdit(!edit)} className="fas fa-pencil-alt" />
+
+                )}
+                <i onClick={() => EliminarVenta()} className="fas fa-trash" />
+
+            </td>
 
 
-            </tr>
-        
+        </tr>
+
     )
 }
 
 
 const ListarVenta = () => {
     const [ventas, setVentas] = useState([]);
-    
+    const [ejecutarConsulta, setEjecutarConsulta] = useState(true);
 
 
-    
+    useEffect(() => {
+        const obtenerVentas = async () => {
 
 
-    useEffect
-        (
-            () => 
-            {
-                
+            const options = { method: 'GET', url: 'http://localhost:5000/ventas' };
 
-                const options = { method: 'GET', url: 'http://localhost:5000/ventas' };
+            await axios.request(options).then(function (response) {
+                setVentas(response.data);
+                console.log(response.data);
+            }).catch(function (error) {
+                console.error(error);
+            });
+        };
+        if (ejecutarConsulta) {
+            obtenerVentas();
+            setEjecutarConsulta(false);
+        }
+    }, [ejecutarConsulta]);
 
-                axios.request(options).then(function (response) {                   
-                    setVentas(response.data);
-                    console.log(response.data);
-                }).catch(function (error) {
-                    console.error(error);
-                });
-                // Obtener lista de ventas desde el backend
-                setVentas([]);
-            }, []
-        )
 
-    const TablaVentas = ({ listaVentas }) => {
+    useEffect(() => {
+
+        setEjecutarConsulta(true);
+        // Obtener lista de ventas desde el backend
+
+    }, []);
+
+    const TablaVentas = ({ listaVentas, setEjecutarConsulta }) => {
         //const form = useRef(null)
         useEffect(() => {
             console.log("Este es el listado de ventas en el componente de tabla", listaVentas);
         }, [listaVentas])
 
-    const EliminarVenta = () => {
-        const options = {
-            method: 'DELETE',
-            url: 'http://localhost:5000/ventas/eliminar',
-            headers: { 'Content-Type': 'application/json' },
-            data: { id: ventas._id }
-        };
-
-         axios
-            .request(options)
-            .then(function (response) {
-            console.log(response.data);
-                toast.success("Registro de venta eliminada con exito")
-        }).catch(function (error) {
-            console.error(error);
-            toast.error("Error al eliminar el registro de venta")
-        });
-    }         
-
-    
+        
 
 
 
-    return (
-        <div>
-            
-            <div className="scrollDivTab designDesktopVt">
-               
+
+
+        return (
+            <div>
+
+                <div className="scrollDivTab designDesktopVt">
+
                     <table>
                         <thead>
                             <tr>
@@ -312,290 +305,299 @@ const ListarVenta = () => {
 
                             {
                                 listaVentas.map(
-                                    (ventas) => 
-                                    {
-                                        return <FilaVenta key={nanoid()} ventas = {ventas}/>;
+                                    (ventas) => {
+                                        return <FilaVenta key={nanoid()} ventas={ventas} setEjecutarConsulta={setEjecutarConsulta} />;
                                     }
                                 )
 
-                             }
+                            }
                         </tbody>
                     </table>
-                
+
+                </div>
+
+
+
+
+
+
+                {
+                    listaVentas.map(
+                        (ventas) => {
+
+
+                            return (
+                                <>
+                                    <div className="designMovil">
+
+                                        <div class="row row-cols-1 row-cols-md-3 g-4">
+                                            <div class="col">
+                                                <div class="card">
+                                                    <img src={modelS} alt="img1" />
+
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="card">
+                                                    <div class="card-body">
+                                                        <div className="tit">
+                                                            <div className="lblTit1">
+                                                                <label className="input-group-text">Id Venta
+                                                                </label>
+                                                            </div>
+                                                            <div className="lblTit2">
+                                                                <label className="lblTit">{ventas.idVenta}
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="card">
+                                                    <div class="card-body">
+                                                        <div className="tit">
+                                                            <div className="lblTit1">
+                                                                <label className="input-group-text">Cantidad
+                                                                </label>
+                                                            </div>
+                                                            <div className="lblTit2">
+                                                                <label className="lblTit">{ventas.cantidad}
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="card">
+                                                    <div class="card-body">
+                                                        <div className="tit">
+                                                            <div className="lblTit1">
+                                                                <label className="input-group-text">Valor
+                                                                </label>
+                                                            </div>
+                                                            <div className="lblTit2">
+                                                                <label>{ventas.precio}
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="card">
+                                                    <div class="card-body">
+                                                        <div className="tit">
+                                                            <div className="lblTit1">
+                                                                <label className="input-group-text">ID Automovil
+                                                                </label>
+                                                            </div>
+                                                            <div className="lblTit2">
+                                                                <label className="lblTit">{ventas.idAuto}
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="card">
+                                                    <div class="card-body">
+                                                        <div className="tit">
+                                                            <div className="lblTit1">
+                                                                <label className="input-group-text">Estado
+                                                                </label>
+                                                            </div>
+                                                            <div className="lblTit2">
+                                                                <label className="lblTit">{ventas.estado}
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="card">
+                                                    <div class="card-body">
+                                                        <label className="input-group-text">Descripción
+                                                        </label>
+                                                        <p class="card-text">{ventas.descripcion}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="card">
+                                                    <div class="card-body">
+                                                        <label className="input-group-text">Observaciones
+                                                        </label>
+                                                        <p class="card-text">{ventas.observacion}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col">
+                                                <div class="card">
+                                                    <div class="card-body">
+                                                        <div className="tit1">
+                                                            <div className="lblTit1">
+                                                                <span className="input-group-text">Vendedor</span>
+                                                            </div>
+                                                            <div>
+                                                                <label className="padName">{ventas.fNVendedor} {ventas.lNVendedor}
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="card">
+                                                    <div class="card-body">
+                                                        <div className="form-floating">
+                                                            <label className="form-control">{ventas.emailVendedor}
+                                                            </label>
+                                                            <input type="email" className="form-control" id="inputEmail" />
+                                                            <label for="inputEmail" className="form-label">Email
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="card">
+                                                    <div class="card-body">
+                                                        <div className="form-floating">
+                                                            <label className="form-control">{ventas.celularVendedor}
+                                                            </label>
+                                                            <input type="text" className="form-control" id="celular" />
+                                                            <label for="celular" className="form-label">Celular
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="card">
+                                                    <div class="card-body">
+                                                        <div className="tit1">
+                                                            <div className="lblTit1">
+                                                                <span className="input-group-text">Cliente</span>
+                                                            </div>
+                                                            <div>
+                                                                <label className="padName">{ventas.firstName} {ventas.lastName}
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="card">
+                                                    <div class="card-body">
+                                                        <div className="form-floating">
+                                                            <label className="form-control">{ventas.email}
+                                                            </label>
+                                                            <input type="email" className="form-control" id="inputEmail" />
+                                                            <label for="inputEmail" className="form-label">Email
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="card">
+                                                    <div class="card-body">
+                                                        <div className="form-floating">
+                                                            <label className="form-control">{ventas.celular}
+                                                            </label>
+                                                            <input type="text" className="form-control" id="celular" />
+                                                            <label for="celular" className="form-label">Celular
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col">
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <button type="button" class="btn btn-success buttonEdit" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Editar registro</button>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <button type="button" class="btn btn-danger buttonEdit">Eliminar registro
+                                                    </button>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                    </div>
+                                </>
+                            );
+                        }
+                    )
+                }
+
+
+
+
             </div>
 
-           
-
-            
-
-                        
-            {
-                listaVentas.map(
-                    (ventas) => {
-
-
-                        return (
-                            <>
-                                <div className="designMovil">
-
-                                    <div class="row row-cols-1 row-cols-md-3 g-4">
-                                        <div class="col">
-                                            <div class="card">
-                                                <img src={modelS} alt="img1" />
-                                               
-                                            </div>
-                                        </div>
-                                        <div class="col">
-                                            <div class="card">
-                                                <div class ="card-body">
-                                                    <div className="tit">
-                                                        <div className="lblTit1">
-                                                            <label className="input-group-text">Id Venta
-                                                            </label>
-                                                        </div>
-                                                        <div className="lblTit2">
-                                                            <label className="lblTit">{ventas.idVenta}
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col">
-                                            <div class="card">
-                                                <div class ="card-body">
-                                                    <div className="tit">
-                                                        <div className="lblTit1">
-                                                            <label className="input-group-text">Cantidad
-                                                            </label>
-                                                        </div>
-                                                        <div className="lblTit2">
-                                                            <label className="lblTit">{ventas.cantidad}
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col">
-                                            <div class="card">
-                                                <div class ="card-body">
-                                                    <div className="tit">
-                                                        <div className="lblTit1">
-                                                            <label className="input-group-text">Valor
-                                                            </label>
-                                                        </div>
-                                                        <div className="lblTit2">
-                                                            <label>{ventas.precio}
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col">
-                                            <div class="card">
-                                                <div class="card-body">
-                                                    <div className="tit">
-                                                        <div className="lblTit1">
-                                                            <label className="input-group-text">ID Automovil
-                                                            </label>
-                                                        </div>
-                                                        <div className="lblTit2">
-                                                            <label className="lblTit">{ventas.idAuto}
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col">
-                                            <div class="card">
-                                                <div class="card-body">
-                                                    <div className="tit">
-                                                        <div className="lblTit1">
-                                                            <label className="input-group-text">Estado
-                                                            </label>
-                                                        </div>
-                                                        <div className="lblTit2">
-                                                            <label className="lblTit">{ventas.estado}
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col">
-                                            <div class="card">
-                                                <div class="card-body">
-                                                    <label className="input-group-text">Descripción
-                                                    </label>
-                                                    <p class="card-text">{ventas.descripcion}</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col">
-                                            <div class="card">
-                                                <div class="card-body">
-                                                    <label className="input-group-text">Observaciones
-                                                    </label>
-                                                    <p class="card-text">{ventas.observacion}</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                       
-                                        <div class="col">
-                                            <div class="card">
-                                                <div class="card-body">
-                                                    <div className="tit1">
-                                                        <div className="lblTit1">
-                                                            <span className="input-group-text">Vendedor</span>
-                                                        </div>
-                                                        <div>
-                                                            <label className="padName">{ventas.fNVendedor} {ventas.lNVendedor}
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col">
-                                            <div class="card">
-                                                <div class="card-body">
-                                                    <div className="form-floating">
-                                                        <label className="form-control">{ventas.emailVendedor}
-                                                        </label>
-                                                        <input type="email" className="form-control" id="inputEmail" />
-                                                        <label for="inputEmail" className="form-label">Email
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col">
-                                            <div class="card">
-                                                <div class="card-body">
-                                                    <div className="form-floating">
-                                                        <label className="form-control">{ventas.celularVendedor}
-                                                        </label>
-                                                        <input type="text" className="form-control" id="celular" />
-                                                        <label for="celular" className="form-label">Celular
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col">
-                                            <div class="card">
-                                                <div class="card-body">
-                                                    <div className="tit1">
-                                                        <div className="lblTit1">
-                                                            <span className="input-group-text">Cliente</span>
-                                                        </div>
-                                                        <div>
-                                                            <label className="padName">{ventas.firstName} {ventas.lastName}
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col">
-                                            <div class="card">
-                                                <div class="card-body">
-                                                    <div className="form-floating">
-                                                        <label className="form-control">{ventas.email}
-                                                        </label>
-                                                        <input type="email" className="form-control" id="inputEmail" />
-                                                        <label for="inputEmail" className="form-label">Email
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col">
-                                            <div class="card">
-                                                <div class="card-body">
-                                                    <div className="form-floating">
-                                                        <label className="form-control">{ventas.celular}
-                                                        </label>
-                                                        <input type="text" className="form-control" id="celular" />
-                                                        <label for="celular" className="form-label">Celular
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col">
-                                        <div class="card">
-                                            <div class="card-body">
-                                                <button type="button" class="btn btn-success buttonEdit" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Editar registro</button>
-                                               
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col">
-                                        <div class="card">
-                                            <div class="card-body">
-                                                <button type="button" onClick={() => EliminarVenta()} class="btn btn-danger buttonEdit">Eliminar registro
-                                                </button>
-                                               
-                                            </div>
-                                        </div>
-                                    </div>
 
 
 
 
-
-
-
-
-
-
-                                
-                                   
-
-                                   
-
-
-
-
-
-                                   
-
-                                </div>
-                            </>
-                        );
-                    }
-                )
-            }
-
-                       
-
-            
-        </div>
-
-
-
-
-
-    );
-};
+        );
+    };
     return (
 
         <div>
-            <TablaVentas listaVentas={ventas} />
-
+            <TablaVentas listaVentas={ventas} setEjecutarConsulta={setEjecutarConsulta} />
+            <ToastContainer
+                position="bottom-center"
+                autoClose={2500}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                draggable
+            />
         </div>
 
 
 
     )
+
 }
 
 
 
 export default ListarVenta;
+
