@@ -6,7 +6,8 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from "axios";
 import { nanoid } from 'nanoid';
-
+import { Tooltip } from '@material-ui/core';
+import { Dialog } from '@material-ui/core'; 
 
 
 
@@ -74,6 +75,19 @@ const ListarVenta = () => {
 
 }
 const TablaVentas = ({ listaVentas, setEjecutarConsulta }) => {
+    const [busqueda, setBusqueda] = useState('');
+    const [ventasFilatradas, setVentasFiltradas] = useState(listaVentas);
+    useEffect(() => {
+        console.log('busqueda', busqueda);
+        console.log("Lista original", listaVentas);
+        setVentasFiltradas(
+            listaVentas.filter(elemento=>{
+                console.log("elemento", elemento);
+                return JSON.stringify(elemento).toLowerCase().includes(busqueda.toLowerCase()); 
+            })
+        );
+    }, [busqueda, listaVentas]);
+ 
     //const form = useRef(null)
     useEffect(() => {
         console.log("Este es el listado de ventas en el componente de tabla", listaVentas);
@@ -87,7 +101,18 @@ const TablaVentas = ({ listaVentas, setEjecutarConsulta }) => {
 
     return (
         <div>
-
+            <div class="container-fluid">
+                <form class="d-flex">
+                    <input 
+                    value={busqueda}
+                    onChange={(e) => setBusqueda(e.target.value)}
+                    class="form-control me-2" 
+                    type="search"
+                     placeholder="Buscar" 
+                     aria-label="Search" />
+                    <button class="btn btn-outline-success" type="submit">Buscar</button>
+                </form>
+            </div>
             <div className="scrollDivTab designDesktopVt">
 
                 <table>
@@ -114,7 +139,7 @@ const TablaVentas = ({ listaVentas, setEjecutarConsulta }) => {
                     <tbody>
 
                         {
-                            listaVentas.map(
+                            ventasFilatradas.map(
                                 (ventas) => {
                                     return <FilaVenta key={nanoid()} ventas={ventas} setEjecutarConsulta={setEjecutarConsulta} />;
                                 }
@@ -390,6 +415,7 @@ const TablaVentas = ({ listaVentas, setEjecutarConsulta }) => {
 const FilaVenta = ({ ventas, setEjecutarConsulta }) => {
     console.log('ventas', ventas);
     const [edit, setEdit] = useState(false);
+    const [openDialog, setOpenDialog] = useState(false);
     const [infoNuevaVenta, setInfoNuevaVenta] = useState({
         cantidad: ventas.cantidad,
         celular: ventas.celular,
@@ -451,6 +477,7 @@ const FilaVenta = ({ ventas, setEjecutarConsulta }) => {
             toast.error("Error al eliminar el registro de venta")
             console.error(error);
         });
+        setOpenDialog(false);
 
     }
 
@@ -592,14 +619,33 @@ const FilaVenta = ({ ventas, setEjecutarConsulta }) => {
 
             <td>
                 {edit ? (
-
-                    <i onClick={() => actualizarVenta()} className="fas fa-check" />
-
+                    <>
+                        <Tooltip title= "Confirmar edición">
+                            <i onClick={() => actualizarVenta()} className="fas fa-check" />
+                        </Tooltip>
+                        <Tooltip title= "Cancelar edición">
+                            <i onClick={() => actualizarVenta(false)} className="fas fa-ban" />
+                        </Tooltip>
+                    </>
                 ) : (
-                    <i onClick={() => setEdit(!edit)} className="fas fa-pencil-alt" />
+                    <>
+                        <Tooltip title= "Editar Registro de Venta">
+                            <i onClick={() => setEdit(!edit)} className="fas fa-pencil-alt" />
+                        </Tooltip>
 
+                        <Tooltip title= "Eliminar Registro deVenta">
+                            <i onClick={() => setOpenDialog(true)} className="fas fa-trash" />
+                        </Tooltip>
+                    </>
                 )}
-                <i onClick={() => EliminarVenta()} className="fas fa-trash" />
+                
+                <Dialog open={openDialog}>
+                    <div>
+                        <h4>¿Confirma la eliminación de este registro?</h4> 
+                        <button onClick={() => EliminarVenta()}>Si</button>
+                        <button onClick={()=>setOpenDialog(false)}>No</button>
+                    </div>
+                </Dialog>
 
             </td>
 
