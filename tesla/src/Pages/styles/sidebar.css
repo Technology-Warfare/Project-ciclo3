@@ -15,11 +15,15 @@ ul{
 
 
 .liu{
+    padding-top: 10%;
     height: 100%;
+    padding-bottom: 5%;
     color:white;
     background-color: rgb(179, 179, 253);
     font-size: 15px;
     margin-bottom: 10%;
+    margin-right: 15%;
+    border-radius: 30px;
 }
 
 
@@ -32,10 +36,13 @@ ul{
 
 
 .ButtonSidebar{
-    border-radius: 20px;
-    padding-top: 10px;
+    border-radius: 10px;
     width: 100%;
     border-color: whitesmoke;
+    font-size: 1.3rem;
+    font-family:sans-serif;
+    border: 3px;
+    background-color: Transparent;
+
         
 }
-

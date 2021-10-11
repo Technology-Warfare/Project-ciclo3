@@ -7,21 +7,21 @@ const Sidebar = () => {
         <div className="sidebar">
             <ul className='mt-4'>
                 <li>
-                    <Link to="/" style={{ textDecoration: 'none' }}><div className='liu'><button type="button" class="btn  ButtonSidebar">Home</button></div></Link>
+                    <Link to="/" style={{ textDecoration: 'none' }}><div className='liu'><button type="button" class="ButtonSidebar">Home</button></div></Link>
                 </li>
                 
                 <li>                   
-                    <Link to="/dashboard/ventas" style={{ textDecoration: 'none' }}><div className='liu' > <button type="button" class="btn  ButtonSidebar">Ventas</button></div></Link>  
+                    <Link to="/dashboard/ventas" style={{ textDecoration: 'none' }}><div className='liu' > <button type="button" class="ButtonSidebar">Ventas</button></div></Link>  
                 </li>
                 <li>
-                    <Link to="/dashboard/vehiculos" style={{ textDecoration: 'none' }}><div className='liu'><button type="button" class="btn  ButtonSidebar">Vehiculos
+                    <Link to="/dashboard/vehiculos" style={{ textDecoration: 'none' }}><div className='liu'><button type="button" class="ButtonSidebar">Vehiculos
                     </button></div></Link>
                 </li>
                 <li>
-                    <Link to="/dashboard/usuarios" style={{ textDecoration: 'none' }}><div className='liu'><button type="button" class="btn  ButtonSidebar">Usuarios </button></div></Link>
+                    <Link to="/dashboard/usuarios" style={{ textDecoration: 'none' }}><div className='liu'><button type="button" class="ButtonSidebar">Usuarios </button></div></Link>
                 </li>
                 <li>
-                    <Link to="/dashboard/" style={{ textDecoration: 'none' }}><div className='liu' ><button type="button" class="btn  ButtonSidebar">Dashboard</button></div></Link>
+                    <Link to="/dashboard/" style={{ textDecoration: 'none' }}><div className='liu' ><button type="button" class="ButtonSidebar">Dashboard</button></div></Link>
                 </li>
             </ul>
         </div>
