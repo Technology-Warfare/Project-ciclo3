@@ -164,12 +164,12 @@ const RegistrarVenta = () => {
                             <div className="form-floating">
                                 <select name="estado" onChange={handleChange} className="form-select" id="inEstado">
                                     <option selected>Seleccione</option>
-                                    <option value="1">Creacion</option>
-                                    <option value="2">Embalaje</option>
-                                    <option value="3">Despacho</option>
-                                    <option value="4">Ruta</option>
-                                    <option value="5">Ubicación</option>
-                                    <option value="6">Recepción</option>
+                                    <option value="Creacion">Creacion</option>
+                                    <option value="Embalaje">Embalaje</option>
+                                    <option value="Despacho">Despacho</option>
+                                    <option value="Ruta">Ruta</option>
+                                    <option value="Ubicación">Ubicación</option>
+                                    <option value="Recepción">Recepción</option>
                                 </select>
                                 <label className="form-label" for="inEstado">Estado Venta</label>
                             </div>
