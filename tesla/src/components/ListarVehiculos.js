@@ -1,11 +1,5 @@
 import '../Pages/styles/vehiculos.css';
 import React, { useState, useEffect } from 'react';
-import Button from '@mui/material/Button';
-import Dialog from '@mui/material/Dialog';
-import DialogActions from '@mui/material/DialogActions';
-import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
-import Slide from '@mui/material/Slide';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import modelS from "../Pages/img/ModelS/models.jpg";
@@ -13,81 +7,120 @@ import RegistrarVehiculo from "../components/RegistrarVehiculo";
 //import { tableRowClasses } from '@mui/material';
 import axios from "axios";
 
+import { nanoid } from 'nanoid';
+import { Tooltip } from '@material-ui/core';
+import { Dialog } from '@material-ui/core';
 
 
-const ListarVehiculos = () => 
-{
+const ListarVehiculos = () => {
     const [vehiculos, setVehiculos] = useState([]);
-    const Transition = React.forwardRef
-    (
-        function Transition(props, ref) 
-        {
-            return <Slide direction="up" ref={ref} {...props} />;
+    const [ejecutarConsulta, setEjecutarConsulta] = useState(true);
+
+
+    useEffect(() => {
+        const obtenerVehiculos = async () => {
+
+            
+            const options = {
+                method: 'GET',
+                url: 'http://localhost:5000/vehiculos',
+                headers: { 'Content-Type': 'application/json' }
+            };
+
+            await axios.request(options).then(function (response) {
+                setVehiculos(response.data);
+                console.log(response.data);
+            }).catch(function (error) {
+                console.error(error);
+            });
+
+
+
+        };
+        if (ejecutarConsulta) {
+            obtenerVehiculos();
+            setEjecutarConsulta(false);
         }
-    );
+    }, [ejecutarConsulta]);
 
-    const [open, setOpen] = React.useState(false);
 
-    const handleClickOpen = () => 
-    {
-        setOpen(true);
-    };
+    useEffect(() => {
 
-    const handleAceptar = () => 
-    {
-        setOpen(false);
-        toast.success
-        (
-            'Operación exitosa.', 
-            {
-                position: "bottom-center",
-                autoClose: 5000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-            }
+        setEjecutarConsulta(true);
+        // Obtener lista de ventas desde el backend
+
+    }, []);
+
+
+
+
+
+
+
+
+
+
+    return (
+
+        <div>
+            <TablaVehiculos listaVehiculos={vehiculos} setEjecutarConsulta={setEjecutarConsulta} />
+            <ToastContainer
+                position="bottom-center"
+                autoClose={2500}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                draggable
+            />
+        </div>
+
+
+
+    )
+
+}
+
+
+
+
+
+const TablaVehiculos = ({ listaVehiculos, setEjecutarConsulta }) => {
+    const [busqueda, setBusqueda] = useState('');
+    const [vehiculosFiltrados, setVehiculosFiltrados] = useState(listaVehiculos);
+    useEffect(() => {
+        console.log('busqueda', busqueda);
+        console.log("Lista original", listaVehiculos);
+        setVehiculosFiltrados(
+            listaVehiculos.filter(elemento => {
+                console.log("elemento", elemento);
+                return JSON.stringify(elemento).toLowerCase().includes(busqueda.toLowerCase());
+            })
         );
-        
-        window.location = "/dashboard/vehiculos";
-    };
+    }, [busqueda, listaVehiculos]);
 
-    const handleClose = (e) => 
-    {
-        e.preventDefault();
-        setOpen(false);
-        window.location = "/dashboard/vehiculos";
-    };
-
-
-    useEffect
-        (
-            () => 
-            {
-                const options = { method: 'GET', url: 'http://localhost:5000/vehiculos' };
-
-                axios.request(options).then(function (response) {
-                    setVehiculos(response.data);
-                    console.log(response.data);
-                }).catch(function (error) {
-                    console.error(error);
-                });
-                // Obtener lista de vehiculos desde el backend
-                setVehiculos([]);
-            }, []
-        )
-
-    const TablaVehiculos = ({ listaVehiculos }) => {
-        useEffect(() => 
-        {
-            console.log("Este es el listado de vehiculos en el componente de tabla", listaVehiculos);
-        }, [listaVehiculos])
+    //const form = useRef(null)
+    useEffect(() => {
+        console.log("Este es el listado de vehiculos en el componente de tabla", listaVehiculos);
+    }, [listaVehiculos])
 
 
     return (
         <div>
-            <div className="designDesktop">
+            <div class="container-fluid">
+                <form class="d-flex">
+                    <input
+                        value={busqueda}
+                        onChange={(e) => setBusqueda(e.target.value)}
+                        class="form-control me-2"
+                        type="search"
+                        placeholder="Buscar"
+                        aria-label="Search" />
+                    <button class="btn btn-outline-success" type="submit">Buscar</button>
+                </form>
+            </div>
+            
+
                 <table>
                     <thead>
                         <tr>
@@ -99,93 +132,32 @@ const ListarVehiculos = () =>
                             <th>Modificación</th>
                             <th>Descripción</th>
                             <th>Observaciones</th>
-                            <th>Actividad</th>
+                            <th>Acciones</th>
                         </tr>
                     </thead>
                     <tbody>
 
-                    { 
-                        listaVehiculos.map(
-                            (vehiculos) => 
-                            {
-                                return (
-                                    <tr>
-                                        <td>{vehiculos.marca}</td>
-                                        <td>{vehiculos.modelo}</td>
-                                        <td>{vehiculos.generacion}</td>
-                                        <td>{vehiculos.serie}</td>
-                                        <td>{vehiculos.equipamiento}</td>
-                                        <td>{vehiculos.modificacion}</td>
-                                        <td>{vehiculos.descripcion}</td>
-                                        <td>{vehiculos.observaciones}</td>
-                                        <td>
-                                            <div className="boxButtons">
-                                                <button type="button mr-3" className="btn btn-success mt-3 mx-4" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">E</button>
-                                                <div className="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                                    <div className="modal-dialog ModalDialogEdit">
-                                                        <div className="modal-content">
-                                                            <div className="modal-header">
-                                                                <h5 className="modal-title" id="exampleModalLabel">Editar</h5>
-                                                                <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close">
-                                                                </button>
-                                                            </div>
-                                                            <div className="modal-body">
+                        {
+                            vehiculosFiltrados.map(
+                                (vehiculos) => {
+                                    return <FilaVehiculo key={nanoid()} vehiculos={vehiculos} setEjecutarConsulta={setEjecutarConsulta} />;
+                                }
+                            )
 
-                                                                <RegistrarVehiculo />
-
-
-                                                            </div>
-                                                            <div className="modal-footer">
-                                                                <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Cancelar
-                                                                </button>
-                                                                <button type="button" onClick={handleAceptar} className="btn btn-primary">Guardar
-                                                                </button>
-                                                                <ToastContainer />
-                                                            </div>
-                                                        </div>
-
-                                                    </div>
-
-                                                </div>
-
-
-                                                <button type="button" onClick={handleClickOpen} className="btn btn-danger mt-3">E
-                                                </button>
-                                                <Dialog
-                                                    open={open}
-                                                    TransitionComponent={Transition}
-                                                    keepMounted
-                                                    onClose={handleAceptar}
-                                                    aria-describedby="alert-dialog-slide-description">
-                                                    <DialogContent>
-                                                        <DialogContentText id="alert-dialog-slide-description">
-                                                            Estas seguro que deseas realizar esta acción, luego no podrás recuperar lo perdido.
-                                                        </DialogContentText>
-                                                    </DialogContent>
-                                                    <DialogActions>
-                                                        <Button onClick={handleClose}>Cancelar
-                                                        </Button>
-                                                        <Button onClick={handleAceptar}>Aceptar</Button>
-                                                    </DialogActions>
-                                                </Dialog>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                );
-
-                            }
-                        )
-                    }
+                        }
                     </tbody>
-
                 </table>
-            </div>
+
+            
+
+
+
+
 
 
             {
                 listaVehiculos.map(
-                    (vehiculos) => 
-                    {
+                    (vehiculos) => {
 
 
                         return (
@@ -201,7 +173,7 @@ const ListarVehiculos = () =>
                                         <div className="Form">
                                             <div className="cardData">
                                                 <ul className="list-group list-group-flush">
-                                                    
+
                                                     <li className="list-group-item">
                                                         <div className="tit">
                                                             <div className="lblTit1">
@@ -277,7 +249,7 @@ const ListarVehiculos = () =>
                                                             </div>
                                                         </div>
                                                     </li>
-                                                    
+
 
                                                 </ul>
                                             </div>
@@ -297,7 +269,7 @@ const ListarVehiculos = () =>
                                                     <p className="card-text">{vehiculos.observaciones}</p>
                                                 </div>
                                             </div>
-                                            
+
                                         </div>
                                     </div>
 
@@ -305,51 +277,10 @@ const ListarVehiculos = () =>
                                         <div className="Form">
                                             <div className="boxButtons">
                                                 <button type="button mr-3" className="btn btn-success mt-3 mx-4" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Editar registro</button>
-                                                <div className="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                                    <div className="modal-dialog ModalDialogEdit">
-                                                        <div className="modal-content">
-                                                            <div className="modal-header">
-                                                                <h5 className="modal-title" id="exampleModalLabel">Editar</h5>
-                                                                <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close">
-                                                                </button>
-                                                            </div>
-                                                            <div className="modal-body">
+                                                
 
-                                                                <RegistrarVehiculo />
-
-
-                                                            </div>
-                                                            <div className="modal-footer">
-                                                                <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                                                                <button type="button" onClick={handleAceptar} className="btn btn-primary">Guardar
-                                                                </button>
-                                                                <ToastContainer />
-                                                            </div>
-                                                        </div>
-
-                                                    </div>
-
-                                                </div>
-
-
-                                                <button type="button" onClick={handleClickOpen} className="btn btn-danger mt-3">Eliminar registro</button>
-                                                <Dialog
-                                                    open={open}
-                                                    TransitionComponent={Transition}
-                                                    keepMounted
-                                                    onClose={handleAceptar}
-                                                    aria-describedby="alert-dialog-slide-description">
-                                                    <DialogContent>
-                                                        <DialogContentText id="alert-dialog-slide-description">
-                                                            Estas seguro que deseas realizar esta acción, luego no podrás
-                                                            recuperar lo perdido.
-                                                        </DialogContentText>
-                                                    </DialogContent>
-                                                    <DialogActions>
-                                                        <Button onClick={handleClose}>Cancelar</Button>
-                                                        <Button onClick={handleAceptar}>Aceptar</Button>
-                                                    </DialogActions>
-                                                </Dialog>
+                                                <button type="button"  className="btn btn-danger mt-3">Eliminar registro</button>
+                                               
                                             </div>
                                         </div>
                                     </div>
@@ -362,21 +293,196 @@ const ListarVehiculos = () =>
 
 
 
-            
+
         </div>
+
+
+
+
+
     );
 };
+
+const FilaVehiculo = ({ vehiculos, setEjecutarConsulta }) => {
+    console.log('vehiculos', vehiculos);
+    const [edit, setEdit] = useState(false);
+    const [openDialog, setOpenDialog] = useState(false);
+    const [infoNuevoVehiculo, setInfoNuevoVehiculo] = useState({
+        descripcion: vehiculos.descripcion,
+        equipamiento: vehiculos.equipamiento,
+        generacion: vehiculos.generacion,
+        marca: vehiculos.marca,
+        modelo: vehiculos.modelo,
+        modificacion: vehiculos.modificacion,
+        observaciones: vehiculos.observaciones,
+        serie: vehiculos.serie,
+
+    })
+
+    const actualizarVehiculo = async () => {
+        console.log(infoNuevoVehiculo);
+        //enviar la info al backend
+
+        const options = {
+            method: 'PATCH',
+            url: 'http://localhost:5000/vehiculos/editar',
+            headers: { 'Content-Type': 'application/json' },
+            data: { ...infoNuevoVehiculo, id: vehiculos._id  }
+        };
+
+        await axios.request(options).then(function (response) {
+            console.log(response.data);
+            toast.success('Vehiculo modificado con exito')
+            setEdit(false);
+            setEjecutarConsulta(true);
+        }).catch(function (error) {
+            toast.error('Error en la actualizacion del registro del vehiculo')
+            console.error(error);
+        });
+
+
+
+    };
+
+    const EliminarVehiculo = async () => {
+
+        
+
+        const options = {
+            method: 'DELETE',
+            url: 'http://localhost:5000/vehiculos/eliminar',
+            headers: { 'Content-Type': 'application/json' },
+            data: { id: vehiculos._id }
+        };
+
+        await axios.request(options).then(function (response) {
+            toast.success("Registro del vehiculo eliminado satisfactoriamente")
+            console.log(response.data);
+            setEjecutarConsulta(true);
+        }).catch(function (error) {
+            toast.error("Error al eliminar el registro del vehiculo")
+            console.error(error);
+        });
+        setOpenDialog(false);
+
+    }
+
+
+
     return (
 
-        <div>
-            <TablaVehiculos listaVehiculos={vehiculos} />
+        <tr>
+            {
+                edit ? (
+                    <>
 
-        </div>
+                        <td>
+                            <input
+                                type="text"
+                                className="InputSize"
+                                value={infoNuevoVehiculo.marca}
+                                onChange={(e) => setInfoNuevoVehiculo({ ...infoNuevoVehiculo, marca: e.target.value })} />
+                        </td>
+                        <td>
+                            <input
+                                type="text"
+                                className="InputSize"
+                                value={infoNuevoVehiculo.modelo}
+                                onChange={(e) => setInfoNuevoVehiculo({ ...infoNuevoVehiculo, modelo: e.target.value })} />
+                        </td>
+                        <td>
+                            <input
+                                type="text"
+                                className="InputSize"
+                                value={infoNuevoVehiculo.generacion}
+                                onChange={(e) => setInfoNuevoVehiculo({ ...infoNuevoVehiculo, generacion: e.target.value })} />
+                        </td>
+                        <td>
+                            <input
+                                type="text"
+                                className="InputSize"
+                                value={infoNuevoVehiculo.serie}
+                                onChange={(e) => setInfoNuevoVehiculo({ ...infoNuevoVehiculo, serie: e.target.value })} />
+                        </td>
+                        <td>
+                            <input
+                                type="text"
+                                className="InputSize"
+                                value={infoNuevoVehiculo.equipamiento}
+                                onChange={(e) => setInfoNuevoVehiculo({ ...infoNuevoVehiculo, equipamiento: e.target.value })} />
+                        </td>
+                        <td>
+                            <input
+                                type="text"
+                                className="InputSize"
+                                value={infoNuevoVehiculo.modificacion}
+                                onChange={(e) => setInfoNuevoVehiculo({ ...infoNuevoVehiculo, modificacion: e.target.value })} />
+                        </td>
+                        <td>
+                            <input
+                                type="text"
+                                className="InputSize"
+                                value={infoNuevoVehiculo.descripcion}
+                                onChange={(e) => setInfoNuevoVehiculo({ ...infoNuevoVehiculo, descripcion: e.target.value })} />
+                        </td>
+                        <td>
+                            <input
+                                type="text"
+                                className="InputSize"
+                                value={infoNuevoVehiculo.observaciones}
+                                onChange={(e) => setInfoNuevoVehiculo({ ...infoNuevoVehiculo, observaciones: e.target.value })} />
+                        </td>
 
 
+                    </>
+                ) : (
+                    <>
+                        <td>{vehiculos.marca}</td>
+                        <td>{vehiculos.modelo}</td>
+                        <td>{vehiculos.generacion}</td>
+                        <td>{vehiculos.serie}</td>
+                        <td>{vehiculos.equipamiento}</td>
+                        <td>{vehiculos.modificacion}</td>
+                        <td>{vehiculos.descripcion}</td>
+                        <td>{vehiculos.observaciones}</td>
+                        
+                    </>
+                )}
+
+            <td>
+                {edit ? (
+                    <>
+                        <Tooltip title="Confirmar edición">
+                            <i onClick={() => actualizarVehiculo()} className="fas fa-check" />
+                        </Tooltip>
+                        <Tooltip title="Cancelar edición">
+                            <i onClick={() => actualizarVehiculo(false)} className="fas fa-ban" />
+                        </Tooltip>
+                    </>
+                ) : (
+                    <>
+                        <Tooltip title="Editar Registro del Vehiculo">
+                            <i onClick={() => setEdit(!edit)} className="fas fa-pencil-alt" />
+                        </Tooltip>
+
+                        <Tooltip title="Eliminar Registro del Vehiculo">
+                            <i onClick={() => setOpenDialog(true)} className="fas fa-trash" />
+                        </Tooltip>
+                    </>
+                )}
+
+                <Dialog open={openDialog}>
+                    <div>
+                        <h4>¿Confirma la eliminación de este registro?</h4>
+                        <button onClick={() => EliminarVehiculo()}>Si</button>
+                        <button onClick={() => setOpenDialog(false)}>No</button>
+                    </div>
+                </Dialog>
+
+            </td>
 
 
-
+        </tr>
 
     )
 }
