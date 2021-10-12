@@ -77,6 +77,10 @@ const TablaUsuarios = ({ listaUsuarios, setEjecutarConsulta }) => {
         console.log("Este es el listado de usaurios en el componente de tabla", listaUsuarios);
     }, [listaUsuarios])
 
+    const refresh = () => {
+        window.location="/dashboard/usuarios";
+    }
+
 
     return (
         <>
@@ -91,10 +95,11 @@ const TablaUsuarios = ({ listaUsuarios, setEjecutarConsulta }) => {
                         aria-label="Search" />
                     <button class="btn btn-outline-success" type="submit">Buscar</button>
                 </form>
+                <button className="btn btn-outline-primary refresh mt-5 mb-5" onClick={refresh}>Refresh<i className="fas fa-sync-alt"></i></button>
             </div>
             <div className="table-responsive">
                 <table className="table table-sm table-hover">
-                    <thead>
+                    <thead className="table-active">
                         <tr>
                             <th>Nombre</th>
                             <th>Tipo documento</th>
@@ -152,11 +157,9 @@ const FilaUsuario = ({ usuarios, setEjecutarConsulta }) => {
             toast.success('usuario modificado con exito')
             setEdit(false);
             setEjecutarConsulta(true);
-           // window.location="/dashboard/usuarios";
         }).catch(function (error) {
             toast.error('Error en la actualizacion del registro del usuario')
             console.error(error);
-            window.location="/dashboard/usuarios";
         });
     };
 
@@ -181,8 +184,6 @@ const FilaUsuario = ({ usuarios, setEjecutarConsulta }) => {
         setOpenDialog(false);
 
     }
-
-
 
     return (
         <tr>
