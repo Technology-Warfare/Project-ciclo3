@@ -3,8 +3,6 @@ import React, { useState, useEffect } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import modelS from "../Pages/img/ModelS/models.jpg";
-import RegistrarVehiculo from "../components/RegistrarVehiculo";
-//import { tableRowClasses } from '@mui/material';
 import axios from "axios";
 
 import { nanoid } from 'nanoid';
