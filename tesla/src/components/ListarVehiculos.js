@@ -102,6 +102,9 @@ const TablaVehiculos = ({ listaVehiculos, setEjecutarConsulta }) => {
         console.log("Este es el listado de vehiculos en el componente de tabla", listaVehiculos);
     }, [listaVehiculos])
 
+    const refresh = () => {
+        window.location = "/dashboard/vehiculos";
+    }
 
     return (
         <div>
@@ -116,11 +119,13 @@ const TablaVehiculos = ({ listaVehiculos, setEjecutarConsulta }) => {
                         aria-label="Search" />
                     <button class="btn btn-outline-success" type="submit">Buscar</button>
                 </form>
+                <button className="btn btn-outline-primary refresh mt-5 mb-5" onClick={refresh}>Refresh<i className="fas fa-sync-alt"></i></button>
             </div>
             
 
-            <table className="table table-striped">
-                    <thead>
+            <div className="table-responsive">
+                <table className="table table-sm table-hover">
+                    <thead className="table-active">
                         <tr>
                             <th>Marca</th>
                             <th>Modelo</th>
@@ -146,7 +151,7 @@ const TablaVehiculos = ({ listaVehiculos, setEjecutarConsulta }) => {
                     </tbody>
                 </table>
 
-            
+            </div>
 
 
 

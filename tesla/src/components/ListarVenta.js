@@ -95,7 +95,9 @@ const TablaVentas = ({ listaVentas, setEjecutarConsulta }) => {
 
 
 
-
+    const refresh = () => {
+        window.location = "/dashboard/ventas";
+    }
 
 
 
@@ -112,11 +114,11 @@ const TablaVentas = ({ listaVentas, setEjecutarConsulta }) => {
                      aria-label="Search" />
                     <button class="btn btn-outline-success" type="submit">Buscar</button>
                 </form>
+                <button className="btn btn-outline-primary refresh mt-5 mb-5" onClick={refresh}>Refresh<i className="fas fa-sync-alt"></i></button>
             </div>
-            <div className="scrollDivTab designDesktopVt">
-
-                <table className="table table-striped">
-                    <thead>
+            <div className="table-responsive">
+                <table className="table table-sm table-hover">
+                    <thead className="table-active">
                         <tr>
                             <th>idVenta</th>
                             <th>idAutomovil</th>
