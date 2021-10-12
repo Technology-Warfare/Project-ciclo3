@@ -115,7 +115,7 @@ const TablaVentas = ({ listaVentas, setEjecutarConsulta }) => {
             </div>
             <div className="scrollDivTab designDesktopVt">
 
-                <table>
+                <table className="table table-striped">
                     <thead>
                         <tr>
                             <th>idVenta</th>

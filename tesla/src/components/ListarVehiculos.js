@@ -121,7 +121,7 @@ const TablaVehiculos = ({ listaVehiculos, setEjecutarConsulta }) => {
             </div>
             
 
-                <table>
+            <table className="table table-striped">
                     <thead>
                         <tr>
                             <th>Marca</th>
