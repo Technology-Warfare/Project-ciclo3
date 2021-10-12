@@ -36,6 +36,11 @@ td{
     margin-top: 5%;
 }
 
+.refresh{
+    position: relative;
+    left: 90%;
+}
+
 @media screen and (max-width:600px) {
     
     .content-usuarios{
