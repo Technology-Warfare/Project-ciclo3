@@ -472,10 +472,10 @@ const FilaVehiculo = ({ vehiculos, setEjecutarConsulta }) => {
                 )}
 
                 <Dialog open={openDialog}>
-                    <div>
+                    <div className="PopupDialog">
                         <h4>¿Confirma la eliminación de este registro?</h4>
-                        <button onClick={() => EliminarVehiculo()}>Si</button>
-                        <button onClick={() => setOpenDialog(false)}>No</button>
+                        <button className="ConfirmDialog ConfYes" onClick={() => EliminarVehiculo()}>Si</button>
+                        <button className="ConfirmDialog ConfNo" onClick={() => setOpenDialog(false)}>No</button>
                     </div>
                 </Dialog>
 

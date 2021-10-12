@@ -640,10 +640,10 @@ const FilaVenta = ({ ventas, setEjecutarConsulta }) => {
                 )}
                 
                 <Dialog open={openDialog}>
-                    <div>
-                        <h4>¿Confirma la eliminación de este registro?</h4> 
-                        <button onClick={() => EliminarVenta()}>Si</button>
-                        <button onClick={()=>setOpenDialog(false)}>No</button>
+                    <div className="PopupDialog">
+                            <h4>¿Confirma la eliminación de este registro?</h4> 
+                            <button className="ConfirmDialog ConfYes" onClick={() => EliminarVenta()}>Si</button>
+                            <button className="ConfirmDialog ConfNo" onClick={()=>setOpenDialog(false)}>No</button>
                     </div>
                 </Dialog>
 
