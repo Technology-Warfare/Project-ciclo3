@@ -101,6 +101,7 @@ const TablaUsuarios = ({ listaUsuarios, setEjecutarConsulta }) => {
                             <th>Número</th>
                             <th>Edad</th>
                             <th>Email</th>
+                            <th>Rol</th>
                             <th>Acciones</th>
                         </tr>
                     </thead>
@@ -131,7 +132,8 @@ const FilaUsuario = ({ usuarios, setEjecutarConsulta }) => {
         edad : usuarios.edad,
         email : usuarios.email,
         documento : usuarios.documento,
-        numerodocumento : usuarios.numerodocumento
+        numerodocumento : usuarios.numerodocumento,
+        cargo: usuarios.cargo
     })
 
     const actualizarUsuario = async () => {
@@ -150,7 +152,7 @@ const FilaUsuario = ({ usuarios, setEjecutarConsulta }) => {
             toast.success('usuario modificado con exito')
             setEdit(false);
             setEjecutarConsulta(true);
-            window.location="/dashboard/usuarios";
+           // window.location="/dashboard/usuarios";
         }).catch(function (error) {
             toast.error('Error en la actualizacion del registro del usuario')
             console.error(error);
@@ -187,15 +189,13 @@ const FilaUsuario = ({ usuarios, setEjecutarConsulta }) => {
             {
                 edit ? (
                     <>
-
                         <td>
                             <input
                                 type="text"
                                 className="InputSize"
                                 value={infoNuevoUsuario.nombre}
                                 onChange={(e) => setInfoNuevoUsuario({ ...infoNuevoUsuario, nombre: e.target.value })} />
-                        </td>
-                        <td>
+                        
                             <input
                                 type="text"
                                 className="InputSize"
@@ -206,29 +206,38 @@ const FilaUsuario = ({ usuarios, setEjecutarConsulta }) => {
                             <input
                                 type="text"
                                 className="InputSize"
-                                value={infoNuevoUsuario.edad}
-                                onChange={(e) => setInfoNuevoUsuario({ ...infoNuevoUsuario, edad: e.target.value })} />
-                        </td>
-                        <td>
-                            <input
-                                type="text"
-                                className="InputSize"
                                 value={infoNuevoUsuario.documento}
-                                onChange={(e) => setInfoNuevoUsuario({ ...infoNuevoUsuario, documento: e.target.value })} />
+                                onChange={(e) => setInfoNuevoUsuario({ ...infoNuevoUsuario, documento: e.target.value })}
+                                disabled />
                         </td>
                         <td>
                             <input
                                 type="text"
                                 className="InputSize"
                                 value={infoNuevoUsuario.numerodocumento}
-                                onChange={(e) => setInfoNuevoUsuario({ ...infoNuevoUsuario, numerodocumento: e.target.value })} />
+                                onChange={(e) => setInfoNuevoUsuario({ ...infoNuevoUsuario, numerodocumento: e.target.value })}
+                                disabled />
                         </td>
                         <td>
                             <input
                                 type="text"
                                 className="InputSize"
+                                value={infoNuevoUsuario.edad}
+                                onChange={(e) => setInfoNuevoUsuario({ ...infoNuevoUsuario, edad: e.target.value })} />
+                        </td>
+                        <td>
+                            <input
+                                type="email"
+                                className="InputSize"
                                 value={infoNuevoUsuario.email}
                                 onChange={(e) => setInfoNuevoUsuario({ ...infoNuevoUsuario, email: e.target.value })} />
+                        </td>
+                        <td>
+                            <input
+                                type="text"
+                                className="InputSize"
+                                value={infoNuevoUsuario.cargo}
+                                onChange={(e) => setInfoNuevoUsuario({ ...infoNuevoUsuario, cargo: e.target.value })} />
                         </td>
                     </>
                 ) : (
@@ -238,6 +247,7 @@ const FilaUsuario = ({ usuarios, setEjecutarConsulta }) => {
                         <td>{usuarios.numerodocumento}</td>
                         <td>{usuarios.edad}</td>
                         <td>{usuarios.email}</td>
+                        <td>{usuarios.cargo}</td>
                     </>
                 )}
 

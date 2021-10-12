@@ -28,16 +28,33 @@ const currencies = [
     },
   ];
 
+const ocupacion = [
+    {
+        value: 'cliente',
+        label: 'Cliente',
+    },
+    {
+        value: 'vendedor',
+        label: 'Vendedor',
+    },
+    {
+        value: 'administrador',
+        label: 'Administrador',
+    },
+  ];
+
 const RegistrarUsuario = () => {
     const [habilitar, setHabilitar] = useState(false);
     const [currency, setCurrency] = useState('');
+    const [rol, setRol] = useState('');
     const [datos, setDatos] = useState({
         nombre:'',
         apellido:'',
         edad:'',
         email:'',
         documento:'',
-        numerodocumento:''
+        numerodocumento:'',
+        cargo: ''
     })
 
     useEffect(() => {
@@ -57,6 +74,7 @@ const RegistrarUsuario = () => {
             [event.target.name]:event.target.value
         })
         setCurrency(event.target.value);
+        setRol(event.target.value);
     };
 
     const handleSubmit = async (e) => {
@@ -73,7 +91,8 @@ const RegistrarUsuario = () => {
                 edad : datos.edad,
                 email : datos.email,
                 documento : datos.documento,
-                numerodocumento : datos.numerodocumento
+                numerodocumento : datos.numerodocumento,
+                cargo: datos.cargo
             },
         };
         await axios
@@ -174,6 +193,22 @@ const RegistrarUsuario = () => {
                                         variant="outlined"
                                         onChange={handleChange}
                                         type="text" />
+                                    <TextField
+                                    required
+                                    name="cargo"
+                                    id="outlined-select"
+                                    select
+                                    label="Selecciona un rol"
+                                    value={rol}
+                                    onChange={handleChange}
+                                    helperText="Por favor digita un rol"
+                                    >
+                                        {ocupacion.map((option) => (
+                                            <MenuItem key={option.value} value={option.value}>
+                                            {option.label}
+                                            </MenuItem>
+                                        ))}
+                                    </TextField>
                                 </div>
                         </Box>
                         {habilitar ? (
