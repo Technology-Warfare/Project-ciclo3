@@ -54,6 +54,11 @@ header{
         display: flex;
         justify-content: center;
     }
+
+    .border2{
+        padding-left: 2%;
+        padding-right: 3%;
+    }
 }
 
 
