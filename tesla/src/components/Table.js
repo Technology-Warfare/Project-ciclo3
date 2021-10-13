@@ -77,7 +77,8 @@ const TablaUsuarios = ({ listaUsuarios, setEjecutarConsulta }) => {
         console.log("Este es el listado de usaurios en el componente de tabla", listaUsuarios);
     }, [listaUsuarios])
 
-    const refresh = () => {
+    const refresh = (e) => {
+        e.preventDefault();
         window.location="/dashboard/usuarios";
     }
 

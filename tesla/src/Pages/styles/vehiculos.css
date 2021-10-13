@@ -8,9 +8,7 @@
 }
 @media screen and (min-width:1596px){
     .content-vehiculos{   
-    margin-left: 1%;
-    margin-right: 1%;
-    margin-top: 15%;
+    margin: 0%;
     padding-bottom: 5%;
     width: 100%;
     }
