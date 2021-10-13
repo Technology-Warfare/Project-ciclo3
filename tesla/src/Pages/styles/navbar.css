@@ -6,19 +6,6 @@ header{
     background-color: rgb(179, 179, 253);
 }
 
-.border2{
-    border-style: solid;
-    border-color: rgb(4, 25, 65);
-    background-color: rgb(5, 5, 78);
-    border-width: 2px;
-    padding: 15%;
-    border-radius: 10px;
-}
-
-.border3{
-    color: rgb(255, 255, 255);
-}
-
 .border3:hover{
    color:rgb(240, 225, 12);
 }
@@ -35,10 +22,6 @@ header{
     right: 5%;
 }
 
-.login{
-    width: 40px;
-}
-
 .h{
     color: rgb(5, 5, 78);
 }
@@ -53,11 +36,6 @@ header{
         position: relative;
         display: flex;
         justify-content: center;
-    }
-
-    .border2{
-        padding-left: 2%;
-        padding-right: 3%;
     }
 }
 
