@@ -2,8 +2,11 @@ import React from "react";
 import '../Pages/styles/navbar.css';
 import logo from '../Pages/img/logo.png';
 import { Link } from "react-router-dom";
+import { useAuth0 } from "@auth0/auth0-react";
 
 const Navbar = () => {
+
+    const { loginWithRedirect } = useAuth0();
 
     return(
         <>
@@ -24,7 +27,7 @@ const Navbar = () => {
                                 <ul className="navbar-nav ml-auto mb-2 mb-lg-0">
                                     <li className="nav-item border2">
                                         <div className="login">
-                                        <Link to="/login" style={{ textDecoration: 'none'}}><div className='border3'>Login</div></Link>
+                                        <button className="btn btn-outline-primary" onClick={() => loginWithRedirect()}>Log In</button>
                                         </div>
                                     </li>
                                 </ul>

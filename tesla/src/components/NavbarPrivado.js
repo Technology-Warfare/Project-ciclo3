@@ -1,10 +1,15 @@
-import React from 'react'
+import React from 'react';
+import { useAuth0 } from "@auth0/auth0-react";
 
 import '../Pages/styles/navbar.css';
 import logo from '../Pages/img/logo.png';
 import { Link } from "react-router-dom";
 
 const NavbarPrivado = () => {
+
+    const { logout } = useAuth0();
+    const { user } = useAuth0();
+
     return (
         <>
             <header>
@@ -21,11 +26,14 @@ const NavbarPrivado = () => {
                         <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
                             <div className="ubicacion2 ">
                                 <ul className="navbar-nav ml-auto mb-2 mb-lg-0  ">
-                                    <li className="nav-item">
-                                        
+                                    <li className="nav-item mr-5">
+                                        Bienvenido: {user.name}
+                                        <img src={user.picture} className="border-rounded full" alt={user.name}/>
                                     </li>
                                     <li className="nav-item border2">
-                                        <Link to="/login" style={{ textDecoration: 'none'}}><div className='border3'>Logout</div></Link>
+                                    <button className="btn btn-outline-primary" onClick={() => logout({ returnTo: window.location.origin })}>
+      Log Out
+    </button>
                                     </li>
                                 </ul>
                             </div>
