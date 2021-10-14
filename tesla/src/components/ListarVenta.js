@@ -103,54 +103,55 @@ const TablaVentas = ({ listaVentas, setEjecutarConsulta }) => {
 
     return (
         <div>
-            <div class="container-fluid">
-                <form class="d-flex">
-                    <input 
-                    value={busqueda}
-                    onChange={(e) => setBusqueda(e.target.value)}
-                    class="form-control me-2" 
-                    type="search"
-                     placeholder="Buscar" 
-                     aria-label="Search" />
-                    <button class="btn btn-outline-success" type="submit">Buscar</button>
-                </form>
-                <button className="btn btn-outline-primary refresh mt-5 mb-5" onClick={refresh}>Refresh<i className="fas fa-sync-alt"></i></button>
-            </div>
-            <div className="table-responsive">
-                <table className="table table-sm table-hover">
-                    <thead className="table-active">
-                        <tr>
-                            <th>idVenta</th>
-                            <th>idAutomovil</th>
-                            <th>NombreCliente</th>
-                            <th>ApellidoCliente</th>
-                            <th>EmailCliente</th>
-                            <th>CelularCliente</th>
-                            <th>NombreVendedor</th>
-                            <th>ApellidoVendedor</th>
-                            <th>EmailVendedor</th>
-                            <th>CelularVendedor</th>
-                            <th>PrecioAutomovil</th>
-                            <th>EstadoVenta</th>
-                            <th>Cantidad</th>
-                            <th>Descripcion</th>
-                            <th>Observaciones</th>
-                            <th>Acciones</th>
-                        </tr>
-                    </thead>
-                    <tbody>
+            <div className="designDesktop">
+                <div class="container-fluid">
+                    <form class="d-flex">
+                        <input 
+                        value={busqueda}
+                        onChange={(e) => setBusqueda(e.target.value)}
+                        class="form-control me-2" 
+                        type="search"
+                        placeholder="Buscar" 
+                        aria-label="Search" />
+                        <button class="btn btn-outline-primary" onClick={refresh}>Refresh<i className="fas fa-sync-alt"></i></button>
+                    </form>                    
+                </div>
+                <div className="table-responsive">
+                    <table className="table table-sm table-hover">
+                        <thead className="table-active">
+                            <tr>
+                                <th>idVenta</th>
+                                <th>idAutomovil</th>
+                                <th>NombreCliente</th>
+                                <th>ApellidoCliente</th>
+                                <th>EmailCliente</th>
+                                <th>CelularCliente</th>
+                                <th>NombreVendedor</th>
+                                <th>ApellidoVendedor</th>
+                                <th>EmailVendedor</th>
+                                <th>CelularVendedor</th>
+                                <th>PrecioAutomovil</th>
+                                <th>EstadoVenta</th>
+                                <th>Cantidad</th>
+                                <th>Descripcion</th>
+                                <th>Observaciones</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
 
-                        {
-                            ventasFilatradas.map(
-                                (ventas) => {
-                                    return <FilaVenta key={nanoid()} ventas={ventas} setEjecutarConsulta={setEjecutarConsulta} />;
-                                }
-                            )
+                            {
+                                ventasFilatradas.map(
+                                    (ventas) => {
+                                        return <FilaVenta key={nanoid()} ventas={ventas} setEjecutarConsulta={setEjecutarConsulta} />;
+                                    }
+                                )
 
-                        }
-                    </tbody>
-                </table>
+                            }
+                        </tbody>
+                    </table>
 
+                </div>
             </div>
 
 
