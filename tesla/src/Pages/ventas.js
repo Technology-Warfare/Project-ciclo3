@@ -1,9 +1,8 @@
 import React from "react";
+import { useAuth0 } from "@auth0/auth0-react";
 
-import Footer from "../components/Footer"
 import './styles/ventas.css';
 import NavbarPrivado from "../components/NavbarPrivado";
-import Sidebar from "../components/Sidebar";
 
 
 import '../Pages/styles/admv.css';
@@ -14,12 +13,17 @@ import RegistrarVenta from '../components/RegistrarVenta';
 
 
 
-const ventas = () => {
-    return (
-        <React.Fragment>
+const Ventas = () => {
+
+    const { isLoading } = useAuth0();
+    if (isLoading) {
+        return <div>Loading ...</div>;
+    }
+
+    return(
+    <>
             <NavbarPrivado />
             <div className="flex">
-                <Sidebar />
                 <div className="content-ventas">
                     
                     <h1 className="title">MODULO ADMINISTRADOR DE VENTAS</h1>
@@ -53,10 +57,9 @@ const ventas = () => {
                     </div>
 
                 </div>
-            </div>    
-            <Footer/>    
-        </React.Fragment>
-    );
+            </div>     
+        </>
+        )
 }
 
-    export default ventas;
+    export default Ventas;

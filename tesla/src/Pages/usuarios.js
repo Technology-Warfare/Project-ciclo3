@@ -1,18 +1,22 @@
 import React from 'react'
+import { useAuth0 } from "@auth0/auth0-react";
 
 import NavbarPrivado from '../components/NavbarPrivado';
-import Sidebar from '../components/Sidebar';
-import Footer from '../components/Footer';
 import '../Pages/styles/usuarios.css';
 import RegistrarUsuario from '../components/RegistrarUsuario';
 import ListarUsuario from '../components/ListarUsuario';
 
-const usuarios = () => {
+const Usuarios = () => {
+
+    const {  isLoading } = useAuth0();
+    if (isLoading) {
+        return <div>Loading ...</div>;
+    }
+
     return (
-        <React.Fragment>
+    <>
             <NavbarPrivado />
             <div className="flex">
-                <Sidebar />
                 <div className="content-usuarios">
                     <h1 className="title">
                         Usuarios
@@ -30,10 +34,10 @@ const usuarios = () => {
                         <div className="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab"><RegistrarUsuario></RegistrarUsuario></div>
                     </div>
                 </div>
-            </div>
-            <Footer/>        
-        </React.Fragment>
-    );
+            </div>     
+        </> 
+        )
+    
 }
 
-export default usuarios;
+export default Usuarios;

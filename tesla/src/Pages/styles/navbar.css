@@ -26,6 +26,16 @@ header{
     color: rgb(5, 5, 78);
 }
 
+.entra{
+    display: flex;
+    margin-right: 8%;
+}
+
+.picture{
+    height: 60px;
+    border-radius: 30px;
+}
+
 @media screen and (max-width:600px) {
     .ubicacion{
         position: relative;

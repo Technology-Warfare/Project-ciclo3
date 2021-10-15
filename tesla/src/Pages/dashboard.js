@@ -1,7 +1,5 @@
 import React from 'react'
 import NavbarPrivado from '../components/NavbarPrivado';
-import Footer from '../components/Footer';
-import Sidebar from '../components/Sidebar';
 import '../Pages/styles/dashboard.css';
 import { useAuth0 } from "@auth0/auth0-react";
 
@@ -11,19 +9,14 @@ import fotoDashboard3 from "../Pages/img/ModelY/y.jpg";
 
 const Dashboard = () => {
 
-    const { user, isAuthenticated, isLoading } = useAuth0();
+    const { user } = useAuth0();
 
-    if (isLoading) {
-        return <div>Loading ...</div>;
-    }
     return (
-        <>
-        isAuthenticated && (
+            <>
             <NavbarPrivado />
                 <div className="flex">
-                    <Sidebar/>
                     <div className="content justify-content-between">
-                    <div><h4 className='FloatLeft mb-5'>{user.name}</h4></div>
+                    <div><h4 className='FloatLeft mb-5'>hg</h4></div>
                     
 
                     <div id="carouselExampleControls" class="carousel slide Carusel" data-bs-ride="carousel">
@@ -53,7 +46,7 @@ const Dashboard = () => {
                                         <h6>Email:</h6> 
                                     </div>
                                     <div className="FloatRight">
-                                        {user.email}
+                                        ghg
                                     </div>
                                 </div>
                                 <div className='card DisplayBlock'>
@@ -85,11 +78,9 @@ const Dashboard = () => {
                 </div>
                 
                 
-            <Footer/>
-        )
-            
-        </>
-    )
+            </>
+         )
+    
 }
 
 export default Dashboard;

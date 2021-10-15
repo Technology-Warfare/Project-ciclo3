@@ -1,18 +1,22 @@
 import React from 'react'
+import { useAuth0 } from "@auth0/auth0-react";
 
 import NavbarPrivado from '../components/NavbarPrivado';
-import Sidebar from '../components/Sidebar';
-import Footer from '../components/Footer';
 import '../Pages/styles/vehiculos.css';
 import RegistrarVehiculo from '../components/RegistrarVehiculo';
 import ListarVehiculos from '../components/ListarVehiculos';
 
-const vehiculos = () => {
+const Vehiculos = () => {
+    
+    const { isLoading } = useAuth0();
+    if (isLoading) {
+        return <div>Loading ...</div>;
+    }
+
     return (
-        <React.Fragment>
+        <>
             <NavbarPrivado />
             <div className="flex">
-                <Sidebar />
                 <div className="content-vehiculos">
                     <h1 className="title">Módulo Administrador de Vehículos</h1>
 
@@ -43,10 +47,9 @@ const vehiculos = () => {
                         </div>
                     </div>
                 </div>
-            </div>
-            <Footer/>        
-        </React.Fragment>
-    );
+            </div>    
+        </>
+    )
 }
 
-export default vehiculos
+export default Vehiculos;

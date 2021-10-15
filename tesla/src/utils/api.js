@@ -1,7 +1,12 @@
 import axios from 'axios';
 
 export const obtenerUsuarios = async (setDatos) => {
-    const options = { method: 'GET', url: 'http://localhost:5000/usuarios' };
+    const options = { method: 'GET', 
+    url: 'http://localhost:5000/usuarios',
+  /*headers:{
+    Authorization :
+    'Bearer'*/
+  } //};
     await axios
       .request(options)
       .then(function (response) {
@@ -13,7 +18,8 @@ export const obtenerUsuarios = async (setDatos) => {
     };
 
 export const obtenerVehiculos = async (setDatos) => {
-    const options = { method: 'GET', url: 'http://localhost:5000/vehiculos' };
+    const options = { method: 'GET', 
+    url: 'http://localhost:5000/vehiculos' };
     await axios
         .request(options)
         .then(function (response) {

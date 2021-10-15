@@ -26,14 +26,14 @@ const NavbarPrivado = () => {
                         <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
                             <div className="ubicacion2 ">
                                 <ul className="navbar-nav ml-auto mb-2 mb-lg-0  ">
-                                    <li className="nav-item mr-5">
-                                        Bienvenido: {user.name}
-                                        <img src={user.picture} className="border-rounded full" alt={user.name}/>
+                                    <li className="entra">
+                                        Bienvenido: gs
+                                        <img src="" className="picture" alt=""/>
                                     </li>
                                     <li className="nav-item border2">
-                                    <button className="btn btn-outline-primary" onClick={() => logout({ returnTo: window.location.origin })}>
-      Log Out
-    </button>
+                                        <button className="btn btn-outline-primary" onClick={() => logout({ returnTo: window.location.origin })}>
+                                            Log Out
+                                        </button>
                                     </li>
                                 </ul>
                             </div>
