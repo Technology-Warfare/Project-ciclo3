@@ -6,11 +6,11 @@ const PrivateRoute = ({children}) => {
     
     useEffect(() => {
         const fetchAuth0Token = async () => {
-            const accesToken = await getAccessTokenSilently({
+            const accessToken = await getAccessTokenSilently({
                 audience: `api-autenticaion-technowarfare`,
             });
-            localStorage.setItem('token', accesToken);
-            console.log(accesToken);
+            localStorage.setItem('token', accessToken);
+            console.log(accessToken);
         };
         if (isAuthenticated) {
             fetchAuth0Token();
@@ -20,7 +20,7 @@ const PrivateRoute = ({children}) => {
     if (isLoading) {
         <div>Loading...</div>
     }
-    
+
       return <>{children}</>;
 };
 

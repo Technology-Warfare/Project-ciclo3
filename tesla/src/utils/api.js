@@ -1,21 +1,23 @@
 import axios from 'axios';
 
-export const obtenerUsuarios = async (setDatos) => {
+const getToken = () => {
+  return `Bearer ${localStorage.getItem('token')}`;
+};
+
+const obtenerUsuarios = async (setDatos) => {
     const options = { method: 'GET', 
     url: 'http://localhost:5000/usuarios',
-  /*headers:{
-    Authorization :
-    'Bearer'*/
-  } //};
-    await axios
-      .request(options)
-      .then(function (response) {
-        setDatos(response.data);
-      })
-      .catch(function (error) {
-        console.error(error);
-      });
-    };
+    headers:{
+    Authorization : getToken(), }, 
+  };
+  await axios.request(options)
+  .then(function (response){
+    setDatos(response.data); 
+  })
+  .catch(function (error) {
+    console.error(error);
+  });
+};
 
 export const obtenerVehiculos = async (setDatos) => {
     const options = { method: 'GET', 
@@ -29,5 +31,7 @@ export const obtenerVehiculos = async (setDatos) => {
             console.error(error);
         });
     };
+
+export default obtenerUsuarios;
 
   

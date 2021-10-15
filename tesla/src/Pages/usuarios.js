@@ -8,11 +8,6 @@ import ListarUsuario from '../components/ListarUsuario';
 
 const Usuarios = () => {
 
-    const {  isLoading } = useAuth0();
-    if (isLoading) {
-        return <div>Loading ...</div>;
-    }
-
     return (
     <>
             <NavbarPrivado />

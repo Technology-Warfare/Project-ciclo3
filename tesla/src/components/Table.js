@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
+import obtenerUsuarios from '../utils/api';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Tooltip, Dialog } from '@mui/material';
@@ -9,42 +10,39 @@ import { nanoid } from 'nanoid';
 const ListarUsuarios = () => {
     const [usuarios, setUsuarios] = useState([]);
     const [ejecutarConsulta, setEjecutarConsulta] = useState(true);
+    const [loading, setLoading] = useState(false);
 
 
     useEffect(() => {
-        const obtenerUsuarios = async () => {
-
-            
-            const options = {
-                method: 'GET',
-                url: 'http://localhost:5000/usuarios',
-                headers: { 'Content-Type': 'application/json' }
-            };
-
-            await axios.request(options).then(function (response) {
+        const fetchUsuarios = async () => {
+            setLoading(true);
+            await obtenerUsuarios(
+              (response) => {
+                console.log('la respuesta que se recibio fue', response);
                 setUsuarios(response.data);
-                console.log(response.data);
-            }).catch(function (error) {
-                console.error(error);
-            });
-        };
-        if (ejecutarConsulta) {
-            obtenerUsuarios();
-            setEjecutarConsulta(false);
-        }
-    }, [ejecutarConsulta]);
-
-
-    useEffect(() => {
-
-        setEjecutarConsulta(true);
-        // Obtener lista de ventas desde el backend
-
-    }, []);
+                setEjecutarConsulta(false);
+                setLoading(false);
+              },
+              (error) => {
+                console.error('Salio un error:', error);
+                setLoading(false);
+              }
+            );
+          };
+          console.log('consulta', ejecutarConsulta);
+          if (ejecutarConsulta) {
+            fetchUsuarios();
+          }
+        }, [ejecutarConsulta]);
+      
+        useEffect(() => {
+          //obtener lista de vehículos desde el backend
+            setEjecutarConsulta(true);
+        }, []);
 
     return (
         <div>
-            <TablaUsuarios listaUsuarios={usuarios} setEjecutarConsulta={setEjecutarConsulta} />
+            <TablaUsuarios loading={loading} listaUsuarios={usuarios} setEjecutarConsulta={setEjecutarConsulta} />
             <ToastContainer
                 position="bottom-center"
                 autoClose={2500}
@@ -58,7 +56,7 @@ const ListarUsuarios = () => {
     )
 }
 
-const TablaUsuarios = ({ listaUsuarios, setEjecutarConsulta }) => {
+const TablaUsuarios = ({ loading, listaUsuarios, setEjecutarConsulta }) => {
     const [busqueda, setBusqueda] = useState('');
     const [usuariosFiltrados, setUsuariosFiltrados] = useState(listaUsuarios);
     useEffect(() => {
