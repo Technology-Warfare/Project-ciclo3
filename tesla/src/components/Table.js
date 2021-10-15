@@ -63,7 +63,7 @@ const TablaUsuarios = ({ loading, listaUsuarios, setEjecutarConsulta }) => {
         console.log('busqueda', busqueda);
         console.log("Lista original", listaUsuarios);
         setUsuariosFiltrados(
-            listaUsuarios.filter(elemento => {
+            listaUsuarios && listaUsuarios.filter(elemento => {
                 console.log("elemento", elemento);
                 return JSON.stringify(elemento).toLowerCase().includes(busqueda.toLowerCase());
             })

@@ -27,7 +27,7 @@ const NavbarPrivado = () => {
                             <div className="ubicacion2 ">
                                 <ul className="navbar-nav ml-auto mb-2 mb-lg-0  ">
                                     <li className="entra">
-                                        Bienvenido: gs
+                                        Bienvenido: sds
                                         <img src="" className="picture" alt=""/>
                                     </li>
                                     <li className="nav-item border2">
