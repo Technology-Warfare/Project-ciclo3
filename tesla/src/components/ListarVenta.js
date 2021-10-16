@@ -8,6 +8,8 @@ import axios from "axios";
 import { nanoid } from 'nanoid';
 import { Tooltip } from '@material-ui/core';
 import { Dialog } from '@material-ui/core'; 
+import { obtenerVentas } from '../utils/api';
+import { getToken } from '../utils/api';
 
 
 
@@ -16,48 +18,40 @@ import { Dialog } from '@material-ui/core';
 const ListarVenta = () => {
     const [ventas, setVentas] = useState([]);
     const [ejecutarConsulta, setEjecutarConsulta] = useState(true);
+    const [loading, setLoading] = useState(false);
 
 
     useEffect(() => {
-        const obtenerVentas = async () => {
-
-
-            const options = { method: 'GET', url: 'http://localhost:5000/ventas' };
-
-            await axios.request(options).then(function (response) {
+        const fetchVentas = async () => {
+            setLoading(true);
+            await obtenerVentas(
+              (response) => {
+                console.log('la respuesta que se recibio fue', response);
                 setVentas(response.data);
-                console.log(response.data);
-            }).catch(function (error) {
-                console.error(error);
-            });
-        };
-        if (ejecutarConsulta) {
-            obtenerVentas();
-            setEjecutarConsulta(false);
-        }
-    }, [ejecutarConsulta]);
-
-
-    useEffect(() => {
-
-        setEjecutarConsulta(true);
-        // Obtener lista de ventas desde el backend
-
-    }, []);
-
-    
-
-
-
-
-
-
-
+                setEjecutarConsulta(false);
+                setLoading(false);
+              },
+              (error) => {
+                console.error('Salio un error:', error);
+                setLoading(false);
+              }
+            );
+          };
+          console.log('consulta', ejecutarConsulta);
+          if (ejecutarConsulta) {
+            fetchVentas();
+          }
+        }, [ejecutarConsulta]);
+      
+        useEffect(() => {
+          //obtener lista de vehículos desde el backend
+            setEjecutarConsulta(true);
+        }, []);
 
     return (
 
         <div>
-            <TablaVentas listaVentas={ventas} setEjecutarConsulta={setEjecutarConsulta} />
+            <TablaVentas loading={loading} listaVentas={ventas} setEjecutarConsulta={setEjecutarConsulta} />
             <ToastContainer
                 position="bottom-center"
                 autoClose={2500}
@@ -74,7 +68,7 @@ const ListarVenta = () => {
     )
 
 }
-const TablaVentas = ({ listaVentas, setEjecutarConsulta }) => {
+const TablaVentas = ({ loading, listaVentas, setEjecutarConsulta }) => {
     const [busqueda, setBusqueda] = useState('');
     const [ventasFilatradas, setVentasFiltradas] = useState(listaVentas);
     useEffect(() => {
@@ -444,7 +438,7 @@ const FilaVenta = ({ ventas, setEjecutarConsulta }) => {
         const options = {
             method: 'PATCH',
             url: 'http://localhost:5000/ventas/editar',
-            headers: { 'Content-Type': 'application/json' },
+            headers: { 'Content-Type': 'application/json', Authorization : getToken() },
             data: { ...infoNuevaVenta, id: ventas._id }
         };
 
@@ -466,7 +460,7 @@ const FilaVenta = ({ ventas, setEjecutarConsulta }) => {
         const options = {
             method: 'DELETE',
             url: 'http://localhost:5000/ventas/eliminar',
-            headers: { 'Content-Type': 'application/json' },
+            headers: { 'Content-Type': 'application/json', Authorization : getToken() },
             data: { id: ventas._id }
         };
 

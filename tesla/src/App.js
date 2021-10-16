@@ -20,9 +20,10 @@ function App() {
 
   return (
     <Auth0Provider
-      domain="dev-6cldxko0.us.auth0.com"
-      clientId="JNbMdKPOPxy1tOIT8I8niI7O6OPOIbYl"
+      domain="technowarfare.us.auth0.com"
+      clientId="A7K9u8XMghdZcxisbP0k2AzUe4i6xoSQ"
       redirectUri={'http://localhost:3000/dashboard'}
+      audience='api-autenticacion-technology-warfare'
     >
       <div>
         <BrowserRouter>

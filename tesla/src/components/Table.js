@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
-import obtenerUsuarios from '../utils/api';
+import { obtenerUsuarios } from '../utils/api';
+import { getToken } from '../utils/api';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Tooltip, Dialog } from '@mui/material';
@@ -147,7 +148,7 @@ const FilaUsuario = ({ usuarios, setEjecutarConsulta }) => {
         const options = {
             method: 'PATCH',
             url: 'http://localhost:5000/usuarios/editar',
-            headers: { 'Content-Type': 'application/json' },
+            headers: { 'Content-Type': 'application/json', Authorization : getToken()  },
             data: { ...infoNuevoUsuario, id: usuarios._id  }
         };
 
@@ -166,7 +167,7 @@ const FilaUsuario = ({ usuarios, setEjecutarConsulta }) => {
         const options = {
             method: 'DELETE',
             url: 'http://localhost:5000/usuarios/eliminar',
-            headers: { 'Content-Type': 'application/json' },
+            headers: { 'Content-Type': 'application/json', Authorization : getToken() },
             data: { id: usuarios._id }
         };
 

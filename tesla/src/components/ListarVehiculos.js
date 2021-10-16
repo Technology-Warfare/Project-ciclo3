@@ -1,9 +1,11 @@
 import '../Pages/styles/vehiculos.css';
 import React, { useState, useEffect } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
+import { obtenerVehiculos } from '../utils/api';
 import 'react-toastify/dist/ReactToastify.css';
 import modelS from "../Pages/img/ModelS/models.jpg";
 import axios from "axios";
+import { getToken } from '../utils/api';
 
 import { nanoid } from 'nanoid';
 import { Tooltip } from '@material-ui/core';
@@ -13,55 +15,40 @@ import { Dialog } from '@material-ui/core';
 const ListarVehiculos = () => {
     const [vehiculos, setVehiculos] = useState([]);
     const [ejecutarConsulta, setEjecutarConsulta] = useState(true);
+    const [loading, setLoading] = useState(false);
 
 
     useEffect(() => {
-        const obtenerVehiculos = async () => {
-
-            
-            const options = {
-                method: 'GET',
-                url: 'http://localhost:5000/vehiculos',
-                headers: { 'Content-Type': 'application/json' }
-            };
-
-            await axios.request(options).then(function (response) {
+        const fetchVehiculos = async () => {
+            setLoading(true);
+            await obtenerVehiculos(
+              (response) => {
+                console.log('la respuesta que se recibio fue', response);
                 setVehiculos(response.data);
-                console.log(response.data);
-            }).catch(function (error) {
-                console.error(error);
-            });
-
-
-
-        };
-        if (ejecutarConsulta) {
-            obtenerVehiculos();
-            setEjecutarConsulta(false);
-        }
-    }, [ejecutarConsulta]);
-
-
-    useEffect(() => {
-
-        setEjecutarConsulta(true);
-        // Obtener lista de ventas desde el backend
-
-    }, []);
-
-
-
-
-
-
-
-
-
+                setEjecutarConsulta(false);
+                setLoading(false);
+              },
+              (error) => {
+                console.error('Salio un error:', error);
+                setLoading(false);
+              }
+            );
+          };
+          console.log('consulta', ejecutarConsulta);
+          if (ejecutarConsulta) {
+            fetchVehiculos();
+          }
+        }, [ejecutarConsulta]);
+      
+        useEffect(() => {
+          //obtener lista de vehículos desde el backend
+            setEjecutarConsulta(true);
+        }, []);
 
     return (
 
         <div>
-            <TablaVehiculos listaVehiculos={vehiculos} setEjecutarConsulta={setEjecutarConsulta} />
+            <TablaVehiculos loading={loading} listaVehiculos={vehiculos} setEjecutarConsulta={setEjecutarConsulta} />
             <ToastContainer
                 position="bottom-center"
                 autoClose={2500}
@@ -83,7 +70,7 @@ const ListarVehiculos = () => {
 
 
 
-const TablaVehiculos = ({ listaVehiculos, setEjecutarConsulta }) => {
+const TablaVehiculos = ({ loading, listaVehiculos, setEjecutarConsulta }) => {
     const [busqueda, setBusqueda] = useState('');
     const [vehiculosFiltrados, setVehiculosFiltrados] = useState(listaVehiculos);
     useEffect(() => {
@@ -329,7 +316,7 @@ const FilaVehiculo = ({ vehiculos, setEjecutarConsulta }) => {
         const options = {
             method: 'PATCH',
             url: 'http://localhost:5000/vehiculos/editar',
-            headers: { 'Content-Type': 'application/json' },
+            headers: { 'Content-Type': 'application/json', Authorization : getToken() },
             data: { ...infoNuevoVehiculo, id: vehiculos._id  }
         };
 
@@ -354,7 +341,7 @@ const FilaVehiculo = ({ vehiculos, setEjecutarConsulta }) => {
         const options = {
             method: 'DELETE',
             url: 'http://localhost:5000/vehiculos/eliminar',
-            headers: { 'Content-Type': 'application/json' },
+            headers: { 'Content-Type': 'application/json', Authorization : getToken() },
             data: { id: vehiculos._id }
         };
 

@@ -1,22 +1,22 @@
 import React from 'react';
 
 import Sidebar from '../components/Sidebar';
-import PrivateRoute from '../components/PrivateRoute';
 import Footer from '../components/Footer';
+import PrivateRoute from '../components/PrivateRoute';
 
 const PrivateLayout = ({children}) => {
+
     return (
-        <>
         <PrivateRoute>
             <div className="flex">
                 <Sidebar />
-                <div>
+                <main>
                     {children}
-                </div>
+                </main>
             </div>
-            <Footer />  
+            <Footer /> 
         </PrivateRoute>
-        </>
+        
     )
 }
 

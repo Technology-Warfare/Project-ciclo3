@@ -10,6 +10,11 @@ const NavbarPrivado = () => {
     const { logout } = useAuth0();
     const { user } = useAuth0();
 
+    const cerrarSesion = () => {
+        logout({ returnTo: window.location.origin });
+        localStorage.setItem('token', null);
+    }
+
     return (
         <>
             <header>
@@ -31,7 +36,7 @@ const NavbarPrivado = () => {
                                         <img src="" className="picture" alt=""/>
                                     </li>
                                     <li className="nav-item border2">
-                                        <button className="btn btn-outline-primary" onClick={() => logout({ returnTo: window.location.origin })}>
+                                        <button className="btn btn-outline-primary" onClick={() => cerrarSesion()}>
                                             Log Out
                                         </button>
                                     </li>
