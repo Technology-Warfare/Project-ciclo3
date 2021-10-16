@@ -30,29 +30,41 @@
         
 
     }
-}
-@media screen and (min-width:601px){
 
-    .designMovil{
-        visibility:hidden;
-    }
     .designDesktop{
-        visibility:visible;
-        display: flex;
+        display: none;
         justify-content: center;
         text-align: center;
 
 
     }
 
-    .scrollDivTab{
-        width: 100%;
-        height: 500px;
-        overflow:scroll;
-        border: 1px solid #666;
-        padding: 8px;
-    }
+
 }
+
+
+@media screen and (min-width:601px){
+
+    .designMovil{
+        visibility:hidden;
+        display: none;
+    }
+    
+    .designDesktop{
+        display: block;
+        justify-content: center;
+        text-align: center;
+
+
+    }
+
+    
+}
+
+
+
+
+
 
     .colorPaneVt{
     width: 100%;
@@ -88,3 +100,47 @@
      color: cornsilk;
  }
 
+
+
+
+
+
+
+
+
+
+
+
+    .colorPaneVt{
+    width: 100%;
+    }
+
+    .TextHeight{
+        height: 100%;
+    }
+
+    .InputSize{
+        width: 100px;
+    }
+
+.PopupDialog {
+    padding: 30px;
+    text-align: center;
+    border-radius: 50px;
+}
+
+ .ConfirmDialog{
+     padding-left: 20px;
+     padding-right: 20px;
+     margin: 10px;
+     border-radius: 10px;
+ }
+
+ .ConfYes{
+     background-color: cornflowerblue;
+     color: cornsilk;
+ }
+ .ConfNo{
+     background-color:rgb(199, 44, 44);
+     color: cornsilk;
+ }
