@@ -106,9 +106,9 @@ const TablaVentas = ({ loading, listaVentas, setEjecutarConsulta }) => {
                     type="search"
                      placeholder="Buscar" 
                      aria-label="Search" />
-                    <button class="btn btn-outline-success" type="submit">Buscar</button>
+                    <button class="btn btn-outline-primary" onClick={refresh}>Refresh<i className="fas fa-sync-alt"></i></button>
                 </form>
-                <button className="btn btn-outline-primary refresh mt-5 mb-5" onClick={refresh}>Refresh<i className="fas fa-sync-alt"></i></button>
+                
             </div>
             <div className="table-responsive">
                 <table className="table table-sm table-hover">
