@@ -40,26 +40,26 @@ const Dashboard = () => {
                             <span class="visually-hidden">Next</span>
                         </button>
                     </div>
-                    <div className="ColorBar mb-3">
-                                <div className='card DisplayBlock'>
+                    <div className="ColorBar mb-5">
+                                <div className='card DisplayBlock p-4'>
                                     <div className="FloatLeft">
-                                        <h6>Email:</h6> 
+                                        <h5>Email:</h5> 
                                     </div>
                                     <div className="FloatRight">
                                         ghg
                                     </div>
                                 </div>
-                                <div className='card DisplayBlock'>
+                                <div className='card DisplayBlock p-4'>
                                     <div className="FloatLeft">
-                                        <h6>Edad:</h6>
+                                        <h5>Edad:</h5>
                                     </div>
                                     <div className="FloatRight">
                                         20 años
                                     </div>
                                 </div>
-                                <div className='card DisplayBlock'>
+                                <div className='card DisplayBlock p-4'>
                                     <div className="FloatLeft">
-                                        <h6>Celular:</h6>
+                                        <h5>Celular:</h5>
                                     </div>
                                     <div className="FloatRight">
                                         3006587689
