@@ -106,7 +106,7 @@ const TablaVehiculos = ({ loading, listaVehiculos, setEjecutarConsulta }) => {
                             placeholder="Buscar"
                             aria-label="Search" />
                         <button class="btn btn-outline-primary" onClick={refresh}>Refresh<i className="fas fa-sync-alt"></i></button>
-                    </form>                
+                    </form>
                 </div>
                 
 
@@ -140,11 +140,6 @@ const TablaVehiculos = ({ loading, listaVehiculos, setEjecutarConsulta }) => {
 
                 </div>
             </div>
-
-
-
-
-
 
             {
                 listaVehiculos.map(

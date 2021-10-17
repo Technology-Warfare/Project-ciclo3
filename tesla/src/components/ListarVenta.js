@@ -107,8 +107,8 @@ const TablaVentas = ({ loading, listaVentas, setEjecutarConsulta }) => {
                         type="search"
                         placeholder="Buscar" 
                         aria-label="Search" />
-                        <button class="btn btn-outline-primary" onClick={refresh}>Refresh<i className="fas fa-sync-alt"></i></button>
-                    </form>                    
+                        <button class="btn btn-outline-primary" onClick={refresh}>Refresh<i className="fas fa-sync-alt"></i></button>     
+                    </form>
                 </div>
                 <div className="table-responsive">
                     <table className="table table-sm table-hover">
@@ -147,12 +147,6 @@ const TablaVentas = ({ loading, listaVentas, setEjecutarConsulta }) => {
 
                 </div>
             </div>
-
-
-
-
-
-
             {
                 listaVentas.map(
                     (ventas) => {

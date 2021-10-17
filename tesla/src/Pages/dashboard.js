@@ -16,19 +16,21 @@ const Dashboard = () => {
             <NavbarPrivado />
                 <div className="flex">
                     <div className="content justify-content-between">
-                    <div>
-                        <h4 className='FloatLeft mb-5'>
-                            {user ? (
-                                <>
-                                {user.name}
-                                </>
-                            ): (
-                                <>
-                                <h4>Technology Warfare</h4>
-                                </>
-                            )}
-                        </h4>
+                        <div>
+                            <h4 className='FloatLeft mb-5'>
+                                {user ? (
+                                    <>
+                                    {user.name}
+                                    </>
+                                ): (
+                                    <>
+                                    <h4>Technology Warfare</h4>
+                                    </>
+                                )}
+                            </h4>
+                        </div>
                     </div>
+                </div>
                     
 
                     <div id="carouselExampleControls" class="carousel slide Carusel" data-bs-ride="carousel">
@@ -52,19 +54,17 @@ const Dashboard = () => {
                             <span class="visually-hidden">Next</span>
                         </button>
                     </div>
-                    <div className="ColorBar mb-3">
-                                <div className='card DisplayBlock'>
-                                    <div className="FloatLeft">
-                                        <h6>Email: {user.email}</h6> 
-                                    </div>
-                                </div>
+                    <div className="ColorBar mb-5">
+                        <div className='card DisplayBlock p-4'>
+                            <div className="FloatLeft">
+                                <h6>Email: {user.email}</h6> 
+                            </div>
                         </div>
                     </div>
-                </div>
                 
                 
             </>
-         )
+        )
     
 }
 

@@ -30,7 +30,19 @@
         
 
     }
+
+    .designDesktop{
+        display: none;
+        justify-content: center;
+        text-align: center;
+
+
+    }
+
+
 }
+
+
 @media screen and (min-width:601px){
 
     .designMovil{
@@ -46,7 +58,6 @@
 
     }
 
-    
 }
 @media screen and (max-width:600px){
     .designDesktop{
@@ -56,8 +67,12 @@
 
 
     }
-
 }
+
+
+
+
+
 
     .colorPaneVt{
     width: 100%;
@@ -93,3 +108,47 @@
      color: cornsilk;
  }
 
+
+
+
+
+
+
+
+
+
+
+
+    .colorPaneVt{
+    width: 100%;
+    }
+
+    .TextHeight{
+        height: 100%;
+    }
+
+    .InputSize{
+        width: 100px;
+    }
+
+.PopupDialog {
+    padding: 30px;
+    text-align: center;
+    border-radius: 50px;
+}
+
+ .ConfirmDialog{
+     padding-left: 20px;
+     padding-right: 20px;
+     margin: 10px;
+     border-radius: 10px;
+ }
+
+ .ConfYes{
+     background-color: cornflowerblue;
+     color: cornsilk;
+ }
+ .ConfNo{
+     background-color:rgb(199, 44, 44);
+     color: cornsilk;
+ }
