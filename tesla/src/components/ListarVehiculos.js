@@ -95,49 +95,50 @@ const TablaVehiculos = ({ loading, listaVehiculos, setEjecutarConsulta }) => {
 
     return (
         <div>
-            <div class="container-fluid">
-                <form class="d-flex">
-                    <input
-                        value={busqueda}
-                        onChange={(e) => setBusqueda(e.target.value)}
-                        class="form-control me-2"
-                        type="search"
-                        placeholder="Buscar"
-                        aria-label="Search" />
-                    <button class="btn btn-outline-success" type="submit">Buscar</button>
-                </form>
-                <button className="btn btn-outline-primary refresh mt-5 mb-5" onClick={refresh}>Refresh<i className="fas fa-sync-alt"></i></button>
-            </div>
-            
+            <div className="designDesktop">
+                <div class="container-fluid">
+                    <form class="d-flex">
+                        <input
+                            value={busqueda}
+                            onChange={(e) => setBusqueda(e.target.value)}
+                            class="form-control me-2"
+                            type="search"
+                            placeholder="Buscar"
+                            aria-label="Search" />
+                        <button class="btn btn-outline-primary" onClick={refresh}>Refresh<i className="fas fa-sync-alt"></i></button>
+                    </form>                
+                </div>
+                
 
-            <div className="table-responsive">
-                <table className="table table-sm table-hover">
-                    <thead className="table-active">
-                        <tr>
-                            <th>Marca</th>
-                            <th>Modelo</th>
-                            <th>Generación</th>
-                            <th>Serie</th>
-                            <th>Equipamento</th>
-                            <th>Modificación</th>
-                            <th>Descripción</th>
-                            <th>Observaciones</th>
-                            <th>Acciones</th>
-                        </tr>
-                    </thead>
-                    <tbody>
+                <div className="table-responsive">
+                    <table className="table table-sm table-hover">
+                        <thead className="table-active">
+                            <tr>
+                                <th>Marca</th>
+                                <th>Modelo</th>
+                                <th>Generación</th>
+                                <th>Serie</th>
+                                <th>Equipamento</th>
+                                <th>Modificación</th>
+                                <th>Descripción</th>
+                                <th>Observaciones</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
 
-                        {
-                            vehiculosFiltrados.map(
-                                (vehiculos) => {
-                                    return <FilaVehiculo key={nanoid()} vehiculos={vehiculos} setEjecutarConsulta={setEjecutarConsulta} />;
-                                }
-                            )
+                            {
+                                vehiculosFiltrados.map(
+                                    (vehiculos) => {
+                                        return <FilaVehiculo key={nanoid()} vehiculos={vehiculos} setEjecutarConsulta={setEjecutarConsulta} />;
+                                    }
+                                )
 
-                        }
-                    </tbody>
-                </table>
+                            }
+                        </tbody>
+                    </table>
 
+                </div>
             </div>
 
 

@@ -6,6 +6,8 @@
     width: 84%;
     
 }
+
+
 @media screen and (min-width:1596px){
     .content-vehiculos{   
     margin: 0%;
@@ -54,6 +56,8 @@
 
 
 
+
+
     .DataCol {
         width: 20%;
     
@@ -61,6 +65,7 @@
     .DataContent {
         width: 80%;
     }
+
 
 
 
@@ -110,3 +115,5 @@
      background-color:rgb(199, 44, 44);
      color: cornsilk;
  }
+
+
