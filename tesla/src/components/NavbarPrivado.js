@@ -7,8 +7,7 @@ import { Link } from "react-router-dom";
 
 const NavbarPrivado = () => {
 
-    const { logout } = useAuth0();
-    const { user } = useAuth0();
+    const { logout, user } = useAuth0();
 
     const cerrarSesion = () => {
         logout({ returnTo: window.location.origin });
@@ -32,8 +31,14 @@ const NavbarPrivado = () => {
                             <div className="ubicacion2 ">
                                 <ul className="navbar-nav ml-auto mb-2 mb-lg-0  ">
                                     <li className="entra">
-                                        Bienvenido: sds
-                                        <img src="" className="picture" alt=""/>
+                                        {user ? (
+                                            <>
+                                            <img src={user.picture} className="picture" alt={user.name}/>
+                                            {user.name}
+                                            </>
+                                        ):(
+                                            <p>Bienvenido</p>
+                                        )}
                                     </li>
                                     <li className="nav-item border2">
                                         <button className="btn btn-outline-primary" onClick={() => cerrarSesion()}>

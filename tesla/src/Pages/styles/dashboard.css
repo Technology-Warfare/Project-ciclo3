@@ -9,38 +9,15 @@
     
 }
 
-@media screen and (max-width:600px) {
-    
-    .flex{
-        display: block;
-    }
-
-    .content{
-        padding-top: 5%;
-        margin-left: 0;
-        width: 100%;
-    }
-}
-
 .displayFlexContent{
     display: flex;
     
 }
 
 .FloatLeft{
-    float: left;
-    width: auto;
-    padding-top: 0%;
-    padding-bottom: 0%;
-    margin-left: 5%;
-}
-
-.FloatRight{
-    float: right;
-    width:auto;
-    padding-top: 0%;
-    padding-bottom: 0%;
-    padding-right: 5%;
+    width: 90%;
+    display: flex;
+    justify-content: center;
 }
 
 .DisplayBlock{
@@ -81,4 +58,24 @@
 .paddingImg {
     padding-left: 10%;
     padding-right: 10%;
+}
+
+
+@media screen and (max-width:600px) {
+    
+    .flex{
+        display: block;
+    }
+
+    .content{
+        padding-top: 5%;
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .ColorBar{
+        display: block;
+        height: auto;
+        width: 100%;
+    }
 }

@@ -28,12 +28,12 @@ header{
 
 .entra{
     display: flex;
-    margin-right: 8%;
+    margin-right: 15%;
 }
 
 .picture{
-    height: 60px;
-    border-radius: 30px;
+    height: 50px;
+    border-radius: 25px;
 }
 
 @media screen and (max-width:600px) {

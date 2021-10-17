@@ -16,7 +16,19 @@ const Dashboard = () => {
             <NavbarPrivado />
                 <div className="flex">
                     <div className="content justify-content-between">
-                    <div><h4 className='FloatLeft mb-5'>hg</h4></div>
+                    <div>
+                        <h4 className='FloatLeft mb-5'>
+                            {user ? (
+                                <>
+                                {user.name}
+                                </>
+                            ): (
+                                <>
+                                <h4>Technology Warfare</h4>
+                                </>
+                            )}
+                        </h4>
+                    </div>
                     
 
                     <div id="carouselExampleControls" class="carousel slide Carusel" data-bs-ride="carousel">
@@ -43,38 +55,11 @@ const Dashboard = () => {
                     <div className="ColorBar mb-3">
                                 <div className='card DisplayBlock'>
                                     <div className="FloatLeft">
-                                        <h6>Email:</h6> 
-                                    </div>
-                                    <div className="FloatRight">
-                                        ghg
+                                        <h6>Email: {user.email}</h6> 
                                     </div>
                                 </div>
-                                <div className='card DisplayBlock'>
-                                    <div className="FloatLeft">
-                                        <h6>Edad:</h6>
-                                    </div>
-                                    <div className="FloatRight">
-                                        20 años
-                                    </div>
-                                </div>
-                                <div className='card DisplayBlock'>
-                                    <div className="FloatLeft">
-                                        <h6>Celular:</h6>
-                                    </div>
-                                    <div className="FloatRight">
-                                        3006587689
-                                    </div>                         
-                                </div>
-                                
                         </div>
-                        
-                        <div className="card DisplayBlock pt-0 mb-3">
-                                <button className='rounded ButtonSize'>Editar Info</button>
-                        </div>
-                        
                     </div>
-                    
-                    
                 </div>
                 
                 
