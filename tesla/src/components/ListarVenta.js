@@ -118,7 +118,6 @@ const TablaVentas = ({ loading, listaVentas, setEjecutarConsulta }) => {
                     <table role="table" className="table-bordered">
                         <thead role="rowgroup">
                             <tr role="row" >
-                                <th role="columnheader">idVenta</th>
                                 <th role="columnheader">idAutomovil</th>
                                 <th role="columnheader">NombreCliente</th>
                                 <th role="columnheader">ApellidoCliente</th>
@@ -487,13 +486,7 @@ const FilaVenta = ({ ventas, setEjecutarConsulta }) => {
                 edit ? (
                     <>
 
-                        <td role="cell">
-                            <input
-                                type="text"
-                                className="InputSize"
-                                value={infoNuevaVenta.idVenta}
-                                onChange={(e) => setInfoNuevaVenta({ ...infoNuevaVenta, idVenta: e.target.value })} />
-                        </td>
+                        
                         <td role="cell">
                             <input
                                 type="text"

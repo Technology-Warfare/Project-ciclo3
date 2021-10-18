@@ -110,7 +110,7 @@ const RegistrarUsuario = () => {
 
     return (
         <>
-            <div className="registrar">
+            <div>
                 <h4>Por favor digite los campos para registrar.</h4>
                 <div className="datos">
                     <form onSubmit={handleSubmit}>
