@@ -31,9 +31,10 @@
     }
 
     .designDesktop{
-        display: none;
         justify-content: center;
         text-align: center;
+        width: 10%;
+        background-color: darkorange;
 
 
     }
@@ -58,17 +59,15 @@
     }
 
 }
-@media screen and (max-width:600px){
+
+
     .designDesktop{
-        display: none;
         justify-content: center;
         text-align: center;
+        width: 87%;
 
 
     }
-}
-
-
 
 
 
