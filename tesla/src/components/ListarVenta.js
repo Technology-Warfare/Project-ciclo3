@@ -97,6 +97,9 @@ const TablaVentas = ({ loading, listaVentas, setEjecutarConsulta }) => {
 
     return (
         <div>
+
+           
+
             <div className="designDesktop">
                 <div class="container-fluid">
                     <form class="d-flex">
@@ -110,29 +113,31 @@ const TablaVentas = ({ loading, listaVentas, setEjecutarConsulta }) => {
                         <button class="btn btn-outline-primary" onClick={refresh}>Refresh<i className="fas fa-sync-alt"></i></button>     
                     </form>
                 </div>
-                <div className="table-responsive">
-                    <table className="table table-sm table-hover">
-                        <thead className="table-active">
-                            <tr>
-                                <th>idVenta</th>
-                                <th>idAutomovil</th>
-                                <th>NombreCliente</th>
-                                <th>ApellidoCliente</th>
-                                <th>EmailCliente</th>
-                                <th>CelularCliente</th>
-                                <th>NombreVendedor</th>
-                                <th>ApellidoVendedor</th>
-                                <th>EmailVendedor</th>
-                                <th>CelularVendedor</th>
-                                <th>PrecioAutomovil</th>
-                                <th>EstadoVenta</th>
-                                <th>Cantidad</th>
-                                <th>Descripcion</th>
-                                <th>Observaciones</th>
-                                <th>Acciones</th>
+                <div>
+                <div className="scrollDivTab">
+                    <table role="table" className="table-bordered">
+                        <thead role="rowgroup">
+                            <tr role="row" >
+                                <th role="columnheader">idVenta</th>
+                                <th role="columnheader">idAutomovil</th>
+                                <th role="columnheader">NombreCliente</th>
+                                <th role="columnheader">ApellidoCliente</th>
+                                <th role="columnheader">EmailCliente</th>
+                                <th role="columnheader">CelularCliente</th>
+                                <th role="columnheader">NombreVendedor</th>
+                                <th role="columnheader">ApellidoVendedor</th>
+                                <th role="columnheader">EmailVendedor</th>
+                                <th role="columnheader">CelularVendedor</th>
+                                <th role="columnheader">PrecioAutomovil</th>
+                                <th role="columnheader">EstadoVenta</th>
+                                <th role="columnheader">Cantidad</th>
+                                <th role="columnheader">Descripcion</th>
+                                <th role="columnheader">Observaciones</th>
+                                <th role="columnheader">Acciones</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody role="rowgroup">
+                            
 
                             {
                                 ventasFilatradas.map(
@@ -145,6 +150,7 @@ const TablaVentas = ({ loading, listaVentas, setEjecutarConsulta }) => {
                         </tbody>
                     </table>
 
+                </div>
                 </div>
             </div>
             {
@@ -476,110 +482,110 @@ const FilaVenta = ({ ventas, setEjecutarConsulta }) => {
 
     return (
 
-        <tr>
+        <tr role="row">
             {
                 edit ? (
                     <>
 
-                        <td>
+                        <td role="cell">
                             <input
                                 type="text"
                                 className="InputSize"
                                 value={infoNuevaVenta.idVenta}
                                 onChange={(e) => setInfoNuevaVenta({ ...infoNuevaVenta, idVenta: e.target.value })} />
                         </td>
-                        <td>
+                        <td role="cell">
                             <input
                                 type="text"
                                 className="InputSize"
                                 value={infoNuevaVenta.idAuto}
                                 onChange={(e) => setInfoNuevaVenta({ ...infoNuevaVenta, idAuto: e.target.value })} />
                         </td>
-                        <td>
+                        <td role="cell">
                             <input
                                 type="text"
                                 className="InputSize"
                                 value={infoNuevaVenta.firstName}
                                 onChange={(e) => setInfoNuevaVenta({ ...infoNuevaVenta, firstName: e.target.value })} />
                         </td>
-                        <td>
+                        <td role="cell">
                             <input
                                 type="text"
                                 className="InputSize"
                                 value={infoNuevaVenta.lastName}
                                 onChange={(e) => setInfoNuevaVenta({ ...infoNuevaVenta, lastName: e.target.value })} />
                         </td>
-                        <td>
+                        <td role="cell">
                             <input
                                 type="text"
                                 className="InputSize"
                                 value={infoNuevaVenta.email}
                                 onChange={(e) => setInfoNuevaVenta({ ...infoNuevaVenta, email: e.target.value })} />
                         </td>
-                        <td>
+                        <td role="cell">
                             <input
                                 type="text"
                                 className="InputSize"
                                 value={infoNuevaVenta.celular}
                                 onChange={(e) => setInfoNuevaVenta({ ...infoNuevaVenta, celular: e.target.value })} />
                         </td>
-                        <td>
+                        <td role="cell">
                             <input
                                 type="text"
                                 className="InputSize"
                                 value={infoNuevaVenta.fNVendedor}
                                 onChange={(e) => setInfoNuevaVenta({ ...infoNuevaVenta, fNVendedor: e.target.value })} />
                         </td>
-                        <td>
+                        <td role="cell">
                             <input
                                 type="text"
                                 className="InputSize"
                                 value={infoNuevaVenta.lNVendedor}
                                 onChange={(e) => setInfoNuevaVenta({ ...infoNuevaVenta, lNVendedor: e.target.value })} />
                         </td>
-                        <td>
+                        <td role="cell">
                             <input
                                 type="text"
                                 className="InputSize"
                                 value={infoNuevaVenta.emailVendedor}
                                 onChange={(e) => setInfoNuevaVenta({ ...infoNuevaVenta, emailVendedor: e.target.value })} />
                         </td>
-                        <td>
+                        <td role="cell">
                             <input
                                 type="text"
                                 className="InputSize"
                                 value={infoNuevaVenta.celularVendedor}
                                 onChange={(e) => setInfoNuevaVenta({ ...infoNuevaVenta, celularVendedor: e.target.value })} />
                         </td>
-                        <td>
+                        <td role="cell">
                             <input
                                 type="text"
                                 className="InputSize"
                                 value={infoNuevaVenta.precio}
                                 onChange={(e) => setInfoNuevaVenta({ ...infoNuevaVenta, precio: e.target.value })} />
                         </td>
-                        <td>
+                        <td role="cell">
                             <input
                                 type="text"
                                 className="InputSize"
                                 value={infoNuevaVenta.estado}
                                 onChange={(e) => setInfoNuevaVenta({ ...infoNuevaVenta, estado: e.target.value })} />
                         </td>
-                        <td>
+                        <td role="cell">
                             <input
                                 type="text"
                                 className="InputSize"
                                 value={infoNuevaVenta.cantidad}
                                 onChange={(e) => setInfoNuevaVenta({ ...infoNuevaVenta, cantidad: e.target.value })} />
                         </td>
-                        <td>
+                        <td role="cell">
                             <input
                                 type="text"
                                 className="InputSize"
                                 value={infoNuevaVenta.descripcion}
                                 onChange={(e) => setInfoNuevaVenta({ ...infoNuevaVenta, descripcion: e.target.value })} />
                         </td>
-                        <td>
+                        <td role="cell">
                             <input
                                 type="text"
                                 className="InputSize"
@@ -590,25 +596,25 @@ const FilaVenta = ({ ventas, setEjecutarConsulta }) => {
                     </>
                 ) : (
                     <>
-                        <td>{ventas.idVenta}</td>
-                        <td>{ventas.idAuto}</td>
-                        <td>{ventas.firstName}</td>
-                        <td>{ventas.lastName}</td>
-                        <td>{ventas.email}</td>
-                        <td>{ventas.celular}</td>
-                        <td>{ventas.fNVendedor}</td>
-                        <td>{ventas.lNVendedor}</td>
-                        <td>{ventas.emailVendedor}</td>
-                        <td>{ventas.celularVendedor}</td>
-                        <td>{ventas.precio}</td>
-                        <td>{ventas.estado}</td>
-                        <td>{ventas.cantidad}</td>
-                        <td>{ventas.descripcion}</td>
-                        <td>{ventas.observacion}</td>
+                        <td role="cell">{ventas.idVenta}</td>
+                        <td role="cell">{ventas.idAuto}</td>
+                        <td role="cell">{ventas.firstName}</td>
+                        <td role="cell">{ventas.lastName}</td>
+                        <td role="cell">{ventas.email}</td>
+                        <td role="cell">{ventas.celular}</td>
+                        <td role="cell">{ventas.fNVendedor}</td>
+                        <td role="cell">{ventas.lNVendedor}</td>
+                        <td role="cell">{ventas.emailVendedor}</td>
+                        <td role="cell">{ventas.celularVendedor}</td>
+                        <td role="cell">{ventas.precio}</td>
+                        <td role="cell">{ventas.estado}</td>
+                        <td role="cell">{ventas.cantidad}</td>
+                        <td role="cell">{ventas.descripcion}</td>
+                        <td role="cell">{ventas.observacion}</td>
                     </>
                 )}
 
-            <td>
+            <td role="cell">
                 {edit ? (
                     <>
                         <Tooltip title= "Confirmar edición">
