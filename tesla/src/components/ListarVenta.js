@@ -589,7 +589,6 @@ const FilaVenta = ({ ventas, setEjecutarConsulta }) => {
                     </>
                 ) : (
                     <>
-                        <td role="cell">{ventas.idVenta}</td>
                         <td role="cell">{ventas.idAuto}</td>
                         <td role="cell">{ventas.firstName}</td>
                         <td role="cell">{ventas.lastName}</td>
