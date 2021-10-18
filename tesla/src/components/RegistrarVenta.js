@@ -72,7 +72,7 @@ const RegistrarVenta = () => {
 
     return (
         <div className="registrar-venta">
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className="formWidth">
                 <div className="card-group">
                     <div className="card">
                         <div className ="card-body">
