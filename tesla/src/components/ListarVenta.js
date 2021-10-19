@@ -10,6 +10,7 @@ import { Tooltip } from '@material-ui/core';
 import { Dialog } from '@material-ui/core'; 
 import { obtenerVentas } from '../utils/api';
 import { getToken } from '../utils/api';
+import PrivateComponent from './PrivateComponent';
 
 
 
@@ -97,10 +98,8 @@ const TablaVentas = ({ loading, listaVentas, setEjecutarConsulta }) => {
 
     return (
         <div>
-
-           
-
-            <div className="designDesktop">
+            <PrivateComponent roleList={['administrador', 'vendedor']}>
+                <div className="designDesktop">
                 <div class="container-fluid">
                     <form class="d-flex">
                         <input 
@@ -152,6 +151,10 @@ const TablaVentas = ({ loading, listaVentas, setEjecutarConsulta }) => {
                 </div>
                 </div>
             </div>
+            </PrivateComponent>
+           
+
+            
             {
                 listaVentas.map(
                     (ventas) => {
@@ -159,6 +162,7 @@ const TablaVentas = ({ loading, listaVentas, setEjecutarConsulta }) => {
 
                         return (
                             <>
+                            <PrivateComponent roleList={['administrador', 'vendedor']}>
                                 <div className="designMovil">
 
                                     <div class="row row-cols-1 row-cols-md-3 g-4">
@@ -369,27 +373,9 @@ const TablaVentas = ({ loading, listaVentas, setEjecutarConsulta }) => {
                                         </div>
                                     </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                                 </div>
+                            </PrivateComponent>
+                                
                             </>
                         );
                     }
@@ -480,8 +466,8 @@ const FilaVenta = ({ ventas, setEjecutarConsulta }) => {
 
 
     return (
-
-        <tr>
+        <PrivateComponent roleList={['administrador', 'vendedor']}>
+            <tr>
             {
                 edit ? (
                     <>
@@ -640,6 +626,8 @@ const FilaVenta = ({ ventas, setEjecutarConsulta }) => {
 
 
         </tr>
+        </PrivateComponent>
+        
 
     )
 }
