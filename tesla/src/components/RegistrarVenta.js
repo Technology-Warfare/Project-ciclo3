@@ -78,7 +78,7 @@ const RegistrarVenta = () => {
         const obtenerVendedores = async () =>{
             await obtenerUsuarios(
                 (response)=>{
-                    console.log("Respuesta", response);
+                    console.log("Respuesta usuarios", response);
                     setVendedores(response.data);
                 },
                 (error)=>{
@@ -87,16 +87,17 @@ const RegistrarVenta = () => {
             );
         }
         obtenerVendedores();
+        
     }, []);
 
 
-    const [obtenerSelect, setObtenerSelect] = useState(true);
+    const [obtenerSelect, setObtenerSelect] = useState([]);
 
     useEffect(() => {
         console.log("obtenerSelect", obtenerSelect);
     }, [obtenerSelect]);
 
-    const [obtenerSelect1, setObtenerSelect1] = useState(true);
+    const [obtenerSelect1, setObtenerSelect1] = useState([]);
 
     useEffect(() => {
         console.log("obtenerSelect2", obtenerSelect1);
@@ -107,6 +108,7 @@ const RegistrarVenta = () => {
     const [nombreVendedor, setNombreVendedor] = useState([]);
     const mostrarNombreYApellidoAparte = () => {
         setNombreCliente([obtenerSelect])
+        
     }
     const mostrarNombreYApellidoAparte2 = () => {
         setNombreVendedor([obtenerSelect1])
@@ -118,11 +120,48 @@ const RegistrarVenta = () => {
     useEffect(() => {
         console.log("nombreVendedor", nombreVendedor);
     }, [nombreVendedor]);
+
+
+
+
+    const [busquedaRoll, setBusquedaRoll] = useState('');
+    const [busquedaRoll1, setBusquedaRoll1] = useState('');
+    const [usuariosFilatrados, setUsuariosFiltrados] = useState(vendedores);
+    const [usuariosFilatrados1, setUsuariosFiltrados1] = useState(vendedores);
+    useEffect(() => {
+        //console.log('busquedaRoll', busquedaRoll);
+        //console.log("Lista original Roll", vendedores);
+        setUsuariosFiltrados(
+            vendedores.filter(elementoRoll => {
+                console.log("elemento Roll", elementoRoll);
+                return JSON.stringify(elementoRoll).toLowerCase().includes(busquedaRoll.toLowerCase());
+            })
+        );
+        setUsuariosFiltrados1(
+            vendedores.filter(elementoRoll => {
+                console.log("elemento Roll", elementoRoll);
+                return JSON.stringify(elementoRoll).toLowerCase().includes(busquedaRoll1.toLowerCase());
+            })
+        );
+        setBusquedaRoll("Cliente");
+        setBusquedaRoll1("Vendedor");
+    }, [busquedaRoll, vendedores]);
+
+     
+
     return (
 
                
         <div className="registrar-venta">
+
             <form onSubmit={handleSubmit} className="formWidth">
+
+
+                
+
+
+
+
                 <div className="card-group">
                     
                     
@@ -150,10 +189,12 @@ const RegistrarVenta = () => {
                         <div className="card-body">
                             <h5 className="card-title">Datos cliente</h5>
                             <div className="form-floating">
-                                <select onChange={(e) => setObtenerSelect(vendedores.filter((u)=>u._id===e.target.value)[0])} value={obtenerSelect._id} className="form-select" id="nombres" onClick={mostrarNombreYApellidoAparte}>
+                                <select onChange={(e) => setObtenerSelect(usuariosFilatrados.filter((u)=>u._id===e.target.value)[0])}
+                                value={obtenerSelect}
+                                     className="form-select" id="nombres" onClick={mostrarNombreYApellidoAparte}>
                                     <option>Seleccione un cliente
                                     </option>
-                                    {vendedores.map((el) => {
+                                    {usuariosFilatrados.map((el) => {
                                         return (
                                             <option 
                                             key={nanoid()}
@@ -168,9 +209,9 @@ const RegistrarVenta = () => {
                                 {nombreCliente.map(el => {
                                     return (
                                         <>
-                                            <input name="firstName" onChange={handleChange} type="text" aria-label="First name" className="form-control" id="inputName" value={`${el.nombre}`} />
+                                            <input name="firstName" type="text" aria-label="First name" className="form-control" id="inputName" value={`${el.nombre}`} />
 
-                                            <input name="lastName" onChange={handleChange} type="text" aria-label="Last name" className="form-control" id="inputLastName" value={`${el.apellido}`} />
+                                            <input name="lastName" type="text" aria-label="Last name" className="form-control" id="inputLastName" value={`${el.apellido}`} />
                                         </>
                                     )
                                 })}
@@ -204,10 +245,10 @@ const RegistrarVenta = () => {
                         <div className="card-body">
                             <h5 className="card-title">Datos Vendedor</h5>    
                             <div className="form-floating"> 
-                                <select onChange={(e) => setObtenerSelect1(vendedores.filter((u) => u._id === e.target.value)[0])} value={obtenerSelect1._id} className="form-select" id="nombres2" onClick={mostrarNombreYApellidoAparte2}>
+                                <select onChange={(e) => setObtenerSelect1(usuariosFilatrados1.filter((u) => u._id === e.target.value)[0])} value={obtenerSelect1._id} className="form-select" id="nombres2" onClick={mostrarNombreYApellidoAparte2}>
                                     <option>Seleccione un vendedor
                                     </option>
-                                    {vendedores.map((el) => {
+                                    {usuariosFilatrados1.map((el) => {
                                         return (
                                             <option
                                                 key={nanoid()}
