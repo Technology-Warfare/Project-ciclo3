@@ -209,9 +209,11 @@ const RegistrarVenta = () => {
                                 {nombreCliente.map(el => {
                                     return (
                                         <>
-                                            <input name="firstName" type="text" aria-label="First name" className="form-control" id="inputName" value={`${el.nombre}`} />
+                                            <input name="firstName" 
+                                            onChange={handleChange} type="text" aria-label="First name" className="form-control" id="inputName" value={`${el.nombre}`} />
 
-                                            <input name="lastName" type="text" aria-label="Last name" className="form-control" id="inputLastName" value={`${el.apellido}`} />
+                                            <input name="lastName"
+                                            onChange={handleChange} type="text" aria-label="Last name" className="form-control" id="inputLastName" value={`${el.apellido}`} />
                                         </>
                                     )
                                 })}
