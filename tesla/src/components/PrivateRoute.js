@@ -15,12 +15,12 @@ const PrivateRoute = ({ children }) => {
             localStorage.setItem('token', accessToken);
             console.log(accessToken);
             await obtenerDatosUsuarios(
-                (response) => {
-                    console.log('response datos usuarios', response);
-                    setUserData(response.data);
+                (res) => {
+                    console.log('response datos usuarios', res);
+                    setUserData(res.data);
                 },
-                (err) => {
-                    console.log('err', err)
+                (error) => {
+                  console.error('Salio un error:', error);
                 }
             );
             
@@ -28,7 +28,7 @@ const PrivateRoute = ({ children }) => {
         if (isAuthenticated){
             fetchAuth0Token();
         }
-    }, [isAuthenticated, getAccessTokenSilently])
+    }, [isAuthenticated, getAccessTokenSilently, setUserData])
 
     if (isLoading) return <div>loading...</div>
 
