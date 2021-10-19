@@ -190,7 +190,7 @@ const RegistrarVenta = () => {
                             <h5 className="card-title">Datos cliente</h5>
                             <div className="form-floating">
                                 <select onChange={(e) => setObtenerSelect(usuariosFilatrados.filter((u)=>u._id===e.target.value)[0])}
-                                value={obtenerSelect}
+                                value={obtenerSelect._id}
                                      className="form-select" id="nombres" onClick={mostrarNombreYApellidoAparte}>
                                     <option>Seleccione un cliente
                                     </option>
