@@ -80,8 +80,6 @@ const RegistrarVehiculo = () => {
                             <option value="Model 3">Model 3</option>
                             <option value="Model X">Model X</option>
                             <option value="Model Y">Model Y</option>
-                            <option value="Solar Roof">Solar Roof</option>
-                            <option value="Solar Panels">Solar Panels</option>
                         </select>
                     </div>
                 </div>
@@ -90,8 +88,11 @@ const RegistrarVehiculo = () => {
                         <label className="input-group-text" for="generacion">Generación</label>
                         <select onChange={handleChange} name="generacion" className="form-select" id="generacion">
                             <option selected>Seleccione</option>
+                            <option value="1ra generación [2015 - 2021]">1ra generación [2012 - 2020]</option>
+                            <option value="1ra generación [2015 - 2021]">1ra generación [2015 - 2021]</option>
                             <option value="1ra generación [2017 - 2021]">1ra generación [2017 - 2021]</option>
                         </select>
+                        
                     </div>
                 </div>
             </div>
@@ -102,6 +103,8 @@ const RegistrarVehiculo = () => {
                         <select onChange={handleChange} name="serie" className="form-select" id="serie">
                             <option selected>Seleccione</option>
                             <option value="Sedan">Sedan</option>
+                            <option value="Crossover">Crossover</option>
+                            <option value="Liftbek">Liftbek</option>
                         </select>
                     </div>
                 </div>
@@ -116,6 +119,9 @@ const RegistrarVehiculo = () => {
                             <option value="340 kVt (462 cv) tracción, transmisión automática">340 kVt (462 cv) tracción, transmisión automática</option>
                             <option value="340kw (462 cv a) tracción, transmisión automática">340kw (462 cv a) tracción, transmisión automática</option>
                             <option value="AT (341 kVt) 4WD">AT (341 kVt) 4WD</option>
+                            <option value="AT 4WD (333 cv)">AT 4WD (333 cv)</option>
+                            <option value="AT (271 cv)">AT (271 cv)</option>
+                            <option value="60 (306 cv)">60 (306 cv)</option>
                         </select>
                     </div>
                 </div>
@@ -124,8 +130,10 @@ const RegistrarVehiculo = () => {
                         <label className="input-group-text" for="equipamento">Equipamento</label>
                         <select onChange={handleChange} name="equipamiento" className="form-select" id="equipamento">
                             <option selected>Seleccione</option>
+                            <option value="----------------">----------------</option>
                             <option value="Long Range">Long Range</option>
                             <option value="Performance">Performance</option>
+                            <option value="Model Y">Model Y</option>
                         </select>
                     </div>
                 </div>

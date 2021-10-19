@@ -143,8 +143,8 @@ const RegistrarVenta = () => {
                 return JSON.stringify(elementoRoll).toLowerCase().includes(busquedaRoll1.toLowerCase());
             })
         );
-        setBusquedaRoll("Cliente");
-        setBusquedaRoll1("Vendedor");
+        setBusquedaRoll("cliente");
+        setBusquedaRoll1("vendedor");
     }, [busquedaRoll, vendedores]);
 
      
