@@ -5,8 +5,9 @@ import { obtenerUsuarios } from '../utils/api';
 import { getToken } from '../utils/api';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { Tooltip, Dialog } from '@mui/material';
+import { Tooltip, Dialog, Button } from '@mui/material';
 import { nanoid } from 'nanoid';
+import PrivateComponent from './PrivateComponent';
 
 const ListarUsuarios = () => {
     const [usuarios, setUsuarios] = useState([]);
@@ -96,6 +97,9 @@ const TablaUsuarios = ({ loading, listaUsuarios, setEjecutarConsulta }) => {
                     <button class="btn btn-outline-success" type="submit">Buscar</button>
                 </form>
                 <button className="btn btn-outline-primary refresh mt-5 mb-5" onClick={refresh}>Refresh<i className="fas fa-sync-alt"></i></button>
+                <PrivateComponent roleList={['Administrador', 'Vendedor']}>
+                <Button>Hola RBAC</Button>
+            </PrivateComponent>
             </div>
             <div className="table-responsive">
                 <table className="table table-sm table-hover">

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
 import { Auth0Provider } from "@auth0/auth0-react";
 
@@ -13,10 +13,12 @@ import vehiculos from './Pages/vehiculos';
 import ventas from './Pages/ventas';
 import PrivateLayout from './layouts/PrivateLayout';
 import PublicLayout from './layouts/PublicLayout';
+import { UserContext } from './context/user';
 
 
 
 function App() {
+  const [userData, setUserData] = useState({});
 
   return (
     <Auth0Provider
@@ -26,7 +28,8 @@ function App() {
       audience='api-autenticacion-technology-warfare'
     >
       <div>
-        <BrowserRouter>
+        <UserContext.Provider value={{userData, setUserData}}>
+          <BrowserRouter>
           <Switch>
             <Route path={['/dashboard', '/dashboard/ventas', '/dashboard/vehiculos', '/dashboard/usuarios']}>
               <PrivateLayout>
@@ -66,6 +69,8 @@ function App() {
               component={approval} />
           </Switch>
         </BrowserRouter>
+        </UserContext.Provider>
+        
       </div>
     </Auth0Provider>
   );
