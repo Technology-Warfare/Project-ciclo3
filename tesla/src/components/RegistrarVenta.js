@@ -190,7 +190,7 @@ const RegistrarVenta = () => {
                             <h5 className="card-title">Datos cliente</h5>
                             <div className="form-floating">
                                 <select onChange={(e) => setObtenerSelect(usuariosFilatrados.filter((u)=>u._id===e.target.value)[0])}
-                                value={obtenerSelect._id}
+                                value={obtenerSelect._id -1}
                                      className="form-select" id="nombres" onClick={mostrarNombreYApellidoAparte}>
                                     <option>Seleccione un cliente
                                     </option>
@@ -247,7 +247,7 @@ const RegistrarVenta = () => {
                         <div className="card-body">
                             <h5 className="card-title">Datos Vendedor</h5>    
                             <div className="form-floating"> 
-                                <select onChange={(e) => setObtenerSelect1(usuariosFilatrados1.filter((u) => u._id === e.target.value)[0])} value={obtenerSelect1._id} className="form-select" id="nombres2" onClick={mostrarNombreYApellidoAparte2}>
+                                <select onChange={(e) => setObtenerSelect1(usuariosFilatrados1.filter((u) => u._id === e.target.value)[0])} value={obtenerSelect1._id -1} className="form-select" id="nombres2" onClick={mostrarNombreYApellidoAparte2}>
                                     <option>Seleccione un vendedor
                                     </option>
                                     {usuariosFilatrados1.map((el) => {
