@@ -3,6 +3,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
 import { Button } from '@mui/material';
+import PrivateComponent from './PrivateComponent';
 
 const RegistrarVehiculo = () => {
 
@@ -58,7 +59,8 @@ const RegistrarVehiculo = () => {
 
     return (
         <div>
-            <form onSubmit={handleSubmit}>
+            <PrivateComponent roleList={['administrador', 'vendedor']}>
+                <form onSubmit={handleSubmit}>
             <div className="form">
                 <div class="input-group mb-3">
                     <div className="input-group flex-nowrap">
@@ -159,6 +161,8 @@ const RegistrarVehiculo = () => {
                 draggable
             />
             </form>
+            </PrivateComponent>
+            
         </div>
     )
 }

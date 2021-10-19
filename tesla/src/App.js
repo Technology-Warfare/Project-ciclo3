@@ -35,7 +35,7 @@ function App() {
               <PrivateLayout>
                 <Switch>
                   <Route exact
-                    path="/dashboard/ventas"
+                    path='/dashboard/ventas'
                     component={ventas} />
                   <Route exact
                     path="/dashboard"

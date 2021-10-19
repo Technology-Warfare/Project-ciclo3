@@ -7,7 +7,7 @@ const PrivateComponent = ({roleList, children}) => {
 
     console.log('user data desde el pruvate component', userData)
 
-    if (roleList.includes('Cliente')){
+    if (roleList.includes(userData.cargo)){
         return children;
     }
     return <></>;

@@ -3,6 +3,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
 import { Button } from '@mui/material';
+import PrivateComponent from './PrivateComponent';
 
 import '../Pages/styles/admv.css';
 import '../utils/api';
@@ -145,14 +146,14 @@ const RegistrarVenta = () => {
         );
         setBusquedaRoll("cliente");
         setBusquedaRoll1("vendedor");
-    }, [busquedaRoll, vendedores]);
+    }, [busquedaRoll, vendedores, busquedaRoll1]);
 
      
 
     return (
 
-               
-        <div className="registrar-venta">
+        <PrivateComponent roleList={['administrador', 'vendedor']}>
+           <div className="registrar-venta">
 
             <form onSubmit={handleSubmit} className="formWidth">
 
@@ -209,11 +210,14 @@ const RegistrarVenta = () => {
                                 {nombreCliente.map(el => {
                                     return (
                                         <>
+                                        <PrivateComponent roleList={['administrador', 'vendedor']}>
                                             <input name="firstName" 
                                             onChange={handleChange} type="text" aria-label="First name" className="form-control" id="inputName" value={`${el.nombre}`} />
 
                                             <input name="lastName"
                                             onChange={handleChange} type="text" aria-label="Last name" className="form-control" id="inputLastName" value={`${el.apellido}`} />
+                                        </PrivateComponent>
+                                            
                                         </>
                                     )
                                 })}
@@ -373,7 +377,9 @@ const RegistrarVenta = () => {
                     
                 </div>
             </form>
-        </div>
+        </div> 
+        </PrivateComponent>
+        
     )
 }
 
