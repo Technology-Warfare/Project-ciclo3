@@ -15,13 +15,20 @@
 }
 
 .FloatLeft{
-    width: 90%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.FloatRight{
+    width: 100%;
     display: flex;
     justify-content: center;
 }
 
 .DisplayBlock{
     display: block;
+    justify-content: ;
     padding-top: 12px;
     padding-bottom: 0%;
     background-color: transparent;
@@ -35,8 +42,10 @@
 .ColorBar{
     background-color: rgb(128, 179, 238);
     display: flex;
-    height: 50px;
-    width: 100%;
+    justify-content: center;
+    height: auto;
+    width: 90%;
+    margin-left: 5%;
 }
 
 .ButtonSize{

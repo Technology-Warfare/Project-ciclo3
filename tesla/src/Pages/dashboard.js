@@ -2,6 +2,7 @@ import React from 'react'
 import NavbarPrivado from '../components/NavbarPrivado';
 import '../Pages/styles/dashboard.css';
 import { useAuth0 } from "@auth0/auth0-react";
+import { useUser } from '../context/user';
 
 import fotoDashboard1 from "../Pages/img/ModelS/models2.jpg";
 import fotoDashboard2 from "../Pages/img/ModelX/modelx2.jpg";
@@ -10,6 +11,7 @@ import fotoDashboard3 from "../Pages/img/ModelY/y.jpg";
 const Dashboard = () => {
 
     const { user } = useAuth0();
+    const { userData } = useUser();
 
     return (
             <>
@@ -55,9 +57,20 @@ const Dashboard = () => {
                         </button>
                     </div>
                     <div className="ColorBar mb-5">
-                        <div className='card DisplayBlock p-4'>
+                        <div className='card DisplayBlock'>
                             <div className="FloatLeft">
-                                <h6>Email: {user.email}</h6> 
+                                <h6>Email:</h6> 
+                            </div>
+                            <div className="FloatRight">
+                                {user.email}
+                            </div>
+                        </div>
+                        <div className='card DisplayBlock'>
+                            <div className="FloatLeft">
+                                <h6>Rol:</h6> 
+                            </div>
+                            <div className="FloatRight">
+                                {userData.cargo}
                             </div>
                         </div>
                     </div>
