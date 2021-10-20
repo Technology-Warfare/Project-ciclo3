@@ -11,7 +11,7 @@ const PrivateLayout = ({children}) => {
         <PrivateRoute>
             <div className="flex">
                 <Sidebar />
-                <main>
+                <main className="Main">
                     {children}
                 </main>
             </div>
