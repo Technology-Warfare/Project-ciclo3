@@ -100,7 +100,7 @@ const TablaVehiculos = ({ loading, listaVehiculos, setEjecutarConsulta }) => {
         <PrivateComponent roleList={['administrador', 'vendedor']}>
            <div>
             <div className="designDesktop">
-                <div class="container-fluid">
+                <div class="container-flex">
                     <form class="d-flex">
                         <input
                             value={busqueda}

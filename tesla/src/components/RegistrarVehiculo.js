@@ -4,6 +4,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
 import { Button } from '@mui/material';
 import PrivateComponent from './PrivateComponent';
+import '../Pages/styles/vehiculos.css';
 
 const RegistrarVehiculo = () => {
 
@@ -58,7 +59,7 @@ const RegistrarVehiculo = () => {
     }
 
     return (
-        <div>
+        <div className="registrovehiculos">
             <PrivateComponent roleList={['administrador', 'vendedor']}>
                 <form onSubmit={handleSubmit}>
             <div className="form">
