@@ -1,19 +1,18 @@
-.content-vehiculos{   
-    margin-left: 5%;
-    margin-right: 3%;
-    margin-top: 15%;
+.content-vehiculos{
+    padding-top: 15%;
     padding-bottom: 5%;
-    width: 84%;
+    width: 90%;
+    margin-left: 5%;
     
+}
+
+.registrovehiculos{
+    width: 90%;
+    margin-left: 5%;
 }
 
 
 @media screen and (min-width:1596px){
-    .content-vehiculos{   
-    margin: 0%;
-    padding-bottom: 5%;
-    width: 100%;
-    }
 
     .sizeCont {
         width: 100%;
