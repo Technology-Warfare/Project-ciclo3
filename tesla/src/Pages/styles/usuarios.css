@@ -1,0 +1,61 @@
+.content-usuarios{
+    margin-top: 15%;
+    width: 90%;
+    margin-left: 5%;
+    padding-bottom: 5%;
+}
+
+.registrar{
+    text-align: center;
+    width: 100%;
+}
+
+.RegistrarUsuario{
+    width: 100%;
+}
+
+.search{
+    width: 30%;
+    margin-left: 65%;
+    margin-top: 5%;
+}
+
+.table{
+    text-align: center;
+}
+
+td{
+    text-align: center;
+}
+
+.info-user{
+    text-align:center;
+}
+
+.link{
+    text-align: center;
+    margin-top: 5%;
+}
+
+.refresh{
+    position: relative;
+    left: 90%;
+}
+
+@media screen and (max-width:600px) {
+    
+    .content-usuarios{
+        width: 100%;
+        justify-content: center;
+    }
+
+    .refresh{
+        position: relative;
+        left: 70%;
+    }
+}
+
+
+.datos{
+    text-align: center;
+}

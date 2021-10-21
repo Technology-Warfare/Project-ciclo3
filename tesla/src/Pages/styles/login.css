@@ -1,0 +1,85 @@
+.main{
+    /* background-image: url("https://tesla-cdn.thron.com/delivery/public/image/tesla/195458a0-ff67-488c-b972-14d23d2c42fb/bvlatuR/std/1200x630/ms-homepage-social"); */
+    background-size: cover;
+    display: flex;
+    height: 100vh;
+    background-image: url("https://cdni.rt.com/actualidad/public_images/2021.09/article/6136b85859bf5b52685b45f2.JPG");
+}
+
+.main-login{
+    background-color: #a2bbe7e8;
+    justify-content: center;
+    width: 50%;
+    height: 90%;
+    margin-left: 25%;
+    margin-top: 2%;
+    margin-right: 25%;
+    padding-bottom: 3%;
+    border-radius: 30px;
+}
+
+.logo{
+    width: 15%;
+    margin-left: 42.5%;
+    margin-top: 5%;
+    justify-content: center;
+}
+
+.logo-main{
+    width: 100%;
+}
+
+.form{
+    width: 100%;
+    display: block;
+    justify-content: center;
+}
+
+.campos{
+    display: flex;
+    justify-content: center;
+    padding-top: 3.5%;
+}
+
+.registrarse{
+    text-align: center;
+    margin-top: 3%;
+}
+
+.boton-login{
+    text-align: center;
+    margin-top: 5%;
+}
+
+.google{
+    text-align: center;
+    margin-top: 2%;
+}
+
+.border3{
+    color: rgb(255, 255, 255);
+}
+
+.border3:hover{
+   color:rgb(7, 58, 187);
+}
+
+
+@media screen and (max-width:400px) {
+
+    .main{
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    
+    .main-login{
+        width: 100%;
+        margin: 0;
+        margin-top: 40%;
+        padding-bottom: 15%;
+    }
+
+    .logo{
+        width: 20%
+    }
+}
