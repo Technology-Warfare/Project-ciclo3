@@ -62,7 +62,7 @@ const RegistrarVenta = () => {
                 observacion:venta.observacion
             },
         };
-        
+
         await axios
             .request(options)
             .then(function (response) {
@@ -123,9 +123,6 @@ const RegistrarVenta = () => {
     useEffect(() => {
         console.log("nombreVendedor", nombreVendedor);
     }, [nombreVendedor]);
-
-
-
 
     const [busquedaRoll, setBusquedaRoll] = useState('');
     const [busquedaRoll1, setBusquedaRoll1] = useState('');
