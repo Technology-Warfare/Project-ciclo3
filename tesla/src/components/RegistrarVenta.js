@@ -147,8 +147,6 @@ const RegistrarVenta = () => {
         setBusquedaRoll1("vendedor");
     }, [busquedaRoll, vendedores, busquedaRoll1]);
 
-     
-
     return (
 
         <PrivateComponent roleList={['administrador', 'vendedor']}>
