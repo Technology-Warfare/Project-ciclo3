@@ -10,6 +10,7 @@ import { getToken } from '../utils/api';
 import { nanoid } from 'nanoid';
 import { Tooltip } from '@material-ui/core';
 import { Dialog } from '@material-ui/core';
+import PrivateComponent from './PrivateComponent';
 
 
 const ListarVehiculos = () => {
@@ -46,8 +47,8 @@ const ListarVehiculos = () => {
         }, []);
 
     return (
-
-        <div>
+        <PrivateComponent roleList={['administrador', 'vendedor']}>
+            <div>
             <TablaVehiculos loading={loading} listaVehiculos={vehiculos} setEjecutarConsulta={setEjecutarConsulta} />
             <ToastContainer
                 position="bottom-center"
@@ -59,6 +60,8 @@ const ListarVehiculos = () => {
                 draggable
             />
         </div>
+        </PrivateComponent>
+        
 
 
 
@@ -94,9 +97,10 @@ const TablaVehiculos = ({ loading, listaVehiculos, setEjecutarConsulta }) => {
     }
 
     return (
-        <div>
+        <PrivateComponent roleList={['administrador', 'vendedor']}>
+           <div>
             <div className="designDesktop">
-                <div class="container-fluid">
+                <div class="container-flex">
                     <form class="d-flex">
                         <input
                             value={busqueda}
@@ -280,7 +284,9 @@ const TablaVehiculos = ({ loading, listaVehiculos, setEjecutarConsulta }) => {
 
 
 
-        </div>
+        </div> 
+        </PrivateComponent>
+        
 
 
 
@@ -356,8 +362,8 @@ const FilaVehiculo = ({ vehiculos, setEjecutarConsulta }) => {
 
 
     return (
-
-        <tr>
+        <PrivateComponent roleList={['administrador', 'vendedor']}>
+            <tr>
             {
                 edit ? (
                     <>
@@ -469,6 +475,8 @@ const FilaVehiculo = ({ vehiculos, setEjecutarConsulta }) => {
 
 
         </tr>
+        </PrivateComponent>
+        
 
     )
 }

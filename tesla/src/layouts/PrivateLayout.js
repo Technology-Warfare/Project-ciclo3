@@ -3,6 +3,7 @@ import React from 'react';
 import Sidebar from '../components/Sidebar';
 import Footer from '../components/Footer';
 import PrivateRoute from '../components/PrivateRoute';
+import '../Pages/styles/PrivateLayout.css';
 
 const PrivateLayout = ({children}) => {
 
@@ -10,7 +11,7 @@ const PrivateLayout = ({children}) => {
         <PrivateRoute>
             <div className="flex">
                 <Sidebar />
-                <main>
+                <main className="Main">
                     {children}
                 </main>
             </div>

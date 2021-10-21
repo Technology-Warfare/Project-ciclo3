@@ -1,10 +1,14 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
 import { Button } from '@mui/material';
+import PrivateComponent from './PrivateComponent';
 
 import '../Pages/styles/admv.css';
+import '../utils/api';
+import { obtenerUsuarios } from '../utils/api';
+import { nanoid } from 'nanoid';
 
 const RegistrarVenta = () => {
 
@@ -70,21 +74,97 @@ const RegistrarVenta = () => {
             });
     }
 
+    const [vendedores, setVendedores] = useState([]);
+    useEffect(() => {
+        const obtenerVendedores = async () =>{
+            await obtenerUsuarios(
+                (response)=>{
+                    console.log("Respuesta usuarios", response);
+                    setVendedores(response.data);
+                },
+                (error)=>{
+                    console.error(error);
+                }
+            );
+        }
+        obtenerVendedores();
+        
+    }, []);
+
+
+    const [obtenerSelect, setObtenerSelect] = useState([]);
+
+    useEffect(() => {
+        console.log("obtenerSelect", obtenerSelect);
+    }, [obtenerSelect]);
+
+    const [obtenerSelect1, setObtenerSelect1] = useState([]);
+
+    useEffect(() => {
+        console.log("obtenerSelect2", obtenerSelect1);
+    }, [obtenerSelect1]);
+
+
+    const [nombreCliente, setNombreCliente] = useState([]);
+    const [nombreVendedor, setNombreVendedor] = useState([]);
+    const mostrarNombreYApellidoAparte = () => {
+        setNombreCliente([obtenerSelect])
+        
+    }
+    const mostrarNombreYApellidoAparte2 = () => {
+        setNombreVendedor([obtenerSelect1])
+    }
+
+    useEffect(() => {
+        console.log("nombreCliente", nombreCliente);
+    }, [nombreCliente]);
+    useEffect(() => {
+        console.log("nombreVendedor", nombreVendedor);
+    }, [nombreVendedor]);
+
+
+
+
+    const [busquedaRoll, setBusquedaRoll] = useState('');
+    const [busquedaRoll1, setBusquedaRoll1] = useState('');
+    const [usuariosFilatrados, setUsuariosFiltrados] = useState(vendedores);
+    const [usuariosFilatrados1, setUsuariosFiltrados1] = useState(vendedores);
+    useEffect(() => {
+        //console.log('busquedaRoll', busquedaRoll);
+        //console.log("Lista original Roll", vendedores);
+        setUsuariosFiltrados(
+            vendedores.filter(elementoRoll => {
+                console.log("elemento Roll", elementoRoll);
+                return JSON.stringify(elementoRoll).toLowerCase().includes(busquedaRoll.toLowerCase());
+            })
+        );
+        setUsuariosFiltrados1(
+            vendedores.filter(elementoRoll => {
+                console.log("elemento Roll", elementoRoll);
+                return JSON.stringify(elementoRoll).toLowerCase().includes(busquedaRoll1.toLowerCase());
+            })
+        );
+        setBusquedaRoll("cliente");
+        setBusquedaRoll1("vendedor");
+    }, [busquedaRoll, vendedores, busquedaRoll1]);
+
+     
+
     return (
-        <div className="registrar-venta">
+
+        <PrivateComponent roleList={['administrador', 'vendedor']}>
+           <div className="registrar-venta">
+
             <form onSubmit={handleSubmit} className="formWidth">
+
+
+                
+
+
+
+
                 <div className="card-group">
-                    <div className="card">
-                        <div className ="card-body">
-                            <span className="input-group-text">ID venta</span>
-                            <div className="form-floating">
-                                <input onChange={handleChange} name="idVenta" type="text" class="form-control" id="inIdVenta" />
-                                <label for="inIdVenta" class="form-label">
-                                TWMV
-                                </label>
-                            </div>
-                        </div>
-                    </div>
+                    
                     
                     <div className="card">
                         <div className ="card-body">
@@ -110,17 +190,55 @@ const RegistrarVenta = () => {
                         <div className="card-body">
                             <h5 className="card-title">Datos cliente</h5>
                             <div className="form-floating">
-                                <input name="firstName" onChange={handleChange} type="text" aria-label="First name" className="form-control" id="inputName" />
-                                <label for="inputName" className="form-label">Nombres</label>
+                                <select onChange={(e) => setObtenerSelect(usuariosFilatrados.filter((u)=>u._id===e.target.value)[0])}
+                                value={obtenerSelect._id -1}
+                                     className="form-select" id="nombres" onClick={mostrarNombreYApellidoAparte}>
+                                    <option>Seleccione un cliente
+                                    </option>
+                                    {usuariosFilatrados.map((el) => {
+                                        return (
+                                            <option 
+                                            key={nanoid()}
+                                            value={el._id} 
+                                            >{`${el.nombre} ${el.apellido}`}
+                                            </option>
+                                        )
+                                    })}
+                                </select>
+                                <label className="form-label" for="nombres">Cliente</label>
+
+                                {nombreCliente.map(el => {
+                                    return (
+                                        <>
+                                        <PrivateComponent roleList={['administrador', 'vendedor']}>
+                                            <input name="firstName" 
+                                            onChange={handleChange} type="text" aria-label="First name" className="form-control" id="inputName" value={`${el.nombre}`} />
+
+                                            <input name="lastName"
+                                            onChange={handleChange} type="text" aria-label="Last name" className="form-control" id="inputLastName" value={`${el.apellido}`} />
+                                        </PrivateComponent>
+                                            
+                                        </>
+                                    )
+                                })}
                             </div>
+                            
+                                
+
                             <div className="form-floating">
-                                <input name="lastName" onChange={handleChange} type="text" aria-label="Last name" className="form-control" id="inputLastName" />
-                                <label for="inputLastName" className="form-label">Apellidos</label>
+
+                                {nombreCliente.map(el => {
+                                    return (
+                                        <>
+                                            <input name="email" onChange={handleChange} type="text" className="form-control" id="inputEmail" value={`${el.email}`}/>
+                                            <label for="inputEmail" className="form-label">Email</label>
+                                        </>
+                                    )
+                                })}
+                                
                             </div>
-                            <div className="form-floating">
-                                <input name="email" onChange={handleChange} type="email" className="form-control" id="inputEmail" />
-                                <label for="inputEmail" className="form-label">Email</label>
-                            </div>
+                            
+                            
                             <div className="form-floating">
                                 <input name="celular" onChange={handleChange} type="text" className="form-control" id="celular" />
                                 <label for="celular" className="form-label">Celular</label>
@@ -131,19 +249,48 @@ const RegistrarVenta = () => {
                 
                     <div className="card">
                         <div className="card-body">
-                            <h5 className="card-title">Datos Vendedor</h5>
-                            <div className="form-floating">
-                                <input name="fNVendedor" onChange={handleChange} type="text" aria-label="First name" className="form-control" id="inputName" />
-                                <label for="inputName" className="form-label">Nombres</label>
+                            <h5 className="card-title">Datos Vendedor</h5>    
+                            <div className="form-floating"> 
+                                <select onChange={(e) => setObtenerSelect1(usuariosFilatrados1.filter((u) => u._id === e.target.value)[0])} value={obtenerSelect1._id -1} className="form-select" id="nombres2" onClick={mostrarNombreYApellidoAparte2}>
+                                    <option>Seleccione un vendedor
+                                    </option>
+                                    {usuariosFilatrados1.map((el) => {
+                                        return (
+                                            <option
+                                                key={nanoid()}
+                                                value={el._id}
+                                            >{`${el.nombre} ${el.apellido}`}
+                                            </option>
+                                        )
+                                    })}
+                                </select>
+                                <label className="form-label" for="nombres2">Vendedor</label>
+
+                                {nombreVendedor.map(el => {
+                                    return (
+                                        <>
+                                            <input name="fNVendedor" onChange={handleChange} type="text" aria-label="First name" className="form-control" id="inputName" value={`${el.nombre}`} />
+
+                                            <input name="lNVendedor" onChange={handleChange} type="text" aria-label="Last name" className="form-control" id="inputLastName" value={`${el.apellido}`} />
+                                        </>
+                                    )
+                                })}
                             </div>
+
+                           
+                            
                             <div className="form-floating">
-                                <input name="lNVendedor" onChange={handleChange} type="text" aria-label="Last name" className="form-control" id="inputLastName" />
-                                <label for="inputLastName" className="form-label">Apellidos</label>
+                                {nombreVendedor.map(el => {
+                                    return (
+                                        <>
+                                            <input name="emailVendedor" onChange={handleChange} type="text" className="form-control" id="inputEmail" value={`${el.email}`} />
+                                            <label for="inputEmail" className="form-label">Email</label>
+                                        </>
+                                    )
+                                })}
                             </div>
-                            <div className="form-floating">
-                                <input name="emailVendedor" onChange={handleChange} type="email" className="form-control" id="inputEmail" />
-                                <label for="inputEmail" className="form-label">Email</label>
-                            </div>
+                            
+                            
                             <div className="form-floating">
                                 <input name="celularVendedor" onChange={handleChange} type="text" className="form-control" id="celular" />
                                 <label for="celular" className="form-label">Celular</label>
@@ -212,7 +359,7 @@ const RegistrarVenta = () => {
                             </div>
             
                         </div>
-                    </div>
+
                     <Button type="submit" className="button mt-3 mb-5" variant="contained">Submit</Button>
                     <ToastContainer
                         position="bottom-center"
@@ -223,9 +370,16 @@ const RegistrarVenta = () => {
                         rtl={false}
                         draggable
                     />
+                    </div>
+                    
+
+                    
+                    
                 </div>
             </form>
-        </div>
+        </div> 
+        </PrivateComponent>
+        
     )
 }
 

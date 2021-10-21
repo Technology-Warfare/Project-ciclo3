@@ -6,6 +6,7 @@ import MenuItem from '@mui/material/MenuItem';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
+import PrivateComponent from './PrivateComponent';
 
 
 
@@ -99,17 +100,18 @@ const RegistrarUsuario = () => {
             .request(options)
             .then(function (response) {
                 console.log(response.data);
-                toast.success('Vehículo agregado con éxito');
+                toast.success('Usuario agregado con éxito');
                 window.location="/dashboard/usuarios";
             })
             .catch(function (error) {
                 console.error(error);
-                toast.error('Error creando un vehículo');
+                toast.error('Error creando un usuario');
             });
     }
 
     return (
         <>
+        <PrivateComponent roleList={['administrador']}>
             <div className="datos">
                 <h4>Por favor digite los campos para registrar.</h4>
                 <div>
@@ -229,6 +231,8 @@ const RegistrarUsuario = () => {
                     </form>
                 </div>
             </div>
+        </PrivateComponent>
+            
         </>
     )
 };

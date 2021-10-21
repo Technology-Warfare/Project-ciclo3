@@ -1,8 +1,8 @@
 .content-ventas{
-    margin-left: 3%;
+    margin-left: 5%;
     margin-top: 15%;
     padding-bottom: 5%;
-    width: 100%;
+    width: 90%;
 }
 
 
@@ -64,7 +64,7 @@
     .designDesktop{
         justify-content: center;
         text-align: center;
-        width: 87%;
+        width: 100%;
 
 
     }

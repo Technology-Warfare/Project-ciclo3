@@ -1,8 +1,9 @@
 .sidebar{
-    width: 250px;
+    width: 15%;
     padding-top: 10%;
     background-color: rgba(219, 160, 32, 0.904);
     height: auto;
+    text-align: center;
 }
 
 ul{
@@ -10,7 +11,9 @@ ul{
     text-align: center;
     padding-left: 0%;
     padding-top: 4%;  
-    list-style: none;  
+    list-style: none;
+    margin-left: 5%;
+    margin-right: 0;
 }
 
 
