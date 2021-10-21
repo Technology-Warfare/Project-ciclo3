@@ -37,6 +37,7 @@ const RegistrarVenta = () => {
         })
     };
 
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         const options = {
@@ -61,6 +62,7 @@ const RegistrarVenta = () => {
                 observacion:venta.observacion
             },
         };
+        
         await axios
             .request(options)
             .then(function (response) {
