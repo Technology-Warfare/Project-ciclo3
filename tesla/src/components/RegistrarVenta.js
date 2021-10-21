@@ -124,6 +124,7 @@ const RegistrarVenta = () => {
         console.log("nombreVendedor", nombreVendedor);
     }, [nombreVendedor]);
 
+    
     const [busquedaRoll, setBusquedaRoll] = useState('');
     const [busquedaRoll1, setBusquedaRoll1] = useState('');
     const [usuariosFilatrados, setUsuariosFiltrados] = useState(vendedores);
