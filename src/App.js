@@ -24,7 +24,7 @@ function App() {
     <Auth0Provider
       domain="technowarfare.us.auth0.com"
       clientId="A7K9u8XMghdZcxisbP0k2AzUe4i6xoSQ"
-      redirectUri={'http://localhost:3000/dashboard'}
+      redirectUri={'https://thawing-inlet-43435.herokuapp.com/dashboard/'}
       audience='api-autenticacion-technology-warfare'
     >
       <div>
