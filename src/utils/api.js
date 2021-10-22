@@ -6,7 +6,7 @@ export const getToken = () => {
 
 export const obtenerUsuarios = async (successCallback, errorCallback) => {
     const options = { method: 'GET', 
-    url: 'http://localhost:5000/usuarios',
+    url: 'https://whispering-plains-86813.herokuapp.com/usuarios',
     headers:{
     Authorization : getToken() 
     }, 
@@ -18,7 +18,7 @@ export const obtenerUsuarios = async (successCallback, errorCallback) => {
 
 export const obtenerDatosUsuarios = async (successCallback, errorCallback) => {
   const options = { method: 'GET', 
-  url: 'http://localhost:5000/usuarios/self',
+  url: 'https://whispering-plains-86813.herokuapp.com/usuarios/self',
   headers:{
   Authorization : getToken() 
   }, 
@@ -30,7 +30,7 @@ await axios.request(options)
 
 export const obtenerVehiculos = async (successCallback, errorCallback) => {
     const options = { method: 'GET', 
-    url: 'http://localhost:5000/vehiculos',
+    url: 'https://whispering-plains-86813.herokuapp.com/vehiculos',
     headers:{
       Authorization : getToken() 
       },
@@ -42,7 +42,7 @@ export const obtenerVehiculos = async (successCallback, errorCallback) => {
 
 export const obtenerVentas = async (successCallback, errorCallback) => {
   const options = { method: 'GET', 
-    url: 'http://localhost:5000/ventas',
+    url: 'https://whispering-plains-86813.herokuapp.com/ventas',
     headers:{
       Authorization : getToken() 
     },

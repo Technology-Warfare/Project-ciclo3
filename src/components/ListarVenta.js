@@ -423,7 +423,7 @@ const FilaVenta = ({ ventas, setEjecutarConsulta }) => {
 
         const options = {
             method: 'PATCH',
-            url: 'http://localhost:5000/ventas/editar',
+            url: 'https://whispering-plains-86813.herokuapp.com/ventas/editar',
             headers: { 'Content-Type': 'application/json', Authorization : getToken() },
             data: { ...infoNuevaVenta, id: ventas._id }
         };
@@ -445,7 +445,7 @@ const FilaVenta = ({ ventas, setEjecutarConsulta }) => {
 
         const options = {
             method: 'DELETE',
-            url: 'http://localhost:5000/ventas/eliminar',
+            url: 'https://whispering-plains-86813.herokuapp.com/ventas/eliminar',
             headers: { 'Content-Type': 'application/json', Authorization : getToken() },
             data: { id: ventas._id }
         };

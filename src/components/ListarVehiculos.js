@@ -317,7 +317,7 @@ const FilaVehiculo = ({ vehiculos, setEjecutarConsulta }) => {
 
         const options = {
             method: 'PATCH',
-            url: 'http://localhost:5000/vehiculos/editar',
+            url: 'https://whispering-plains-86813.herokuapp.com/vehiculos/editar',
             headers: { 'Content-Type': 'application/json', Authorization : getToken() },
             data: { ...infoNuevoVehiculo, id: vehiculos._id  }
         };
@@ -342,7 +342,7 @@ const FilaVehiculo = ({ vehiculos, setEjecutarConsulta }) => {
 
         const options = {
             method: 'DELETE',
-            url: 'http://localhost:5000/vehiculos/eliminar',
+            url: 'https://whispering-plains-86813.herokuapp.com/vehiculos/eliminar',
             headers: { 'Content-Type': 'application/json', Authorization : getToken() },
             data: { id: vehiculos._id }
         };

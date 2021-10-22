@@ -32,7 +32,7 @@ const RegistrarVehiculo = () => {
         e.preventDefault();
         const options = {
             method: 'POST',
-            url: 'http://localhost:5000/vehiculos/nuevo',
+            url: 'https://whispering-plains-86813.herokuapp.com/vehiculos/nuevo',
             headers: { 'Content-Type': 'application/json' },
             data:{
                 marca : vehiculos.marca,

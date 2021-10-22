@@ -42,7 +42,7 @@ const RegistrarVenta = () => {
         e.preventDefault();
         const options = {
             method: 'POST',
-            url: 'http://localhost:5000/ventas/nuevo',
+            url: 'https://whispering-plains-86813.herokuapp.com/ventas/nuevo',
             headers: { 'Content-Type': 'application/json' },
             data:{
                 idVenta:venta.idVenta,

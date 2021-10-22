@@ -84,7 +84,7 @@ const RegistrarUsuario = () => {
         datos.numerodocumento + " email: "+datos.email+" edad: "+datos.edad);
         const options = {
             method: 'POST',
-            url: 'http://localhost:5000/usuarios/nuevo',
+            url: 'https://whispering-plains-86813.herokuapp.com/usuarios/nuevo',
             headers: { 'Content-Type': 'application/json' },
             data:{
                 nombre : datos.nombre,

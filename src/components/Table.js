@@ -151,7 +151,7 @@ const FilaUsuario = ({ usuarios, setEjecutarConsulta }) => {
 
         const options = {
             method: 'PATCH',
-            url: 'http://localhost:5000/usuarios/editar',
+            url: 'https://whispering-plains-86813.herokuapp.com/usuarios/editar',
             headers: { 'Content-Type': 'application/json', Authorization : getToken()  },
             data: { ...infoNuevoUsuario, id: usuarios._id  }
         };
@@ -170,7 +170,7 @@ const FilaUsuario = ({ usuarios, setEjecutarConsulta }) => {
     const EliminarUsuario = async () => {
         const options = {
             method: 'DELETE',
-            url: 'http://localhost:5000/usuarios/eliminar',
+            url: 'https://whispering-plains-86813.herokuapp.com/usuarios/eliminar',
             headers: { 'Content-Type': 'application/json', Authorization : getToken() },
             data: { id: usuarios._id }
         };
